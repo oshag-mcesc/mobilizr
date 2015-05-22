@@ -17,7 +17,7 @@ Depends:
 Imports:
   curl,
   dplyr,
-  mosaic
+  mosaic,
 License: GPL (>= 2)
 LazyData: TRUE
 URL: http://wiki.mobilizingcs.org
