@@ -22,13 +22,13 @@
 #' lon <- runif(10, -124, -114)
 #' geodata <- data.frame(lat, lon)
 #' scale <- sample(1:10, 10)
-#' make_map(lat~lon, data=geodata)
-#' make_map(lat~lon, data=geodata, scaleby = scale)
-#' make_map(lat~lon, data=geodata, scaleby = scale, size = 5)
-#' make_map(lat~lon, data=geodata, col = type)
-#' make_map(lat~lon, data=geodata, scaleby = scale, col = type)
+#' map(lat~lon, data=geodata)
+#' map(lat~lon, data=geodata, scaleby = scale)
+#' map(lat~lon, data=geodata, scaleby = scale, size = 5)
+#' map(lat~lon, data=geodata, col = type)
+#' map(lat~lon, data=geodata, scaleby = scale, col = type)
 
-make_map <- function(x, data=parent.frame(), e, scaleby, size = 1, col='blue', zoom=10, color, ...){
+map <- function(x, data=parent.frame(), e, scaleby, size = 1, col='blue', zoom=10, color, ...){
   latitude <- data[, deparse(lhs(x))]
   longitude <- data[, deparse(rhs(x))]
   projected <- data.frame(longitude, latitude)
