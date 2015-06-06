@@ -75,7 +75,7 @@ load_lab <- function(lab) {
 
   tf <- tempfile(fileext = ".html")
   writeLines(page, tf)
-  rstudio::viewer(tf)
+  rstudioapi::viewer(tf)
 }
 
 #' @rdname load_lab

@@ -11,14 +11,8 @@
 #' @examples
 #' data(cdc)
 #' histogram(~height, data = cdc)
-
-# histogram <- function(x, data, type='count', fit, ...) {
-#   if(!missing(fit)) {
-#     lattice::histogram(x = x, data = data, type = 'density', fit = fit, ...)
-#   } else {
-#     lattice::histogram(x = x, data = data, type = type, ...)
-#   }
-# }
+#' histogram(~height, data = cdc, fit = "normal")
+#' histogram(~height | gender, data = cdc)
 
 histogram <- function(x, data, type='count', fit, ...) {
   if(!missing(fit)) {

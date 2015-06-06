@@ -25,5 +25,7 @@ For additional options for creating histogram, look at the help file found in th
 \examples{
 data(cdc)
 histogram(~height, data = cdc)
+histogram(~height, data = cdc, fit = "normal")
+histogram(~height | gender, data = cdc)
 }
 
