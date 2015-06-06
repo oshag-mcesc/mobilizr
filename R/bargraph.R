@@ -5,6 +5,7 @@
 #' @param x \code{formula}. An expression of the form \code{~ x | z} where \code{x} is the variable we want to make bargraphs for and \code{z} is a second, optional, variable we would like to use for faceting.
 #' @param data data frame. The data where the variables can be found.
 #' @param groups factor. An additional variable to use for side-by-side bargraphs.
+#' @param horizontal logical. Use \code{horizontal = TRUE} to make a horizontal bargraph.
 #' @section Note:
 #' For additional options for creating bargraphs, look at the help file found in the \code{mosaic} package or run \code{help(bargraph, package="mosaic")} in the console.
 #' @examples
@@ -14,8 +15,7 @@
 #' bargraph(~depressed | grade, data = cdc, groups = gender)
 
 bargraph <- function (x, data = parent.frame(), groups, horizontal = FALSE,
-                      origin = 0, ylab = ifelse(horizontal, "", "Frequency"), xlab = ifelse(horizontal,
-                                                                                            "Frequency", ""), subset, ...)
+                      origin = 0, ylab = ifelse(horizontal, "", "Frequency"), xlab = ifelse(horizontal, "Frequency", ""), subset, ...)
 {
   haveGroups <- !missing(groups)
   sgroups <- substitute(groups)

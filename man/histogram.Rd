@@ -14,6 +14,8 @@ histogram(x, data, type = "count", fit, ...)
 \item{type}{character. A character string that describes what units the user would like on the y-axis. Options include \code{"count"} for frequencies, \code{"percent"} for percentages and \code{"density"} which can be used when adding fitted lines.}
 
 \item{fit}{character. A character string that describes a probablility density curve to overlay on the histogram of the data. Distributions that can be used are \code{"normal"}, \code{"beta"}, \code{"cauchy"}, \code{"chisq"} (similarly \code{"chi-squared"}), \code{"exponential"}, \code{"gamma"}, \code{"geometric"}, \code{"lognormal"}, \code{"poisson"}, \code{"t"} and \code{"weibull"}}
+
+\item{nint}{number. The number of bins to use in the histogram}
 }
 \description{
 Create a histogram of single variables.

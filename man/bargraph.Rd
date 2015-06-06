@@ -14,6 +14,8 @@ bargraph(x, data = parent.frame(), groups, horizontal = FALSE, origin = 0,
 \item{data}{data frame. The data where the variables can be found.}
 
 \item{groups}{factor. An additional variable to use for side-by-side bargraphs.}
+
+\item{horizontal}{logical. Use \code{horizontal = TRUE} to make a horizontal bargraph.}
 }
 \description{
 Create a bargraph.
