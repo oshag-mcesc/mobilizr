@@ -94,7 +94,7 @@ load_labs <- function(lab) {
   lab_urls <- paste0('https://web.ohmage.org/mobilize/resources/ids/labs/',
                      .format_lab_title(lab_titles), '.html')
   if (is.null(lab)) {
-    selection <- menu(lab_titles)
+    selection <- menu(lab_titles, title = "Enter the number next to the lab you would like to load:")
     url <- lab_urls[selection]
   }
   if (!is.null(lab)) {
