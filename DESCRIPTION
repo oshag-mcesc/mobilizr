@@ -17,7 +17,10 @@ Depends:
   stats
 Imports:
   curl,
-  mosaic
+  mosaic,
+  rstudioapi
+Suggests:
+  testthat
 License: GPL (>= 2)
 LazyData: TRUE
 URL: http://wiki.mobilizingcs.org
