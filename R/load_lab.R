@@ -69,9 +69,10 @@ load_lab <- function(lab) {
     url <- .lab_selector(lab=NULL, lab_titles=lab_titles)
   }
 
-
-  page <- paste(readLines(curl::curl(url, "r")),
+  con <- curl::curl(url, "r")
+  page <- paste(readLines(con),
                 collapse = '\n')
+  close(con)
 
   tf <- tempfile(fileext = ".html")
   writeLines(page, tf)
