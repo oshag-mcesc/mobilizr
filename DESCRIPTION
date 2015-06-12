@@ -3,7 +3,7 @@ Type: Package
 Title: Functions for the Mobilize Introduction to Data Science course.
 Description: This package is intended to simplify the code writing process for
   Introduction to Data Science, a Mobilize grant high school course.
-Version: 0.1.1
+Version: 0.1.3
 Date: 2015-04-13
 Authors@R: as.person(c(
     "James Molyneux <jmolyneux@ucla.edu> [aut, cre]",
@@ -13,11 +13,12 @@ Authors@R: as.person(c(
 Encoding: UTF-8
 Depends:
   R (>= 3.0.2),
+  MASS,
+  mosaic,
   dplyr,
   stats
 Imports:
   curl,
-  mosaic,
   rstudioapi
 Suggests:
   testthat
