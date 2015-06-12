@@ -14,11 +14,11 @@ Encoding: UTF-8
 Depends:
   R (>= 3.0.2),
   MASS,
+  mosaic,
   dplyr,
   stats
 Imports:
   curl,
-  mosaic,
   rstudioapi
 Suggests:
   testthat
