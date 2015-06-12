@@ -28,6 +28,7 @@
 #' }
 
 atus_format <- function(data) {
+  names(data) <- gsub(names(data), pattern = ":", replacement = ".")
   time_use_vars <- c("chores", "day","friends", "grooming",
                      "homework", "meals", "online", "read",
                      "school", "sleep", "sports", "television",
