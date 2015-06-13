@@ -23,11 +23,11 @@
 #'   participated in the campaign.}
 #' @examples
 #' \dontrun{
-#' atus_raw <- read.csv("My class time use data.csv")
-#' atus_data <- atus_format(atus_raw)
+#' timeuse_raw <- read.csv("My class time use data.csv")
+#' timeuse <- timeuse_format(timeuse_raw)
 #' }
 
-atus_format <- function(data) {
+timeuse_format <- function(data) {
   names(data) <- gsub(names(data), pattern = ":", replacement = ".")
   time_use_vars <- c("chores", "day","friends", "grooming",
                      "homework", "meals", "online", "read",
@@ -40,7 +40,7 @@ atus_format <- function(data) {
     as.data.frame(., stringsAsFactors=FALSE)
   clean_data[time_use_vars] <- sapply(clean_data[time_use_vars], as.numeric)
 
-  sum_atus <- clean_data %>%
+  sum_timeuse <- clean_data %>%
     dplyr::group_by(user.id, day) %>%
     dplyr::summarise(
       submissions = n(),
@@ -59,7 +59,7 @@ atus_format <- function(data) {
       videogames = sum(videogames),
       work = sum(work))
 
-  mean_atus <- sum_atus %>%
+  mean_timeuse <- sum_timeuse %>%
     dplyr::group_by(user.id) %>%
     dplyr::summarise(
       submissions = sum(submissions),
@@ -77,5 +77,5 @@ atus_format <- function(data) {
       travel = mean(travel),
       videogames = mean(videogames),
       work = mean(work))
-  return(mean_atus)
+  return(mean_timeuse)
 }
