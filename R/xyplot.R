@@ -13,7 +13,6 @@
 #' xyplot(weight ~ height | gender, data = cdc)
 #' xyplot(weight ~ height, data = cdc, groups = gender)
 
-
 xyplot <- function(x, data, ...) {
   lattice::xyplot(x = x, data = data, auto.key = TRUE, ...)
 }
