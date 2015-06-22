@@ -15,7 +15,7 @@
 #' bargraph(~depressed | grade, data = cdc, groups = gender)
 
 bargraph <- function (x, data = parent.frame(), groups, horizontal = FALSE,
-                      origin = 0, ylab = ifelse(horizontal, "", "Frequency"), xlab = ifelse(horizontal, "Frequency", ""), subset, ...)
+                      origin = 0, ylab = ifelse(horizontal, "", "Frequency"), xlab = ifelse(horizontal, "Frequency", ""), subset, scales, ...)
 {
   haveGroups <- !missing(groups)
   sgroups <- substitute(groups)
@@ -34,6 +34,9 @@ bargraph <- function (x, data = parent.frame(), groups, horizontal = FALSE,
   }
   lastvar = names(xtab)[ncol(xtab)]
   if (horizontal) {
+    if (missing(scales)) {
+      scales = list(x = list(rot = 0))
+    }
     if (!is.null(mosaic::condition(x))) {
       formula <- as.formula(paste(deparse(mosaic::rhs(x)), " ~ ",
                                   lastvar, " | ", deparse(mosaic::condition(x))))
@@ -44,6 +47,12 @@ bargraph <- function (x, data = parent.frame(), groups, horizontal = FALSE,
     }
   }
   else {
+    if(missing(scales)) {
+      scales = list(x = list(rot = 30))
+    }
+    else {
+      scales = scales
+    }
     if (!is.null(mosaic::condition(x))) {
       formula <- as.formula(paste(lastvar, " ~", deparse(mosaic::rhs(x)),
                                   "|", deparse(mosaic::condition(x))))
@@ -53,8 +62,8 @@ bargraph <- function (x, data = parent.frame(), groups, horizontal = FALSE,
     }
   }
   if (haveGroups)
-    lattice::barchart(formula, data = xtab, groups = eval(sgroups), auto.key = TRUE,
+    lattice::barchart(formula, data = xtab, groups = eval(sgroups), auto.key = TRUE, scales = scales,
              origin = origin, ylab = ylab, xlab = xlab, ...)
   else lattice::barchart(formula, data = xtab, origin = origin, ylab = ylab,
-                xlab = xlab, ...)
+                xlab = xlab, scales = scales, ...)
 }
