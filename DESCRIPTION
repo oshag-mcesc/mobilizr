@@ -17,7 +17,7 @@ Depends:
   plyr,
   dplyr,
   mosaic,
-  ggplot
+  ggplot2
 Imports:
   MASS,
   curl,
