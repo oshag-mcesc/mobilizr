@@ -13,11 +13,11 @@ Authors@R: as.person(c(
 Encoding: UTF-8
 Depends:
   R (>= 3.0.2),
+Imports:
   stats,
   plyr,
   dplyr,
   mosaic
-Imports:
   MASS,
   curl,
   rstudioapi
