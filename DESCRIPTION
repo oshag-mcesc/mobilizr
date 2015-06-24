@@ -14,16 +14,16 @@ Encoding: UTF-8
 Depends:
   R (>= 3.0.2),
   stats,
+  MASS,
   plyr,
   dplyr,
   mosaic,
   ggplot2
 Imports:
-  MASS,
   curl,
   rstudioapi
 Suggests:
   testthat
 License: GPL (>= 2)
-LazyData: FALSE
+LazyData: TRUE
 URL: http://wiki.mobilizingcs.org
