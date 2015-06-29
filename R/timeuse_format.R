@@ -32,14 +32,12 @@ timeuse_format <- function(data) {
   time_use_vars <- c("chores", "day","friends", "grooming",
                      "homework", "meals", "online", "read",
                      "school", "sleep", "sports", "television",
-                     "travel", "videogames", "work",
-                     "context.location.latitude",
-                     "context.location.longitude")
+                     "travel", "videogames", "work")
   clean_data <- sapply(data, function(x) gsub(x, pattern="NOT_DISPLAYED",
                                               replacement=0)) %>%
     as.data.frame(., stringsAsFactors=FALSE)
   clean_data[time_use_vars] <- sapply(clean_data[time_use_vars], as.numeric)
-
+  
   sum_timeuse <- clean_data %>%
     dplyr::group_by(user.id, day) %>%
     dplyr::summarise(
@@ -58,7 +56,7 @@ timeuse_format <- function(data) {
       travel = sum(travel),
       videogames = sum(videogames),
       work = sum(work))
-
+  
   mean_timeuse <- sum_timeuse %>%
     dplyr::group_by(user.id) %>%
     dplyr::summarise(
