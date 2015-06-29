@@ -8,16 +8,19 @@
 #' }
 
 read.csv <- function(file, ...) {
+  ps_names <- c("user.id", "context.timestamp", "context.location.latitude", "context.location.longitude")
   df <- utils::read.csv(file = file, ...)
-  df <- df %>% select(-ends_with(".key"))
-  names(df) <- gsub(names(df),
-                    pattern = ".label",
-                    replace = "")
-  names(df) <- gsub(names(df),
-                    pattern = "context.",
-                    replace = "")
-  names(df) <- gsub(names(df),
-                    pattern = "location.",
-                    replace = "")
+  if (all(ps_names %in% names(df))) {
+    df <- df %>% select(-ends_with(".key"))
+    names(df) <- gsub(names(df),
+                      pattern = ".label",
+                      replace = "")
+    names(df) <- gsub(names(df),
+                      pattern = "context.",
+                      replace = "")
+    names(df) <- gsub(names(df),
+                      pattern = "location.",
+                      replace = "")
+  }
   return(df)
 }
