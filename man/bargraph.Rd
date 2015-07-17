@@ -6,7 +6,7 @@
 \usage{
 bargraph(x, data = parent.frame(), groups, horizontal = FALSE, origin = 0,
   ylab = ifelse(horizontal, "", "Frequency"), xlab = ifelse(horizontal,
-  "Frequency", ""), subset, ...)
+  "Frequency", ""), subset, scales, ...)
 }
 \arguments{
 \item{x}{\code{formula}. An expression of the form \code{~ x | z} where \code{x} is the variable we want to make bargraphs for and \code{z} is a second, optional, variable we would like to use for faceting.}

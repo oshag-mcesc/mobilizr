@@ -22,10 +22,7 @@ load_lab <- function(lab) {
                      "Lab 1E",
                      "Lab 1F",
                      "Lab 1G",
-                     "Lab 1H",
-                     "Lab 1I",
-                     "Lab 1J",
-                     "Lab 1K")
+                     "Lab 1H")
   unit_2_titles <- c("Lab 2A",
                      "Lab 2B",
                      "Lab 2C",
