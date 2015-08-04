@@ -11,8 +11,8 @@
 #' do(10) * sample(1:10, size=2)
 #'
 
-do <- function(n) {
-  if (n > 500) stop("Number of iterations must not exceed 500. Choose a smaller number of iterations and try again.")
-  df <- mosaic::do(n = n, mode = 'data.frame')
+do <- function(N) {
+  if (N > 500) stop("Number of iterations must not exceed 500. Choose a smaller number of iterations and try again.")
+  df <- mosaic::do(N)
   return(df)
 }
