@@ -22,7 +22,7 @@ quantile <- function (x, ..., data, groups = NULL, ..fun.. = stats::quantile,
   }
   maggregate.call <- orig.call
   x_name <- substitute(x)
-  if (!.is.formula(x)) {
+  if (!mosaic::.is.formula(x)) {
     if (!missingData) {
       fun.call[["data"]] <- NULL
     }
