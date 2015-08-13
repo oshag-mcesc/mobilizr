@@ -12,8 +12,7 @@
 data(cdc)
 }
 \description{
-A dataset containing responses from the CDC Youth Risk Behavior Survey. The
-variables are:
+A dataset containing responses from the CDC Youth Risk Behavior Survey.
 }
 \details{
 \itemize{ \item age. age in years \item grade. grade in school \item gender.

@@ -4,10 +4,7 @@
 \alias{do}
 \title{A wrapper for the mosaic package's \code{do} function.}
 \usage{
-do(n)
-}
-\arguments{
-\item{n}{number of times to repeat}
+do(N)
 }
 \value{
 A data frame of the values for the repeated function.
