@@ -13,6 +13,7 @@
 
 do <- function(N) {
   if (N > 500) stop("Number of iterations must not exceed 500. Choose a smaller number of iterations and try again.")
-  df <- mosaic::do(N)
+  df <- mosaic::do(N, mode = 'data.frame')
   return(df)
 }
+
