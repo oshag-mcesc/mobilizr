@@ -23,13 +23,6 @@ load_lab <- function(lab) {
                      "Lab 1F",
                      "Lab 1G",
                      "Lab 1H")
-#   unit_2_titles <- c("Lab 2A",
-#                      "Lab 2B",
-#                      "Lab 2C",
-#                      "Lab 2D",
-#                      "Lab 2E",
-#                      "Lab 2F",
-#                      "Lab 2G")
   unit_2_titles <- c("Lab 2A",
                      "Lab 2B",
                      "Lab 2C",
@@ -57,8 +50,8 @@ load_lab <- function(lab) {
                      "Lab 4H")
 
   lab_titles <- c(unit_1_titles,
-                  unit_2_titles)#,
-                  # unit_3_titles,
+                  unit_2_titles,
+                   unit_3_titles) #,
                   # unit_4_titles)
 
   if (!missing(lab)) {
