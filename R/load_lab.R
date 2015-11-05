@@ -88,10 +88,17 @@ load_labs <- function(lab) {
                      .format_lab_title(lab_titles), '.html')
   if (is.null(lab)) {
     selection <- menu(lab_titles, title = "Enter the number next to the lab you would like to load:")
+    .log_loaded_lab(selection)
     url <- lab_urls[selection]
   }
   if (!is.null(lab)) {
+    .log_loaded_lab(lab)
     url <- lab_urls[lab]
   }
   return(url)
+}
+
+.log_loaded_lab <- function (lab) {
+  # logs the load_lab command correctly regardless of how the user selected a lab
+  log_info(paste('load_lab(',lab,')', sep = ""))
 }
