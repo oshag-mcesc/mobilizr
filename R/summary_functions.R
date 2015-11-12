@@ -43,7 +43,7 @@ SAD.formula <- aggregatingFunction1(SAD.simple)
 #' @rdname iqr
 SAD <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values\n"))
   }
   output <- SAD.formula(x = x, ..., na.rm = TRUE)
   return(output)
@@ -91,7 +91,7 @@ median <- function(x, ...) {
 min <- function(x, ...) {
   if(plyr::is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values.\n"))
+      warning(paste("The data contains missing values\n"))
     }
     output <- mosaic::min(x = x, ..., na.rm = TRUE)
   } else {
@@ -109,8 +109,16 @@ prod <- function(x, ...) {
   return(output)
 }
 
+quantile.formula <- aggregatingFunction1(stats::quantile)
+
 #' @rdname iqr
-quantile <- aggregatingFunction1(stats::quantile, output.multiple = TRUE, na.rm = TRUE)
+quantile <- function(x, ...) {
+  if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
+    warning(paste("The data contains missing values\n"))
+  }
+  output <- quantile.formula(x = x, ..., na.rm = TRUE)
+  return(output)
+}
 
 #' @rdname iqr
 range <- function(x, ...) {
