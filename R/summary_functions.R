@@ -50,8 +50,8 @@ SAD <- function(x, ...) {
 }
 
 #' @rdname iqr
-MAD <- function(x, ...) {
-  n <- mosaic::favstats(x = x, ...)$n
+MAD <- function(x, ..., na.rm = TRUE) {
+  n <- unname(tally(x, ...)["Total"])
   output <- SAD(x = x, ...) / n
   return(output)
 }
