@@ -16,7 +16,7 @@
 
 iqr <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- mosaic::iqr(x = x, ..., na.rm = TRUE)
   return(output)
@@ -25,7 +25,7 @@ iqr <- function(x, ...) {
 #' @rdname iqr
 IQR <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- mosaic::iqr(x = x, ..., na.rm = TRUE)
   return(output)
@@ -43,7 +43,7 @@ SAD.formula <- aggregatingFunction1(SAD.simple)
 #' @rdname iqr
 SAD <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- SAD.formula(x = x, ..., na.rm = TRUE)
   return(output)
@@ -51,7 +51,12 @@ SAD <- function(x, ...) {
 
 #' @rdname iqr
 MAD <- function(x, ..., na.rm = TRUE) {
-  n <- unname(tally(x, ...)["Total"])
+  tal <- tally(x, ..., format = "count")
+  if (is.na(ncol(tal))) {
+    n <- unname(tally(x, ...)["Total"])
+  } else {
+    n <- tal["Total", ]
+  }
   output <- SAD(x = x, ...) / n
   return(output)
 }
@@ -60,7 +65,7 @@ MAD <- function(x, ..., na.rm = TRUE) {
 max <- function(x, ...) {
   if(plyr::is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values\n"))
+      warning(paste("The data contains missing values"))
     }
     output <- mosaic::max(x = x, ..., na.rm = TRUE)
   } else {
@@ -72,7 +77,7 @@ max <- function(x, ...) {
 #' @rdname iqr
 mean <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- mosaic::mean(x = x, na.rm = TRUE, ...)
   return(output)
@@ -81,7 +86,7 @@ mean <- function(x, ...) {
 #' @rdname iqr
 median <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- mosaic::median(x = x, ..., na.rm = TRUE)
   return(output)
@@ -91,7 +96,7 @@ median <- function(x, ...) {
 min <- function(x, ...) {
   if(plyr::is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values\n"))
+      warning(paste("The data contains missing values"))
     }
     output <- mosaic::min(x = x, ..., na.rm = TRUE)
   } else {
@@ -103,7 +108,7 @@ min <- function(x, ...) {
 #' @rdname iqr
 prod <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- mosaic::prod(x = x, ..., na.rm = TRUE)
   return(output)
@@ -114,7 +119,7 @@ quantile.formula <- aggregatingFunction1(stats::quantile)
 #' @rdname iqr
 quantile <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- quantile.formula(x = x, ..., na.rm = TRUE)
   return(output)
@@ -123,7 +128,7 @@ quantile <- function(x, ...) {
 #' @rdname iqr
 range <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- mosaic::range(x = x, ..., na.rm = TRUE)
   return(output)
@@ -133,7 +138,7 @@ range <- function(x, ...) {
 sd <- function(x, ...) {
   if(plyr::is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values.\n"))
+      warning(paste("The data contains missing values."))
     }
     output <- mosaic::sd(x = x, ..., na.rm = TRUE)
   } else {
@@ -145,7 +150,7 @@ sd <- function(x, ...) {
 #' @rdname iqr
 sum <- function(x, ...) {
   if (any(is.na(mosaic::sum(x = x, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- mosaic::sum(x = x, ..., na.rm = TRUE)
   return(output)
@@ -154,7 +159,7 @@ sum <- function(x, ...) {
 #' @rdname iqr
 var <- function(x, ...) {
   if (any(is.na(mosaic::var(x = x, ...)))) {
-    warning(paste("The data contains missing values\n"))
+    warning(paste("The data contains missing values"))
   }
   output <- mosaic::var(x = x, ..., na.rm = TRUE)
   return(output)
