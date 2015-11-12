@@ -38,7 +38,7 @@ SAD.simple <- function (x, ...) {
   return(sad)
 }
 
-SAD.formula <- aggregatingFunction1(SAD.simple, na.rm = TRUE)
+SAD.formula <- aggregatingFunction1(SAD.simple)
 
 #' @rdname iqr
 SAD <- function(x, ...) {
