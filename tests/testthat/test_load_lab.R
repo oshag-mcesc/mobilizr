@@ -1,5 +1,5 @@
 library(mobilizr)
-context("Load labs")
+context("Test load_labs")
 
 test_that("Load lab breaks", {
   expect_error(load_lab(0))

@@ -8,11 +8,53 @@
 #' @name mobilizr
 NULL
 
+#' American Time Use Survey Sample - Clean
+#'
+#' A dataset containing a subset of variables from the American Time Use Survey. This dataset is a cleaned version of \code{atu_dirty}.
+#'
+#' \itemize{ \item caseid. unique identifier of individual survey participant \item age. the age of the respondent \item gender. the gender of the respondent  \item fulltime_emp. the employment status of the respondent \item phys_challenge. does the respondent have a physical difficulty  \item sleep. the length of time the person sleeps, in minutes \item homework. How long the respondent spent on homework assignments, in minutes \item socializing. the number of minutes the respondent spent socializing }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name atu_clean
+#' @usage data(atu_clean)
+#' @seealso atu_dirty
+#' @format A data frame with 12,443 observations of 8 variables
+NULL
+
+#' American Time Use Survey Sample - Dirty
+#'
+#' A dataset containing a subset of variables from the American Time Use Survey. This dataset is "dirty", meaning it has elements which require formatting before use.
+#'
+#' \itemize{ \item caseid. unique identifier of individual survey participant \item V1. the age of the respondent \item V2. the gender of the respondent (1: Male, 2: Female) \item V3. the employment status of the respondent \item V4. does the respondent have a physical difficulty (1: Person did not report having a physical difficulty, 2: Person surveyed reported the have a physical difficulty) \item V5. the length of time the person sleeps, in minutes \item V6. How long the respondent spent on homework assignments, in minutes \item V7. the number of minutes the respondent spent socializing }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name atu_dirty
+#' @usage data(atu_dirty)
+#' @seealso atu_clean
+#' @format A data frame with 12,443 observations of 8 variables
+NULL
+
+#' American Time Use Survey
+#'
+#' A dataset containing responses from the American Time Use Survey. Each participant is asked to document the amount of time spent participating in various activities for a single 24 hour period. Variables provided are a subset of the entire survey.
+#'
+#' \itemize{ \item caseid. unique identifier of individual survey participant \item state. state of residence \item age. age of respondent \item gender.  gender of respondent \item citizen. citizenship status of the respondent \item marital_stat. marital status of the respondent \item veteran. veteran status of the respondent \item active_armedforces. is the respondent an active service member of the U.S. armed forces? \item emp_status. status of employment \item multi_jobs. is the respondent working multiple jobs \item work_class. the type of work done by the respondent for employment \item retired. is the respondent retired \item fulltime_emp. the fulltime employment status of the respondent \item hours_worked. hours worked by respondent \item fam_income. income range of respondent's household \item household_size. number of people living within the respondent's household \item household_kids. number of children, under the age of 18, living in the respondent's household \item household_child. is there a child, under the age of 18, living in the household \item phys_challenge. does the respondent have a physical difficulty \item travel. time spent traveling, in minutes \item phone. time spent talking on a phone, in minutes \item volunteer. time spent volunteering, in minutes \item religion. time spend participating in religious activities, in minutes \item sports. time spent playing sports, in minutes \item social. time spent socializing, in minutes \item food. time spent eating or preparing food, in minutes \item gov_civic. time spent participating in civic engagement activities, in minutes \item household. time spent performing household duties, in minutes \item pro_services. time spent engaged in professional services, in minutes \item purchasing. time spent shopping, in minutes \item education. time spent in educational activities, in minutes \item work. time spent in work related activites, in minutes \item care_nonhousehold. time spent engaged in non-household related duties, in minutes \item care_household. time spend providing care within respondent's household, in minutes \item household_chores. time spent participating in household chores, in minutes \item personal_care. time spent on personal care, in minutes \item sleep. time spent sleeping, in minutes \item groom. time spent grooming, in minutes \item health_related. time spent in health related actvities, in minutes \item eating. time spent eating, in minutes \item class. time spent within a classroom, in minutes \item homework. time spent on homework, in minutes \item socializing. time spent socializing, in minutes}
+#'
+#' @docType data
+#' @keywords dataset
+#' @name atus
+#' @usage data(atus)
+#' @format A data frame with 12,443 observations of 43 variables
+#' @source \url{http://www.bls.gov/tus/}
+NULL
+
 #' CDC Youth Risk Behaviour survey
 #'
-#' A dataset containing responses from the CDC Youth Risk Behavior Survey. The
-#' variables are:
+#' A dataset containing responses from the CDC Youth Risk Behavior Survey.
 #'
+
 #' \itemize{ \item age. age in years \item grade. grade in school \item gender.
 #' sex assigned at birth \item hisp_latino. whether or not student identifies as
 #' Hispanic or Latino \item race. race the student identifies with (A: American
@@ -48,4 +90,45 @@ NULL
 #' @usage data(cdc)
 #' @format A data frame with 14,041 observations of 26 variables
 #' @source \url{http://www.cdc.gov/HealthyYouth/yrbs/index.htm}
+NULL
+
+#' Survival status of actors and actresses in "Slasher" films
+#'
+#' A dataset containing survival statuses of actors and actresses in 50 randomly sampled "Slasher" films.
+#'
+#' \itemize{ \item gender. the gender of actor/actress \item survival. the survival status of the actor/actress }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name slasher
+#' @usage data(slasher)
+#' @format A data frame with 485 observations of 2 variables
+NULL
+
+#' Titanic passenger data
+#'
+#' A dataset containing information on 1,000 randomly sampled passengers of the Titanic.
+#'
+#' \itemize{ \item name. name of passenger \item age. age of passenger \item gender. gender of passenger \item fare. amount paid for ticket to sail on the Titanic \item class. the class hospitality/room aboard the Titanic \item embarked. location passenger first stepped on board the Titanic \item survived. the survival status of the passenger }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name titanic
+#' @usage data(titanic)
+#' @seealso titanic_test
+#' @format A data frame with 1,000 observations of 7 variables
+NULL
+
+#' Titanic passenger survivial test data
+#'
+#' A dataset containing information on 308 passengers of the Titanic that are not included in the \code{titanic} data set.
+#'
+#' \itemize{ \item name. name of passenger \item age. age of passenger \item gender. gender of passenger \item fare. amount paid for ticket to sail on the Titanic \item class. the class hospitality/room aboard the Titanic \item embarked. location passenger first stepped on board the Titanic \item survived. the survival status of the passenger }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name titanic_test
+#' @usage data(titanic_test)
+#' @seealso titanic
+#' @format A data frame with 308 observations of 7 variables
 NULL
