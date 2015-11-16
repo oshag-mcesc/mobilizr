@@ -1,6 +1,10 @@
 data <- function(...) {
+  args <- list(...)
+  exist <- length(args)
   utils::data(...)
-  if (missing(package)) {
-    View(...)
+  if (exist != 0) {
+    if (is.null(args[['package']])) {
+      View(...)
+    }
   }
 }
