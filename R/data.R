@@ -1,6 +1,6 @@
 data <- function(...) {
   utils::data(...)
-  if (!missing(package)) {
+  if (missing(package)) {
     View(...)
   }
 }
