@@ -60,9 +60,7 @@ load_lab <- function(lab) {
   if (missing(lab)) {
     url <- .lab_selector(lab=NULL, lab_titles=lab_titles)
   }
-  if(!is.numeric(lab) | length(lab) != 1) {
-    stop("Input should be blank or an integer.")
-  }
+
 
   con <- curl::curl(url, "r")
   page <- paste(readLines(con),
@@ -95,6 +93,9 @@ load_labs <- function(lab) {
     url <- lab_urls[selection]
   }
   if (!is.null(lab)) {
+    if(!is.numeric(lab) | length(lab) != 1) {
+      stop("Input should be either left blank or a single integer.")
+    }
     .log_loaded_lab(lab)
     url <- lab_urls[lab]
   }
