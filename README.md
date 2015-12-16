@@ -12,5 +12,9 @@ The package builds on many of the features that were included in the [MobilizeSi
 To install the development version of `mobilizr` from github, be sure to have the `devtools` package installed and then run:
 
 ```{r}
-devtools::install_github("jimmylovestea/mobilizr")
+devtools::install_github("mobilizingcs/mobilizr")
 ```
+
+## Legacy Curriculum
+
+The first version of the IDS curriculum used a number of R functions provided by Mobilize-based tools.  With the addition of `mobilizingcs/mobilizr` these original functions are no longer supported.  If you for some reason need to see the original IDS curriculum side-by-side with the original package.  Please see the branch [here](https://github.com/mobilizingcs/MobilizePrime/tree/ids20142015).
