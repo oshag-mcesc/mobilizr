@@ -50,8 +50,8 @@ load_lab <- function(lab) {
 
   lab_titles <- c(unit_1_titles,
                   unit_2_titles,
-                   unit_3_titles) #,
-                  # unit_4_titles)
+                  unit_3_titles),
+                  unit_4_titles)
 
   if (!missing(lab)) {
     url <- .lab_selector(lab=lab, lab_titles=lab_titles)
