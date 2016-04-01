@@ -17,3 +17,9 @@ add_line <- function(intercept, slope, units = "native") {
     ladd(panel.abline(a=intercept, b=slope, col = "red"))
   }
 }
+
+add_curve <- function(mod, col = "black") {
+  deg = length(coef(mod)) - 1
+  ladd(panel.curve(rowSums(
+    t(coef(mod) * t(outer(x, 0:deg, "^")))), col = col))
+}
