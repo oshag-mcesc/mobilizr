@@ -20,4 +20,5 @@ read.csv <- function(file, ...) {
     names(df) <- gsub(names(df), pattern = "context.", replace = "")
     names(df) <- gsub(names(df), pattern = "location.", replace = "")
   }
+  return(df)
 }
