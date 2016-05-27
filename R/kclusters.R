@@ -2,4 +2,4 @@ kclusters_simple <- function(x, k, ...) {
   kmeans(x = x, centers = k, ...)$cluster
 }
 
-kclusters <- aggregatingFunction2(tmp)
+kclusters <- mosaic::aggregatingFunction2(kclusters_simple)
