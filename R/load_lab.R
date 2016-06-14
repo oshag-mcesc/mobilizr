@@ -31,8 +31,7 @@ load_lab <- function(lab) {
                      "Lab 2F",
                      "Lab 2G",
                      "Lab 2H",
-                     "Lab 2I",
-                     "Lab 2J")
+                     "Lab 2I")
   unit_3_titles <- c("Lab 3A",
                      "Lab 3B",
                      "Lab 3C",
@@ -80,11 +79,13 @@ load_labs <- function(lab) {
   x_lower <- tolower(x)
   x_nospace <- gsub(x = x_lower, pattern = ' ', replacement = "")
   clean_title <- gsub(x = x_nospace, pattern = "-", replacement = "")
-  clean_title
-}
 
+  unit_num <- stringr::str_extract(clean_title, "[1-4]")
+  lab_location <- paste0("unit_", unit_num, "/", clean_title, "/", clean_title)
+  return(lab_location)
+}
 .lab_selector <- function (lab, lab_titles) {
-  lab_urls <- paste0('https://web.ohmage.org/mobilize/resources/ids/labs/',
+  lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
                      .format_lab_title(lab_titles), '.html')
   if (is.null(lab)) {
     selection <- menu(lab_titles, title = "Enter the number next to the lab you would like to load:")
