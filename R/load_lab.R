@@ -46,11 +46,14 @@ load_lab <- function(lab) {
                      "Lab 4F",
                      "Lab 4G",
                      "Lab 4H")
+  pd_lab_titles <- c("PD Lab 1D",
+                     "PD Lab 1E")
 
   lab_titles <- c(unit_1_titles,
                   unit_2_titles,
                   unit_3_titles,
-                  unit_4_titles)
+                  unit_4_titles,
+                  pd_lab_titles)
 
   if (!missing(lab)) {
     url <- .lab_selector(lab=lab, lab_titles=lab_titles)
