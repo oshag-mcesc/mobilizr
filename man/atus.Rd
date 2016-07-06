@@ -12,10 +12,48 @@
 data(atus)
 }
 \description{
-A dataset containing responses from the American Time Use Survey. Each participant is asked to document the amount of time spent participating in various activities for a single 24 hour period. Variables provided are a subset of the entire survey.
+A dataset containing responses from the American Time Use Survey. Each
+participant is asked to document the amount of time spent participating in
+various activities for a single 24 hour period. Variables provided are a
+subset of the entire survey.
 }
 \details{
-\itemize{ \item caseid. unique identifier of individual survey participant \item state. state of residence \item age. age of respondent \item gender.  gender of respondent \item citizen. citizenship status of the respondent \item marital_stat. marital status of the respondent \item veteran. veteran status of the respondent \item active_armedforces. is the respondent an active service member of the U.S. armed forces? \item emp_status. status of employment \item multi_jobs. is the respondent working multiple jobs \item work_class. the type of work done by the respondent for employment \item retired. is the respondent retired \item fulltime_emp. the fulltime employment status of the respondent \item hours_worked. hours worked by respondent \item fam_income. income range of respondent's household \item household_size. number of people living within the respondent's household \item household_kids. number of children, under the age of 18, living in the respondent's household \item household_child. is there a child, under the age of 18, living in the household \item phys_challenge. does the respondent have a physical difficulty \item travel. time spent traveling, in minutes \item phone. time spent talking on a phone, in minutes \item volunteer. time spent volunteering, in minutes \item religion. time spend participating in religious activities, in minutes \item sports. time spent playing sports, in minutes \item social. time spent socializing, in minutes \item food. time spent eating or preparing food, in minutes \item gov_civic. time spent participating in civic engagement activities, in minutes \item household. time spent performing household duties, in minutes \item pro_services. time spent engaged in professional services, in minutes \item purchasing. time spent shopping, in minutes \item education. time spent in educational activities, in minutes \item work. time spent in work related activites, in minutes \item care_nonhousehold. time spent engaged in non-household related duties, in minutes \item care_household. time spend providing care within respondent's household, in minutes \item household_chores. time spent participating in household chores, in minutes \item personal_care. time spent on personal care, in minutes \item sleep. time spent sleeping, in minutes \item groom. time spent grooming, in minutes \item health_related. time spent in health related actvities, in minutes \item eating. time spent eating, in minutes \item class. time spent within a classroom, in minutes \item homework. time spent on homework, in minutes \item socializing. time spent socializing, in minutes}
+\itemize{ \item caseid. unique identifier of individual survey participant
+\item state. state of residence \item age. age of respondent \item gender.
+gender of respondent \item citizen. citizenship status of the respondent
+\item marital_stat. marital status of the respondent \item veteran. veteran
+status of the respondent \item active_armedforces. is the respondent an
+active service member of the U.S. armed forces? \item emp_status. status of
+employment \item multi_jobs. is the respondent working multiple jobs \item
+work_class. the type of work done by the respondent for employment \item
+retired. is the respondent retired \item fulltime_emp. the fulltime
+employment status of the respondent \item hours_worked. hours worked by
+respondent \item fam_income. income range of respondent's household \item
+household_size. number of people living within the respondent's household
+\item household_kids. number of children, under the age of 18, living in the
+respondent's household \item household_child. is there a child, under the age
+of 18, living in the household \item phys_challenge. does the respondent have
+a physical difficulty \item travel. time spent traveling, in minutes \item
+phone. time spent talking on a phone, in minutes \item volunteer. time spent
+volunteering, in minutes \item religion. time spend participating in
+religious activities, in minutes \item sports. time spent playing sports, in
+minutes \item social. time spent socializing, in minutes \item food. time
+spent eating or preparing food, in minutes \item gov_civic. time spent
+participating in civic engagement activities, in minutes \item household.
+time spent performing household duties, in minutes \item pro_services. time
+spent engaged in professional services, in minutes \item purchasing. time
+spent shopping, in minutes \item education. time spent in educational
+activities, in minutes \item work. time spent in work related activites, in
+minutes \item care_nonhousehold. time spent engaged in non-household related
+duties, in minutes \item care_household. time spend providing care within
+respondent's household, in minutes \item household_chores. time spent
+participating in household chores, in minutes \item personal_care. time spent
+on personal care, in minutes \item sleep. time spent sleeping, in minutes
+\item groom. time spent grooming, in minutes \item health_related. time spent
+in health related actvities, in minutes \item eating. time spent eating, in
+minutes \item class. time spent within a classroom, in minutes \item
+homework. time spent on homework, in minutes \item socializing. time spent
+socializing, in minutes}
 }
 \keyword{dataset}
 

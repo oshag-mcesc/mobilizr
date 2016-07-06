@@ -37,5 +37,5 @@ Suggests:
     testthat
 License: GPL (>= 2)
 LazyData: TRUE
-URL: http://wiki.mobilizingcs.org
+URL: http://www.mobilizingcs.org
 RoxygenNote: 5.0.1

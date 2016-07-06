@@ -7,7 +7,7 @@
 bargraph(x, data, horizontal = FALSE, type = "frequency", ...)
 }
 \arguments{
-\item{x}{\code{formula}. An expression of the form \code{~ x | z} where
+\item{x}{formula. An expression of the form \code{~ x | z} where
 \code{x} is the variable we want to make bargraphs for and \code{z} is a
 second, optional, variable we would like to use for faceting.}
 

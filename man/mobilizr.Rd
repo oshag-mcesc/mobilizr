@@ -6,9 +6,11 @@
 \alias{mobilizr-package}
 \title{mobilizr: Functions for the Mobilize Intro to Data Science course.}
 \description{
-mobilizr provides wrappers and other functions to help students focus on the essentials of learning to code and conduct data science.
+mobilizr provides wrappers and other functions to help students focus on the
+essentials of learning to code and conduct data science.
 }
 \details{
-To learn more about Mobilize and the Introduction to Data Science course see \href{http://wiki.mobilizingcs.org}{the Mobilize wiki}.
+To learn more about Mobilize and the Introduction to Data Science course see
+\href{http://www.mobilizingcs.org}{the Mobilize homepage}.
 }
 
