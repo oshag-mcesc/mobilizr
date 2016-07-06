@@ -7,24 +7,31 @@
 add_curve(mod, col = "black")
 }
 \arguments{
-\item{mod.}{A linear model with a single response and a single explanatory variable.}
+\item{mod}{A linear model with a single response and a single explanatory
+variable.}
 
-\item{col.}{A character color to use when plotting the line/curve.}
+\item{col}{A character color to use when plotting the line/curve.}
 }
 \description{
 Include a line or curve created from a linear model with a single response
-and a single explanatory variable.
+and a single explanatory variable. The \code{mod} function should be created
+by using the \code{lm} function. To plot a polynomial curve, use the
+\code{poly} function with the explanatory variable. See the examples below
+for additional usage details.
 }
 \examples{
+# Create a linear model and use the model plot the line on a xyplot
 m_line <- lm(weight ~ height, data = cdc)
+xyplot(weight ~ height, data = cdc)
+add_curve(m_line)
 
-m_curve
+# Create a linear model with a quadratic polynomial and include the curve on
+# the xyplot.
+m_curve <- lm(weight ~ poly(height, 2), data = cdc)
+xyplot(weight ~ height, data = cdc)
+add_curve(m_curve)
 }
 \seealso{
-\code{\link{add_line}}
-
-\code{\link{lm}}
-
-\code{\link{poly}}
+\code{\link{add_line}}, \code{\link{lm}}, \code{\link{poly}}
 }
 

@@ -4,25 +4,30 @@
 \alias{bargraph}
 \title{Bargraph Plots}
 \usage{
-bargraph(x, data = parent.frame(), groups, horizontal = FALSE, origin = 0,
-  ylab = ifelse(horizontal, "", "Frequency"), xlab = ifelse(horizontal,
-  "Frequency", ""), subset, scales, ...)
+bargraph(x, data, horizontal = FALSE, type = "frequency", ...)
 }
 \arguments{
-\item{x}{\code{formula}. An expression of the form \code{~ x | z} where \code{x} is the variable we want to make bargraphs for and \code{z} is a second, optional, variable we would like to use for faceting.}
+\item{x}{\code{formula}. An expression of the form \code{~ x | z} where
+\code{x} is the variable we want to make bargraphs for and \code{z} is a
+second, optional, variable we would like to use for faceting.}
 
 \item{data}{data frame. The data where the variables can be found.}
 
-\item{groups}{factor. An additional variable to use for side-by-side bargraphs.}
+\item{horizontal}{logical. Use \code{horizontal = TRUE} to make a horizontal
+bargraph.}
 
-\item{horizontal}{logical. Use \code{horizontal = TRUE} to make a horizontal bargraph.}
+\item{type}{character. Choose the type of y-axis. Options include \code{"count"}, \code{"frequency"}, \code{"proportion"} and \code{"percent"}.}
+
+\item{groups}{factor. An additional variable to use for side-by-side
+bargraphs.}
 }
 \description{
-Create a bargraph.
+Create a bargraph of a categorical variable.
 }
 \section{Note}{
-
-For additional options for creating bargraphs, look at the help file found in the \code{mosaic} package or run \code{help(bargraph, package="mosaic")} in the console.
+ For additional options for creating bargraphs, look at the
+  help file found in the \code{mosaic} package or run \code{help(bargraph,
+  package="mosaic")} in the console.
 }
 \examples{
 data(cdc)
