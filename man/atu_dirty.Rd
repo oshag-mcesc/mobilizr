@@ -27,7 +27,7 @@ V6. How long the respondent spent on homework assignments, in minutes \item
 V7. the number of minutes the respondent spent socializing }
 }
 \seealso{
-atu_clean
+\link{atu_clean}
 }
 \keyword{dataset}
 

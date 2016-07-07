@@ -5,17 +5,25 @@
 \alias{titanic}
 \title{Titanic passenger data}
 \format{A data frame with 1,000 observations of 7 variables}
+\source{
+\url{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
+}
 \usage{
 data(titanic)
 }
 \description{
-A dataset containing information on 1,000 randomly sampled passengers of the Titanic.
+A dataset Containing Information on 1,000 Randomly Sampled Passengers of the
+Titanic.
 }
 \details{
-\itemize{ \item name. name of passenger \item age. age of passenger \item gender. gender of passenger \item fare. amount paid for ticket to sail on the Titanic \item class. the class hospitality/room aboard the Titanic \item embarked. location passenger first stepped on board the Titanic \item survived. the survival status of the passenger }
+\itemize{ \item name. name of passenger \item age. age of passenger \item
+gender. gender of passenger \item fare. amount paid for ticket to sail on the
+Titanic \item class. the class hospitality/room aboard the Titanic \item
+embarked. location passenger first stepped on board the Titanic \item
+survived. the survival status of the passenger }
 }
 \seealso{
-titanic_test
+\link{titanic_test}
 }
 \keyword{dataset}
 

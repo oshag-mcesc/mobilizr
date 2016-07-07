@@ -46,7 +46,7 @@ NULL
 #' @keywords dataset
 #' @name atu_clean
 #' @usage data(atu_clean)
-#' @seealso atu_dirty
+#' @seealso \link{atu_dirty}
 #' @format A data frame with 12,443 observations of 8 variables
 #' @source \url{http://www.bls.gov/tus/}
 NULL
@@ -70,7 +70,7 @@ NULL
 #' @keywords dataset
 #' @name atu_dirty
 #' @usage data(atu_dirty)
-#' @seealso atu_clean
+#' @seealso \link{atu_clean}
 #' @format A data frame with 12,443 observations of 8 variables
 #' @source \url{http://www.bls.gov/tus/}
 NULL
@@ -190,7 +190,92 @@ NULL
 #' @name dwp_2010
 #' @usage data(dwp_2010)
 #' @format A data frame with 1,705 observations of 19 variables
+#' @seealso \link{dwp_student}, \link{dwp_teacher}
 #' @source \url{https://www.ladwp.com}
+NULL
+
+
+#' LA Department of Water and Power (2010) - Student
+#'
+#' Water usage from the Los Angeles Department of Water and Power, by census
+#' block, for the year 2010. Some blocks are dropped due to identifiability
+#' concerns. This data set is used for a student practicum and contains 1,193 randomly selected observations. The remaining 512 observations can be found in the \code{\link{dwp_teacher}} data.
+#'
+#' \itemize{ \item census. The census block. \item sector_type. Indicates the
+#' type of customers using water. \item longitude. The longitudinal centroid of
+#' the census block. \item latitude. The latitudinal centroid of the census
+#' block. \item census_pop. The number of people residing within the census
+#' block. \item total. The total amount of water used in the year in hundreds of
+#' cubic feet for each census block. \item july - june. The amount of water used
+#' per month in hundreds of cubic feet for each census block. \item count. The
+#' number of users measured per census block by sector type.}
+#'
+#' @docType data
+#' @keywords dataset
+#' @name dwp_student
+#' @usage data(dwp_student)
+#' @format A data frame with 1,193 observations of 19 variables
+#' @seealso \link{dwp_2010}, \link{dwp_teacher}
+#' @source \url{https://www.ladwp.com}
+NULL
+
+
+#' LA Department of Water and Power (2010) - Teacher
+#'
+#' Water usage from the Los Angeles Department of Water and Power, by census
+#' block, for the year 2010. Some blocks are dropped due to identifiability
+#' concerns. This data set is used for a student practicum and contains 512 observations can be used by teachers to validate the student models.
+#'
+#' \itemize{ \item census. The census block. \item sector_type. Indicates the
+#' type of customers using water. \item longitude. The longitudinal centroid of
+#' the census block. \item latitude. The latitudinal centroid of the census
+#' block. \item census_pop. The number of people residing within the census
+#' block. \item total. The total amount of water used in the year in hundreds of
+#' cubic feet for each census block. \item july - june. The amount of water used
+#' per month in hundreds of cubic feet for each census block. \item count. The
+#' number of users measured per census block by sector type.}
+#'
+#' @docType data
+#' @keywords dataset
+#' @name dwp_teacher
+#' @usage data(dwp_teacher)
+#' @format A data frame with 512 observations of 19 variables
+#' @seealso \link{dwp_2010}, \link{dwp_student}
+#' @source \url{https://www.ladwp.com}
+NULL
+
+
+#' Futbol Data Set
+#'
+#' Futbol
+#'
+#' \itemize{
+#'  \item
+#' }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name futbol
+#' @usage data(futbol)
+#' @format A data frame with _ observations of _ variables
+#' @source \url{}
+NULL
+
+
+#' Movie Data Set
+#'
+#' Movie
+#'
+#' \itemize{
+#'  \item
+#' }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name movie
+#' @usage data(movie)
+#' @format A data frame with _ observations of _ variables
+#' @source \url{http://www.rottentomatos.com}
 NULL
 
 
@@ -209,28 +294,40 @@ NULL
 
 #' Titanic passenger data
 #'
-#' A dataset containing information on 1,000 randomly sampled passengers of the Titanic.
+#' A dataset Containing Information on 1,000 Randomly Sampled Passengers of the
+#' Titanic.
 #'
-#' \itemize{ \item name. name of passenger \item age. age of passenger \item gender. gender of passenger \item fare. amount paid for ticket to sail on the Titanic \item class. the class hospitality/room aboard the Titanic \item embarked. location passenger first stepped on board the Titanic \item survived. the survival status of the passenger }
+#' \itemize{ \item name. name of passenger \item age. age of passenger \item
+#' gender. gender of passenger \item fare. amount paid for ticket to sail on the
+#' Titanic \item class. the class hospitality/room aboard the Titanic \item
+#' embarked. location passenger first stepped on board the Titanic \item
+#' survived. the survival status of the passenger }
 #'
 #' @docType data
 #' @keywords dataset
 #' @name titanic
 #' @usage data(titanic)
-#' @seealso titanic_test
+#' @seealso \link{titanic_test}
 #' @format A data frame with 1,000 observations of 7 variables
+#' @source \url{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
 NULL
 
-#' Titanic passenger survivial test data
+#' Titanic Passenger Survivial Test Data
 #'
-#' A dataset containing information on 308 passengers of the Titanic that are not included in the \code{titanic} data set.
+#' A dataset containing information on 308 passengers of the Titanic that are
+#' not included in the \code{titanic} data set.
 #'
-#' \itemize{ \item name. name of passenger \item age. age of passenger \item gender. gender of passenger \item fare. amount paid for ticket to sail on the Titanic \item class. the class hospitality/room aboard the Titanic \item embarked. location passenger first stepped on board the Titanic \item survived. the survival status of the passenger }
+#' \itemize{ \item name. name of passenger \item age. age of passenger \item
+#' gender. gender of passenger \item fare. amount paid for ticket to sail on the
+#' Titanic \item class. the class hospitality/room aboard the Titanic \item
+#' embarked. location passenger first stepped on board the Titanic \item
+#' survived. the survival status of the passenger }
 #'
 #' @docType data
 #' @keywords dataset
 #' @name titanic_test
 #' @usage data(titanic_test)
-#' @seealso titanic
+#' @seealso \link{titanic}
 #' @format A data frame with 308 observations of 7 variables
+#' @source \link{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
 NULL

@@ -25,7 +25,7 @@ respondent spent on homework assignments, in minutes \item socializing. the
 number of minutes the respondent spent socializing }
 }
 \seealso{
-atu_dirty
+\link{atu_dirty}
 }
 \keyword{dataset}
 
