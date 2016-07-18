@@ -275,7 +275,7 @@ NULL
 #' @name movie
 #' @usage data(movie)
 #' @format A data frame with _ observations of _ variables
-#' @source \url{http://www.rottentomatos.com}
+#' @source \url{http://www.rottentomatoes.com}
 NULL
 
 

@@ -28,7 +28,8 @@ Depends:
     RColorBrewer,
     network,
     stringr,
-    rpart
+    rpart,
+    rpart.plot
 Imports:
     curl,
     rstudioapi,
