@@ -15,9 +15,18 @@ data(movie)
 Movie
 }
 \details{
-\itemize{
- \item
-}
+\itemize{ \item title. The title of the film. \item year. The year the film
+was released. \item rotten_id. The unique identifer for the film on Rotten
+Tomatos. \item mpaa_rating. The rating of the film as given by the MPAA.
+\item runtime. The length of the film, in minutes. \item release_theater. The
+release date of the film in theaters. \item release_dvd. The release date of
+the film onto DVD. \item critics_rating. The average critics rating on a
+scale of 1-100. \item critics_score. The label of the critics rating. \item
+audience_rating. The average audience rating on a scale of 1-100. \item
+audience_score. The label of the audience score. \item reviews_num. The total
+number of reviews for the film. \item studio. The studio involved in
+releasing the film. \item domest_gross. The domestic gross ticket revenues of
+the film in dollars. }
 }
 \keyword{dataset}
 

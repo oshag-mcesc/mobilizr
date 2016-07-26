@@ -247,18 +247,21 @@ NULL
 
 #' Futbol Data Set
 #'
-#' Futbol
+#' Player data for National Football League players from 2014 or from members of
+#' the U.S. Men's National Soccer Team from 2014.
 #'
-#' \itemize{
-#'  \item
-#' }
+#' \itemize{ \item team. The home city for each player's team. \item player. The
+#' name of the player. \item ht_inches. The player's height in inches. \item
+#' wt_lbs. The player's weight in pounds. \item age. The age of the player in
+#' 2014. \item league. Indicates whether the player plays for the U.S. Mens
+#' National Soccer Team or the NFL.}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name futbol
 #' @usage data(futbol)
-#' @format A data frame with _ observations of _ variables
-#' @source \url{}
+#' @format A data frame with 45 observations of 6 variables
+#' @source USMNT data from: \url{http://www.ussoccer.com/mens-national-team/latest-roster} NFL data from: \url{http://www.besttickets.com/blog/wp-content/uploads/2014/09/2014-NFL-Census-Shared.xls}
 NULL
 
 
@@ -266,9 +269,18 @@ NULL
 #'
 #' Movie
 #'
-#' \itemize{
-#'  \item
-#' }
+#' \itemize{ \item title. The title of the film. \item year. The year the film
+#' was released. \item rotten_id. The unique identifer for the film on Rotten
+#' Tomatos. \item mpaa_rating. The rating of the film as given by the MPAA.
+#' \item runtime. The length of the film, in minutes. \item release_theater. The
+#' release date of the film in theaters. \item release_dvd. The release date of
+#' the film onto DVD. \item critics_rating. The average critics rating on a
+#' scale of 1-100. \item critics_score. The label of the critics rating. \item
+#' audience_rating. The average audience rating on a scale of 1-100. \item
+#' audience_score. The label of the audience score. \item reviews_num. The total
+#' number of reviews for the film. \item studio. The studio involved in
+#' releasing the film. \item domest_gross. The domestic gross ticket revenues of
+#' the film in dollars. }
 #'
 #' @docType data
 #' @keywords dataset
