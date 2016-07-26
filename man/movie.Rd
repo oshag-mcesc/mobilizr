@@ -6,7 +6,7 @@
 \title{Movie Data Set}
 \format{A data frame with _ observations of _ variables}
 \source{
-\url{http://www.rottentomatos.com}
+\url{http://www.rottentomatoes.com}
 }
 \usage{
 data(movie)

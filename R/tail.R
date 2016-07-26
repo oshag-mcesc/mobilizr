@@ -9,4 +9,5 @@
 #' tail(~hp, data = mtcars)
 #'
 
+# Allow user to use formula syntax with tail function.
 tail <- mosaic::aggregatingFunction1(utils::tail)

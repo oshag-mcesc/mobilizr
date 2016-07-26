@@ -15,8 +15,8 @@
 treeplot <- function(model, ...) {
 
   # Check the number of splits to ensure the plot won't be overly complex.
-  if(class(model) == "rpart") {
-    n_splits <- .tree_splits(x=model)
+  if (class(model) == "rpart") {
+    n_splits <- .tree_splits(x = model)
     max_splits <- base::max(n_splits)
   }
 
@@ -25,7 +25,7 @@ treeplot <- function(model, ...) {
 
   # If the model is a regression tree, change some of the plotting parameters
   if (model$method == "anova") {
-    rpart.plot::prp(x=model, type=3, under=TRUE, clip.right.labs=FALSE,varlen=0, faclen=0, ...)
+    rpart.plot::prp(x = model, type=3, under=TRUE, clip.right.labs=FALSE,varlen=0, faclen=0, ...)
   } else {
 
     # For classification trees, use the following plotting parameters.

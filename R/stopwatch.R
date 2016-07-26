@@ -1,4 +1,13 @@
-
+#' Time Perception Stopwatch
+#'
+#' A stopwatch to use for the time perception experiment. To use, simply run the
+#' function \code{stopwatch()} and then hit enter at the desired time to stop
+#' the timer.
+#'
+#' @examples
+#' \dontrun{
+#' stopwatch()
+#' }
 
 stopwatch <- function() {
   .tic()
