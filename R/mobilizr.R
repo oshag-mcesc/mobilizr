@@ -286,7 +286,7 @@ NULL
 #' @keywords dataset
 #' @name movie
 #' @usage data(movie)
-#' @format A data frame with _ observations of _ variables
+#' @format A data frame with 489 observations of 14 variables
 #' @source \url{http://www.rottentomatoes.com}
 NULL
 
