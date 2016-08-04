@@ -7,10 +7,10 @@
 add_curve(mod, col = "black")
 }
 \arguments{
-\item{mod}{A linear model with a single response and a single explanatory
+\item{mod}{Model. A linear model with a single response and a single explanatory
 variable.}
 
-\item{col}{A character color to use when plotting the line/curve.}
+\item{col}{Character. The name of a color to use when plotting the line/curve.}
 }
 \description{
 Include a line or curve created from a linear model with a single response

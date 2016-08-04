@@ -2,15 +2,16 @@
 #'
 #' Create a bargraph of a categorical variable.
 #'
-#' @param x formula. An expression of the form \code{~ x | z} where
+#' @param x Formula. An expression of the form \code{~ x | z} where
 #'   \code{x} is the variable we want to make bargraphs for and \code{z} is a
 #'   second, optional, variable we would like to use for faceting.
-#' @param data data frame. The data where the variables can be found.
-#' @param groups factor. An additional variable to use for side-by-side
+#' @param data Data frame. The data where the variables can be found.
+#' @param groups Factor. An additional variable to use for side-by-side
 #'   bargraphs.
-#' @param horizontal logical. Use \code{horizontal = TRUE} to make a horizontal
+#' @param horizontal Logical. Use \code{horizontal = TRUE} to make a horizontal
 #'   bargraph.
-#' @param type character. Choose the type of y-axis. Options include \code{"count"}, \code{"frequency"}, \code{"proportion"} and \code{"percent"}.
+#' @param type Character. Choose the type of y-axis. Options include \code{"count"}, \code{"frequency"}, \code{"proportion"} and \code{"percent"}.
+#'
 #'
 #' @section Note: For additional options for creating bargraphs, look at the
 #'   help file found in the \code{mosaic} package or run \code{help(bargraph,

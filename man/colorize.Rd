@@ -2,12 +2,12 @@
 % Please edit documentation in R/colorize.R
 \name{colorize}
 \alias{colorize}
-\title{Add colors by catergory}
+\title{Add colors by category}
 \usage{
 colorize(x)
 }
 \arguments{
-\item{x}{Categorical used to base the coloring of the observations on. For
+\item{x}{Categorical. Used to base the coloring of the observations on. For
 now must have 12 or fewer categories to work.}
 }
 \value{

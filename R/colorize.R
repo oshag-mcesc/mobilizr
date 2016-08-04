@@ -1,10 +1,10 @@
-#' Add colors by catergory
+#' Add colors by category
 #'
 #' A simple function to add a variable of colors to a data frame based on a
 #' separate categorical variable. Designed to be used within the \code{dplyr}
 #' \code{mutate} funciton.
 #'
-#' @param x Categorical used to base the coloring of the observations on. For
+#' @param x Categorical. Used to base the coloring of the observations on. For
 #'   now must have 12 or fewer categories to work.
 #'
 #' @return When used with \code{mutate}, the function returns a variable where

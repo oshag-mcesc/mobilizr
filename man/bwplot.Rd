@@ -7,13 +7,13 @@
 bwplot(x, data, ...)
 }
 \arguments{
-\item{x}{formula. An expression of the form \code{~ x | z} where \code{x} is
+\item{x}{Formula. An expression of the form \code{~ x | z} where \code{x} is
 the variable we want to make boxplots for and \code{z} is a second,
 optional, variable we would like to use for faceting. Alternatively, one
 could also use the form \code{z ~ x} or \code{x ~ z} to change how the
 faceted boxplot is displayed.}
 
-\item{data}{data frame. The data where the variables can be found.}
+\item{data}{Data frame. The data where the variables can be found.}
 }
 \description{
 Create a box and whisker plot for a numerical variable.

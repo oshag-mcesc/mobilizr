@@ -7,18 +7,18 @@
 bargraph(x, data, horizontal = FALSE, type = "frequency", ...)
 }
 \arguments{
-\item{x}{formula. An expression of the form \code{~ x | z} where
+\item{x}{Formula. An expression of the form \code{~ x | z} where
 \code{x} is the variable we want to make bargraphs for and \code{z} is a
 second, optional, variable we would like to use for faceting.}
 
-\item{data}{data frame. The data where the variables can be found.}
+\item{data}{Data frame. The data where the variables can be found.}
 
-\item{horizontal}{logical. Use \code{horizontal = TRUE} to make a horizontal
+\item{horizontal}{Logical. Use \code{horizontal = TRUE} to make a horizontal
 bargraph.}
 
-\item{type}{character. Choose the type of y-axis. Options include \code{"count"}, \code{"frequency"}, \code{"proportion"} and \code{"percent"}.}
+\item{type}{Character. Choose the type of y-axis. Options include \code{"count"}, \code{"frequency"}, \code{"proportion"} and \code{"percent"}.}
 
-\item{groups}{factor. An additional variable to use for side-by-side
+\item{groups}{Factor. An additional variable to use for side-by-side
 bargraphs.}
 }
 \description{

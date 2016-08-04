@@ -1,27 +1,29 @@
 #' Add a line to an \code{xyplot}
 #'
 #' Include a line to an \code{xyplot} by either including a slope and intercept
-#' term or by clicking twice on the Plots pane in RStudio. After creating an
+#' term or by clicking twice on the \emph{Plots} pane in RStudio. After creating an
 #' \code{xyplot}, either run \code{add_line()} with no arguments and then click
 #' on the RStudio plot plane twice to draw a line OR include arguments for
 #' \code{slope} and \code{intercept} to draw a specific line.
 #'
 #'
-#' @param intercept Optional. The intercept term for a line to plot.
-#' @param slope Optional. The slope term for a line to plot.
+#' @param intercept Numerical (optional). The intercept term for a line to plot.
+#' @param slope Numerical (optional). The slope term for a line to plot.
 #'
 #' @seealso \code{\link{add_curve}}
 #'
 #' @examples
+#' data(cdc)
+#'
 #' \dontrun{
 #' # Add a line by clicking on the plot pane
 #' xyplot(weight ~ height, data = cdc)
 #' add_line() # Click the Plots pane twice inorder to proceed.
+#' }
 #'
 #' # Specify a line using the slope and intercept arguments
 #' xyplot(weight ~ height, data = cdc)
 #' add_line(intercept = -180, slope = 165)
-#' }
 
 
 add_line <- function(intercept, slope, units = "native") {

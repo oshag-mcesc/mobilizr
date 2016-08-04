@@ -6,9 +6,9 @@
 #' \code{poly} function with the explanatory variable. See the examples below
 #' for additional usage details.
 #'
-#' @param mod A linear model with a single response and a single explanatory
+#' @param mod Model. A linear model with a single response and a single explanatory
 #'   variable.
-#' @param col A character color to use when plotting the line/curve.
+#' @param col Character. The name of a color to use when plotting the line/curve.
 #'
 #' @seealso \code{\link{add_line}}, \code{\link{lm}}, \code{\link{poly}}
 #'
