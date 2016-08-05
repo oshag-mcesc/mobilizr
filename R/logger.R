@@ -1,3 +1,6 @@
+# A set of logging functions that Steve made. These aren't used by the user
+# and so no documentation will be made for them.
+
 log_config <- log4r::create.logger()
 
 .onLoad <- function(libname, pkgname) {

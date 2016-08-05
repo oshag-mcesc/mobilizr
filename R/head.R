@@ -7,6 +7,6 @@
 #' @examples
 #' head(~hp, data = mtcars)
 #' tail(~hp, data = mtcars)
-#'
 
+# Allow user to use formula syntax with head function.
 head <- mosaic::aggregatingFunction1(utils::head)

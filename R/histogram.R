@@ -15,14 +15,13 @@
 #' histogram(~height, data = cdc, fit = "normal")
 #' histogram(~height | gender, data = cdc)
 
-histogram <- function(x, data, type='count', fit, ...) {
+histogram <- function(x, data, type = 'count', fit, ...) {
+  # Change default y-axis to "count"
+
+  # If including a fitted density curve, change y-axis back to "density"
   if(!missing(fit)) {
-    suppressWarnings(
-      mosaic::xhistogram(x = x, data = data, type = 'density', fit = fit, ...)
-    )
+    lattice::histogram(x = x, data = data, type = 'density', fit = fit, ...)
   } else {
-    suppressWarnings(
-      mosaic::xhistogram(x = x, data = data, type = type, ...)
-    )
+    lattice::histogram(x = x, data = data, type = type, ...)
   }
 }
