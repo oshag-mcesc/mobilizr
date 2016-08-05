@@ -51,9 +51,9 @@ SAD <- function(x, ...) {
 
 #' @rdname iqr
 MAD <- function(x, ..., na.rm = TRUE) {
-  tal <- tally(x, ..., format = "count")
+  tal <- tally(x, format = "count", margin = TRUE, useNA = "no", ...)
   if (is.na(ncol(tal))) {
-    n <- unname(tally(x, ...)["Total"])
+    n <- unname(tal["Total"])
   } else {
     n <- tal["Total", ]
   }
