@@ -2,15 +2,15 @@
 % Please edit documentation in R/data.R
 \name{data}
 \alias{data}
-\title{Load built-in data sets.}
+\title{Load built-in datasets.}
 \usage{
 data(...)
 }
 \arguments{
-\item{...}{The data set to load.}
+\item{...}{The name of the dataset to load.}
 }
 \value{
-Loads the data set and opens it up to view.
+Loads the dataset and opens it up to view.
 }
 \description{
 Load built-in data sets. After loading the data, the data frame will popup in
