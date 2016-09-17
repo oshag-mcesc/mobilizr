@@ -20,6 +20,10 @@ roll_die <- function(die, times = 1) {
     stop("Please set the die argument to be either 'A' or 'B'")
   }
 
+  if (times > 500) {
+    stop("Number of rolls should be less than or equal to 500")
+  }
+
   # For "A" roll an unbiased die.
   if (die == "A") {
     rolls <- sample(1:6, size = times, replace = TRUE)
