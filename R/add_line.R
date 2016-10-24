@@ -50,10 +50,11 @@ add_line <- function(intercept, slope, units = "native") {
 
     # Included the line in the plot
     trellis.unfocus()
-    ladd(panel.abline(a=b1, b=m1))
+    ladd(panel.abline(a=b1, b=m1), data = list(b1 = b1, m1 = m1))
   } else {
 
   # If both a slope AND intercept are provided, draw the requested line.
-    ladd(panel.abline(a=intercept, b=slope, col = "red"))
+    ladd(panel.abline(a=intercept, b=slope, col = "red"),
+         data = list(intercept = intercept, slope = slope))
   }
 }
