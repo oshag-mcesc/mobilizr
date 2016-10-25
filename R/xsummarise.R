@@ -1,4 +1,4 @@
-summarise <- function(.data, ...) {
+xsummarise <- function(.data, ...) {
   stopifnot(is.data.frame(.data) || is.list(.data) || is.environment(.data))
   cols <- as.list(substitute(list(...))[-1])
   if (is.null(names(cols))) {
@@ -19,7 +19,7 @@ summarise <- function(.data, ...) {
   quickdf(.data[names(cols)])
 }
 
-summarize <- function(.data, ...) {
+xsummarize <- function(.data, ...) {
   stopifnot(is.data.frame(.data) || is.list(.data) || is.environment(.data))
   cols <- as.list(substitute(list(...))[-1])
   if (is.null(names(cols))) {
