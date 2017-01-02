@@ -15,90 +15,96 @@
 #' load_labs(1) # Similar to load_lab(1)
 
 load_lab <- function(lab) {
-  unit_1_titles <- c("Unit 1 - Lab 1",
-                     "Unit 1 - Lab 2",
-                     "Unit 1 - Lab 3",
-                     "Unit 1 - Lab 4",
-                     "Unit 1 - Lab 5",
-                     "Unit 1 - Lab 6",
-                     "Unit 1 - Lab 7a",
-                     "Unit 1 - Lab 7b",
-                     "Unit 1 - Lab 8",
-                     "Unit 1 - Lab 9",
-                     "Unit 1 - Lab 10")
-  unit_2_titles <- c("Unit 2 - Lab 1",
-                     "Unit 2 - Lab 2",
-                     "Unit 2 - Lab 3",
-                     "Unit 2 - Lab 4",
-                     "Unit 2 - Lab 5",
-                     "Unit 2 - Lab 6",
-                     "Unit 2 - Lab 7",
-                     "Unit 2 - Lab 7",
-                     "Unit 2 - Lab 8",
-                     "Unit 2 - Lab 9",
-                     "Unit 2 - Lab 10",
-                     "Unit 2 - Lab 11",
-                     "Unit 2 - Lab 12",
-                     "Unit 2 - Lab 13",
-                     "Unit 2 - Lab 14")
-  unit_3_titles <- c("Unit 3 - Lab 1",
-                     "Unit 3 - Lab 2",
-                     "Unit 3 - Lab 3",
-                     "Unit 3 - Lab 4",
-                     "Unit 3 - Lab 5",
-                     "Unit 3 - Lab 6",
-                     "Unit 3 - Lab 7")
-  unit_4_titles <- c("Unit 4 - Lab 1",
-                     "Unit 4 - Lab 2",
-                     "Unit 4 - Lab 3",
-                     "Unit 4 - Lab 4",
-                     "Unit 4 - Lab 5",
-                     "Unit 4 - Lab 6",
-                     "Unit 4 - Lab 7",
-                     "Unit 4 - Lab 8")
+  # Create the names of the labs for the menu
+  unit_1_titles <- c("Lab 1A", "Lab 1B", "Lab 1C", "Lab 1D", "Lab 1E", "Lab 1F",
+                     "Lab 1G", "Lab 1H")
+  unit_2_titles <- c("Lab 2A", "Lab 2B", "Lab 2C", "Lab 2D", "Lab 2E", "Lab 2F",
+                     "Lab 2G", "Lab 2H", "Lab 2I")
+  unit_3_titles <- c("Lab 3A", "Lab 3B", "Lab 3C", "Lab 3D", "Lab 3E", "Lab 3F")
+  unit_4_titles <- c("Lab 4A", "Lab 4B", "Lab 4C", "Lab 4D", "Lab 4E", "Lab 4F",
+                     "Lab 4G", "Lab 4H")
 
-  lab_titles <- c(unit_1_titles,
-                  unit_2_titles,
-                  unit_3_titles,
-                  unit_4_titles)
+  # These were added because the labs used during Summer PDs used different
+  # campaigns than the actual labs. At some point it'd be nice to remove
+  # these labs.
+  pd_lab_titles <- c("PD Lab 1D",
+                     "PD Lab 1E")
 
+  # Put lab titles together.
+  lab_titles <- c(unit_1_titles, unit_2_titles, unit_3_titles, unit_4_titles,
+                  pd_lab_titles)
+
+  # If the user specifies a lab file in load_lab(), grab the lab URL.
   if (!missing(lab)) {
-    url <- .lab_selector(lab=lab, lab_titles=lab_titles)
+    url <- .lab_selector(lab=lab, lab_titles = lab_titles)
   }
+
+  # Otherwise, open a menu for the user to select from and grab the lab URL.
   if (missing(lab)) {
-    url <- .lab_selector(lab=NULL, lab_titles=lab_titles)
+    url <- .lab_selector(lab=NULL, lab_titles = lab_titles)
   }
 
+  # Using the URL for the chosen lab, the following reads in the lab's HTML
+  # and displays it in the Viewer pane.
 
-  page <- paste(readLines(curl::curl(url, "r")),
-                collapse = '\n')
+  # Get HTML
+  con <- curl::curl(url, "r")
+  page <- paste(readLines(con), collapse = '\n')
+  close(con)
 
+  # Create a temp HTML file
   tf <- tempfile(fileext = ".html")
   writeLines(page, tf)
-  rstudio::viewer(tf)
+
+  # Display HTML file in the viewer pane.
+  rstudioapi::viewer(tf)
 }
 
 #' @rdname load_lab
 load_labs <- function(lab) {
+  # Alias to avoid problems with load_lab vs. load_labs in the written
+  # curriculum
   load_lab(lab)
 }
 
 .format_lab_title <- function (x) {
+  # Helper function that formats the lab title, from the menu, to the lab
+  # file format for the html.
   x_lower <- tolower(x)
   x_nospace <- gsub(x = x_lower, pattern = ' ', replacement = "")
   clean_title <- gsub(x = x_nospace, pattern = "-", replacement = "")
-  clean_title
+
+  unit_num <- stringr::str_extract(clean_title, "[1-4]")
+  lab_location <- paste0("unit_", unit_num, "/", clean_title, "/", clean_title)
+  return(lab_location)
 }
 
 .lab_selector <- function (lab, lab_titles) {
-  lab_urls <- paste0('https://web.ohmage.org/mobilize/resources/ids/labs/',
+  # Helper function that displays the actual menu to choose labs from.
+
+  # Create a list of URLs to choose from, 1 for each lab.
+  lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
                      .format_lab_title(lab_titles), '.html')
   if (is.null(lab)) {
-    selection <- menu(lab_titles)
+    # If user doesn't specify a lab to open in load_lab(), prompt them.
+    selection <- menu(lab_titles, title = "Enter the number next to the lab you would like to load:")
+    .log_loaded_lab(selection)
     url <- lab_urls[selection]
   }
+
   if (!is.null(lab)) {
+    if(!is.numeric(lab) | length(lab) != 1) {
+      # If user puts something that's not a number associated with a lab,
+      # give the user an error message.
+      stop("Input should be either left blank or a single integer.")
+    }
+    .log_loaded_lab(lab)
     url <- lab_urls[lab]
   }
   return(url)
+}
+
+.log_loaded_lab <- function (lab) {
+  # logs the load_lab command correctly regardless of how the user selected a lab
+  log_info(paste('load_lab(',lab,')', sep = ""))
 }
