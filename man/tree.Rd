@@ -32,6 +32,7 @@ treeplot(m1)
 # For a more complex model
 m2 <- tree(survived ~ age + embarked + class, data = titanic, cp = 0.001, minsplit = 5)
 treeplot(m2)
+
 }
 \seealso{
 \link{\code{rpart::rpart}}

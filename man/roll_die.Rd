@@ -21,5 +21,6 @@ roll_die("A")
 # Roll a die many times then create a histogram.
 rolls <- roll_die("A", times = 100)
 histogram(rolls, nint = 6)
+
 }
 

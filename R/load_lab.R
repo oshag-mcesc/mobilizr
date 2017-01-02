@@ -13,6 +13,11 @@
 #' load_lab(1) # Automatically loads the 1st lab from the menu.
 #' load_labs() # Similar to load_lab()
 #' load_labs(1) # Similar to load_lab(1)
+#'
+#' @importFrom curl curl
+#' @importFrom rstudioapi viewer
+#' @importFrom stringr str_extract
+#' @export load_lab
 
 load_lab <- function(lab) {
   # Create the names of the labs for the menu
@@ -48,7 +53,7 @@ load_lab <- function(lab) {
   # and displays it in the Viewer pane.
 
   # Get HTML
-  con <- curl::curl(url, "r")
+  con <- curl(url, "r")
   page <- paste(readLines(con), collapse = '\n')
   close(con)
 
@@ -57,7 +62,7 @@ load_lab <- function(lab) {
   writeLines(page, tf)
 
   # Display HTML file in the viewer pane.
-  rstudioapi::viewer(tf)
+  viewer(tf)
 }
 
 #' @rdname load_lab
@@ -74,7 +79,7 @@ load_labs <- function(lab) {
   x_nospace <- gsub(x = x_lower, pattern = ' ', replacement = "")
   clean_title <- gsub(x = x_nospace, pattern = "-", replacement = "")
 
-  unit_num <- stringr::str_extract(clean_title, "[1-4]")
+  unit_num <- str_extract(clean_title, "[1-4]")
   lab_location <- paste0("unit_", unit_num, "/", clean_title, "/", clean_title)
   return(lab_location)
 }

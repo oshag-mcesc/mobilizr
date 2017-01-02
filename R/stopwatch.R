@@ -8,6 +8,7 @@
 #' \dontrun{
 #' stopwatch()
 #' }
+#' @export
 
 stopwatch <- function() {
   .tic()

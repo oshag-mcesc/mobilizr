@@ -30,6 +30,7 @@ add_line() # Click the Plots pane twice inorder to proceed.
 # Specify a line using the slope and intercept arguments
 xyplot(weight ~ height, data = cdc)
 add_line(intercept = -180, slope = 165)
+
 }
 \seealso{
 \code{\link{add_curve}}

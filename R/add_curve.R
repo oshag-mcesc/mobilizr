@@ -23,6 +23,9 @@
 #' m_curve <- lm(weight ~ poly(height, 2), data = cdc)
 #' xyplot(weight ~ height, data = cdc)
 #' add_curve(m_curve)
+#'
+#' @importFrom lattice panel.curve
+#' @export
 
 
 add_curve <- function(mod, col = "black") {

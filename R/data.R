@@ -12,7 +12,7 @@
 
 data <- function(...) {
 
-  # Inorder to avoid some recurring errors, we check to see whether the call
+  # In order to avoid some recurring errors, we check to see whether the call
   # should or should not open the View() window.
   args <- list(...)
   exist <- length(args)

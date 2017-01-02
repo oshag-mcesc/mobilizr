@@ -13,6 +13,10 @@
 #' MAD(~height | gender, data = cdc)
 #' quantile(~height, data = cdc)
 #' quantile(~height, data = cdc, probs = 0.6)
+#'
+#' @import mosaic
+#' @importFrom plyr is.formula
+#'
 
 iqr <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
@@ -63,7 +67,7 @@ MAD <- function(x, ..., na.rm = TRUE) {
 
 #' @rdname iqr
 max <- function(x, ...) {
-  if(plyr::is.formula(x)) {
+  if(is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
       warning(paste("The data contains missing values"))
     }
@@ -94,7 +98,7 @@ median <- function(x, ...) {
 
 #' @rdname iqr
 min <- function(x, ...) {
-  if(plyr::is.formula(x)) {
+  if(is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
       warning(paste("The data contains missing values"))
     }
@@ -136,7 +140,7 @@ range <- function(x, ...) {
 
 #' @rdname iqr
 sd <- function(x, ...) {
-  if(plyr::is.formula(x)) {
+  if(is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
       warning(paste("The data contains missing values."))
     }

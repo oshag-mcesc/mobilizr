@@ -24,6 +24,11 @@
 #' # Specify a line using the slope and intercept arguments
 #' xyplot(weight ~ height, data = cdc)
 #' add_line(intercept = -180, slope = 165)
+#'
+#' @importFrom lattice trellis.focus
+#' @importFrom lattice trellis.unfocus
+#' @importFrom grid grid.locator
+#' @export
 
 
 add_line <- function(intercept, slope, units = "native") {

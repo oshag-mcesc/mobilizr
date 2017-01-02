@@ -30,6 +30,7 @@ add_curve(m_line)
 m_curve <- lm(weight ~ poly(height, 2), data = cdc)
 xyplot(weight ~ height, data = cdc)
 add_curve(m_curve)
+
 }
 \seealso{
 \code{\link{add_line}}, \code{\link{lm}}, \code{\link{poly}}

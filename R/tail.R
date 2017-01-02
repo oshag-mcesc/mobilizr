@@ -8,6 +8,7 @@
 #' head(~hp, data = mtcars)
 #' tail(~hp, data = mtcars)
 #'
+#' @importFrom mosaic aggregatingFunction1
 
 # Allow user to use formula syntax with tail function.
-tail <- mosaic::aggregatingFunction1(utils::tail)
+tail <- aggregatingFunction1(utils::tail)

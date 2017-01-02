@@ -14,14 +14,16 @@
 #' histogram(~height, data = cdc)
 #' histogram(~height, data = cdc, fit = "normal")
 #' histogram(~height | gender, data = cdc)
+#'
+#' @importFrom lattice histogram
 
 histogram <- function(x, data, type = 'count', fit, ...) {
   # Change default y-axis to "count"
 
   # If including a fitted density curve, change y-axis back to "density"
   if(!missing(fit)) {
-    lattice::histogram(x = x, data = data, type = 'density', fit = fit, ...)
+    histogram(x = x, data = data, type = 'density', fit = fit, ...)
   } else {
-    lattice::histogram(x = x, data = data, type = type, ...)
+    histogram(x = x, data = data, type = type, ...)
   }
 }

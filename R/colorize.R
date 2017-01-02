@@ -15,6 +15,9 @@
 #' mt_colors <- mutate(mtcars, colors = colorize(cyl))
 #' head(mt_colors$colors)
 #' xyplot(hp ~ disp, data = mt_colors, groups = colors)
+#'
+#' @importFrom RColorBrewer brewer.pal
+#' @export
 
 colorize <- function(x) {
 

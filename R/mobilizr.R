@@ -29,7 +29,7 @@ NULL
 NULL
 
 
-#' American Time Use Survey Sample - Clean
+#' American Time Use Survey Data Sample - Clean
 #'
 #' A dataset containing a subset of variables from the American Time Use Survey.
 #' This dataset is a cleaned version of \code{atu_dirty}.
@@ -51,7 +51,7 @@ NULL
 #' @source \url{http://www.bls.gov/tus/}
 NULL
 
-#' American Time Use Survey Sample - Dirty
+#' American Time Use Survey Data Sample - Dirty
 #'
 #' A dataset containing a subset of variables from the American Time Use Survey.
 #' This dataset is "dirty", meaning it has elements which require formatting
@@ -75,7 +75,7 @@ NULL
 #' @source \url{http://www.bls.gov/tus/}
 NULL
 
-#' American Time Use Survey
+#' American Time Use Survey Data
 #'
 #' A dataset containing responses from the American Time Use Survey. Each
 #' participant is asked to document the amount of time spent participating in
@@ -128,7 +128,7 @@ NULL
 NULL
 
 
-#' CDC Youth Risk Behaviour survey
+#' CDC Youth Risk Behaviour Survey Data
 #'
 #' A dataset containing responses from the CDC Youth Risk Behavior Survey.
 #'
@@ -170,7 +170,7 @@ NULL
 NULL
 
 
-#' LA Department of Water and Power (2010)
+#' LA Department of Water and Power (2010) Data
 #'
 #' Water usage from the Los Angeles Department of Water and Power, by census
 #' block, for the year 2010. Some blocks are dropped due to identifiability
@@ -195,7 +195,7 @@ NULL
 NULL
 
 
-#' LA Department of Water and Power (2010) - Student
+#' LA Department of Water and Power (2010) Data - Student
 #'
 #' Water usage from the Los Angeles Department of Water and Power, by census
 #' block, for the year 2010. Some blocks are dropped due to identifiability
@@ -220,7 +220,7 @@ NULL
 NULL
 
 
-#' LA Department of Water and Power (2010) - Teacher
+#' LA Department of Water and Power (2010) Data - Teacher
 #'
 #' Water usage from the Los Angeles Department of Water and Power, by census
 #' block, for the year 2010. Some blocks are dropped due to identifiability
@@ -304,7 +304,7 @@ NULL
 #' @format A data frame with 485 observations of 2 variables
 NULL
 
-#' Titanic passenger data
+#' Titanic Passenger Data
 #'
 #' A dataset Containing Information on 1,000 Randomly Sampled Passengers of the
 #' Titanic.
