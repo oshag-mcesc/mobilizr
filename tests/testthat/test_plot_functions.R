@@ -29,3 +29,6 @@ test_that("xyplots work", {
   expect_equal(length(xyplot(weight~height | gender, data = cdc)[[35]]), 2)
 })
 
+test_that("Adding lines/curves work", {
+  expect_silent(xyplot(weight~height, data = cdc) + add_line(intercept = 50, slope = 10))
+})

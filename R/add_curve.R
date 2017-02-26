@@ -33,6 +33,12 @@ add_curve <- function(mod, col = "black") {
   deg = length(coef(mod)) - 1
 
   # Add the curve to an xyplot
-  ladd(panel.curve(rowSums(
-    t(coef(mod) * t(outer(x, 0:deg, "^")))), col = col))
+  deg <- length(coef(mod)) - 1
+  trellis.last.object() +
+    latticeExtra::layer(panel.curve(rowSums(t(coef(mod) * t(outer(x, 0:deg, "^")))),
+                                    col = col),
+                        data = list(deg = deg,
+                                    x = trellis.last.object()$panel.args[[1]]$x,
+                                    mod = mod,
+                                    col = col))
 }

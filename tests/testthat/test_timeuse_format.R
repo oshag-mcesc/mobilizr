@@ -1,5 +1,5 @@
 library(mobilizr)
-context("Test atus_format")
+context("Test timeuse_format")
 
 timeuse <- read.csv("data/timeuse_sample.csv")
 timeuse_formatted <- timeuse_format(timeuse)
