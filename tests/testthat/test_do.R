@@ -8,3 +8,5 @@ test_that("do function works", {
   expect_equal(names(df), c("Female", "Male"))
   expect_equal(class(df), c("do.data.frame", "data.frame"))
 })
+
+rm(df)
