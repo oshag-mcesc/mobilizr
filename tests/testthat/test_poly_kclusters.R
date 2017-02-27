@@ -10,10 +10,10 @@ test_that("poly works", {
 })
 
 # Test kclusters
-# set.seed(123)
-# test_that("kclusters works", {
-#
-# })
+set.seed(123)
+test_that("kclusters works", {
+  expect_equal(kclusters(wt_lbs ~ ht_inches, data = futbol, k = 2), c(1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 2, 2, 2, 2, 1, 2, 1, 1, 1, 1, 1, 1, 2, 2, 1, 2, 1, 2, 2, 1, 1, 1, 1, 2, 2))
+})
 
 rm(poly_m)
 
