@@ -16,9 +16,7 @@ Authors@R: as.person(c(
 Encoding: UTF-8
 Depends:
     R (>= 3.0.2),
-    stats,
-    mosaic,
-    dplyr
+    mosaic
 Imports:
     curl,
     grid,
