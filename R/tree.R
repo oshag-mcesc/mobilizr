@@ -14,7 +14,6 @@
 #'   categorized into a node before the algorithm decides to split the node into
 #'   a pair of branches.
 #'
-#' @seealso \link{\code{rpart::rpart}}
 #'
 #' @examples
 #' m1 <- tree(survived ~ age + embarked + class, data = titanic)
