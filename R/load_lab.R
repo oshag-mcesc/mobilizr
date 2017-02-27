@@ -17,7 +17,7 @@
 #' @importFrom curl curl
 #' @importFrom rstudioapi viewer
 #' @importFrom stringr str_extract
-#' @export load_lab
+#' @export
 
 load_lab <- function(lab) {
   # Create the names of the labs for the menu
@@ -66,6 +66,7 @@ load_lab <- function(lab) {
 }
 
 #' @rdname load_lab
+#' @export
 load_labs <- function(lab) {
   # Alias to avoid problems with load_lab vs. load_labs in the written
   # curriculum
