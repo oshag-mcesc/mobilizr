@@ -22,12 +22,13 @@
 #' xyplot(wt_lbs ~ ht_inches, data = futbol, groups = league)
 #'
 #' @importFrom mosaic aggregatingFunction2
-#' @export
+
 
 # A simple kmeans function to use
 kclusters_simple <- function(x, k, ...) {
   kmeans(x = x, centers = k, ...)$cluster
 }
 
-
+#' @export
 kclusters <- mosaic::aggregatingFunction2(kclusters_simple)
+

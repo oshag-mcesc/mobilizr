@@ -31,6 +31,7 @@
 #' bargraph(~flips_output)
 #'
 #' @importFrom mosaic rflip
+#' @export
 
 rflip <- function(n = 1, prob = 0.5, quiet = FALSE, verbose = !quiet) {
 
