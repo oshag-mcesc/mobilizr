@@ -23,4 +23,3 @@ rolls <- roll_die("A", times = 100)
 histogram(rolls, nint = 6)
 
 }
-

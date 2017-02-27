@@ -13,4 +13,3 @@ essentials of learning to code and conduct data science.
 To learn more about Mobilize and the Introduction to Data Science course see
 \href{http://www.mobilizingcs.org}{the Mobilize homepage}.
 }
-

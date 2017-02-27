@@ -34,7 +34,3 @@ m2 <- tree(survived ~ age + embarked + class, data = titanic, cp = 0.001, minspl
 treeplot(m2)
 
 }
-\seealso{
-\link{\code{rpart::rpart}}
-}
-

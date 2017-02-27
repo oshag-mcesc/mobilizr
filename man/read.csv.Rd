@@ -38,4 +38,3 @@ Reads comma-seperated value data files into R. This function is specially made t
 food <- read.csv("Food_Habits_Data.csv")
 }
 }
-

@@ -14,4 +14,3 @@ A set of logging functions that Steve made.
 These aren't used by the user.
 }
 \keyword{datasets}
-

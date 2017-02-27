@@ -29,6 +29,7 @@ Create a bargraph of a categorical variable.
   help file found in the \code{mosaic} package or run \code{help(bargraph,
   package="mosaic")} in the console.
 }
+
 \examples{
 data(cdc)
 bargraph(~depressed, data = cdc)
@@ -36,4 +37,3 @@ bargraph(~depressed, data = cdc, groups = gender)
 bargraph(~depressed | grade, data = cdc, groups = gender)
 
 }
-

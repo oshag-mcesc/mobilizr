@@ -45,4 +45,3 @@ reported smoking cigarettes during past 30 days \item fights. number of
 fights student has been during the past 12 months }
 }
 \keyword{dataset}
-

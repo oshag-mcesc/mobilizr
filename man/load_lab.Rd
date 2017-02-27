@@ -27,4 +27,3 @@ load_labs() # Similar to load_lab()
 load_labs(1) # Similar to load_lab(1)
 
 }
-

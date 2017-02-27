@@ -28,4 +28,3 @@ number of minutes the respondent spent socializing }
 \link{atu_dirty}
 }
 \keyword{dataset}
-

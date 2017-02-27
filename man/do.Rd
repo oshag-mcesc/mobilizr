@@ -18,8 +18,8 @@ function can be found in the \code{\link[mosaic]{do}} package documentation
  Find more examples, help and details at the help page for
   \code{\link[mosaic]{do}} in the \code{mosaic} package.
 }
+
 \examples{
 do(10) * sample(1:10, size=2)
 
 }
-

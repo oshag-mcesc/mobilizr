@@ -20,4 +20,3 @@ head(~hp, data = mtcars)
 tail(~hp, data = mtcars)
 
 }
-

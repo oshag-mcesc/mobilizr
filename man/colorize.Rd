@@ -26,4 +26,3 @@ head(mt_colors$colors)
 xyplot(hp ~ disp, data = mt_colors, groups = colors)
 
 }
-
