@@ -68,9 +68,41 @@ test_that("prod function works", {
 
 test_that("quantile function works", {
   expect_equal(quantile(values), c("0%" = 1, "25%" = 3.25, "50%" = 5.5, "75%" = 7.75, "100%" = 10))
-  expect_warning(quantile(quantile(~height, data = cdc)), "The data contains missing values")
+  expect_warning(quantile(~height, data = cdc), "The data contains missing values")
   expect_equal(quantile(~height, data = cdc), c("0%" = 1.27, "25%" = 1.63, "50%" = 1.68, "75%" = 1.78, "100%" = 2.11))
   expect_equal(unname(quantile(~height | gender, data = cdc)), c(1.27, 1.57, 1.63, 1.68, 1.98, 1.35, 1.7, 1.75, 1.8, 2.11))
+})
+
+test_that("var function works", {
+  expect_equal(var(values), 9.1666666)
+  expect_warning(var(~height, data = cdc), "The data contains missing values")
+  expect_equal(var(~height, data = cdc), 0.01029534)
+  expect_equal(unname(var(~height | gender, data = cdc)), c(0.005441601, 0.007017586))
+})
+
+# sd
+test_that("sd function works", {
+  expect_equal(sd(values), 3.02765, tolerance = 1e5)
+  expect_warning(sd(~height, data = cdc), "The data contains missing values")
+  expect_equal(sd(~height, data = cdc), 0.101466, tolerance = 1e5)
+  expect_equal(unname(sd(~height | gender, data = cdc)), c(0.07376721, 0.08377103))
+})
+
+# sum
+test_that("sum function works", {
+  expect_equal(sum(values), 55)
+  expect_warning(sum(~height, data = cdc), "The data contains missing values")
+  expect_equal(sum(~height, data = cdc), 22127.52)
+  expect_equal(unname(sum(~height | gender, data = cdc)), c(10578.12, 11549.40))
+})
+
+
+# range
+test_that("range function works", {
+  expect_equal(range(values), c(1, 10))
+  expect_warning(range(~height, data = cdc), "The data contains missing values")
+  expect_equal(range(~height, data = cdc), c(1.27, 2.11))
+  expect_equal(unname(range(~height | gender, data = cdc)), c(1.27, 1.98, 1.35, 2.11))
 })
 
 rm(values)
