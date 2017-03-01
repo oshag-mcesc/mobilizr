@@ -26,7 +26,8 @@ Imports:
     stringr,
     plyr,
     rpart,
-    rpart.plot
+    rpart.plot,
+    roxygen2,
     testthat
 Suggests:
     fastdigest
