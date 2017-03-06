@@ -26,7 +26,8 @@
 
 # A simple kmeans function to use
 kclusters_simple <- function(x, k, ...) {
-  kmeans(x = x, centers = k, ...)$cluster
+  # Suppress warnings for this implementation
+  suppressWarnings(kmeans(x = x, centers = k, ...)$cluster)
 }
 
 #' @export
