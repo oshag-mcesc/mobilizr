@@ -1,7 +1,7 @@
 library(mobilizr)
 context("colorize function")
 
-mt_colors <- mutate(mtcars, colors = colorize(cyl))
+mt_colors <- dplyr::mutate(mtcars, colors = colorize(cyl))
 df <- data.frame(l = as.factor(letters[1:13]))
 
 test_that("colorize works", {

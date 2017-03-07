@@ -1,6 +1,9 @@
 library(mobilizr)
 context("Test plot functions")
 
+# m <- lm(weight ~ height, data = cdc)
+# p <- xyplot(weight ~ height, data = cdc) + add_curve(m)
+
 test_that("bargraphs work", {
   expect_true(is.null(bargraph(~age, data = cdc)[[4]]))
   expect_true(is.null(bargraph(~age | gender, data = cdc)[[4]]))
@@ -29,3 +32,9 @@ test_that("xyplots work", {
   expect_equal(length(xyplot(weight~height | gender, data = cdc)[[35]]), 2)
 })
 
+# test_that("add_curve works", {
+#   expect_equal(fastdigest(p), "f31fcaec08e316953591cd7f2e38dcf8")
+# })
+
+# rm(m)
+# rm(p)
