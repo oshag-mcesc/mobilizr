@@ -1,17 +1,18 @@
 # History files
 .Rhistory
 .Rapp.history
-
 # Example code in package build process
 *-Ex.R
-
 # RStudio files
 .Rproj.user/
-
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
-
 # Whatever this thing is
 .DS_Store
 .Rproj.user
+.httr-oauth
+.swp
+data/add_curve_plot.png
+data/add_line_plot.png
+tests/testthat/Rplots.pdf
