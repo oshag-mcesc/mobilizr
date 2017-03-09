@@ -28,17 +28,17 @@
 #' @export
 
 
-add_curve <- function(mod, col = "black") {
+add_curve <- function(mod, col = "black", plot_base = trellis.last.object()) {
   # Determine the degree of the model (How many terms are included)
   deg = length(coef(mod)) - 1
 
   # Add the curve to an xyplot
   deg <- length(coef(mod)) - 1
-  trellis.last.object() +
+  plot_base +
     latticeExtra::layer(panel.curve(rowSums(t(coef(mod) * t(outer(x, 0:deg, "^")))),
                                     col = col),
                         data = list(deg = deg,
-                                    x = trellis.last.object()$panel.args[[1]]$x,
+                                    x = plot_base$panel.args[[1]]$x,
                                     mod = mod,
                                     col = col))
 }
