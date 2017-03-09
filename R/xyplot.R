@@ -13,8 +13,8 @@
 #' xyplot(weight ~ height | gender, data = cdc)
 #' xyplot(weight ~ height, data = cdc, groups = gender)
 #'
-#' @importFrom lattice xyplot
+#' @export
 
 xyplot <- function(x, data, ...) {
-  xyplot(x = x, data = data, auto.key = TRUE, ...)
+  lattice::xyplot(x = x, data = data, auto.key = TRUE, ...)
 }

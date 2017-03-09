@@ -4,7 +4,7 @@
 \alias{add_curve}
 \title{Add a fitted linear model to a plot}
 \usage{
-add_curve(mod, col = "black")
+add_curve(mod, col = "black", plot_base = trellis.last.object())
 }
 \arguments{
 \item{mod}{Model. A linear model with a single response and a single explanatory

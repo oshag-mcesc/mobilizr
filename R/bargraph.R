@@ -22,15 +22,15 @@
 #' bargraph(~depressed, data = cdc, groups = gender)
 #' bargraph(~depressed | grade, data = cdc, groups = gender)
 #'
-#' @importFrom mosaic bargraph
+#' @export
 
 bargraph <- function(x, data, horizontal = FALSE, type = "frequency", ...) {
 
   # Rotate the axis lables so they remain easy to read when there's many labels
   # Include a legend by default when groups argument is use
   if (!horizontal) {
-    bargraph(x = x, data = data, scales = list(x = list(rot = 30)), auto.key = TRUE, type = type, ...)
+    mosaic::bargraph(x = x, data = data, scales = list(x = list(rot = 30)), auto.key = TRUE, type = type, ...)
   } else {
-    bargraph(x = x, data = data, horizontal = horizontal, auto.key = TRUE, type = type, ...)
+    mosaic::bargraph(x = x, data = data, horizontal = horizontal, auto.key = TRUE, type = type, ...)
   }
 }
