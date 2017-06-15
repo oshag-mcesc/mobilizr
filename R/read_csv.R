@@ -7,7 +7,7 @@
 #' food <- read.csv("Food_Habits_Data.csv")
 #' }
 
-read.csv <- function(file, ...) {
+read_csv <- function(file, ...) {
 
   # Names of participatory sensing variables to look for.
   ps_names <- c("user.id", "context.timestamp", "context.location.latitude",
