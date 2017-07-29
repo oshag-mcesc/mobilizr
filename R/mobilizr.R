@@ -47,7 +47,7 @@ NULL
 #' @name atu_clean
 #' @usage data(atu_clean)
 #' @seealso \link{atu_dirty}
-#' @format A data frame with 12,443 observations of 8 variables
+#' @format A data frame with 10,493 observations of 8 variables
 #' @source \url{http://www.bls.gov/tus/}
 NULL
 
@@ -71,7 +71,7 @@ NULL
 #' @name atu_dirty
 #' @usage data(atu_dirty)
 #' @seealso \link{atu_clean}
-#' @format A data frame with 12,443 observations of 8 variables
+#' @format A data frame with 10,493 observations of 8 variables
 #' @source \url{http://www.bls.gov/tus/}
 NULL
 
@@ -123,7 +123,7 @@ NULL
 #' @keywords dataset
 #' @name atus
 #' @usage data(atus)
-#' @format A data frame with 12,443 observations of 43 variables
+#' @format A data frame with 10,493 observations of 43 variables
 #' @source \url{http://www.bls.gov/tus/}
 NULL
 
@@ -132,40 +132,46 @@ NULL
 #'
 #' A dataset containing responses from the CDC Youth Risk Behavior Survey.
 #'
-#' \itemize{ \item age. age in years \item grade. grade in school \item gender.
-#' sex assigned at birth \item hisp_latino. whether or not student identifies as
-#' Hispanic or Latino \item race. race the student identifies with (A: American
-#' Indian or Alaska Native, B: Asian, C: Black or African American, D: Native
-#' Hawaiian or Other Pacific Islander, E: White, F: Hispanic or Latino, G:
-#' Multiple - Hispanic or Latino, H: Multiple - Non-Hispanic/Latino) \item
-#' height. height of student in meters \item weight. weight of student in
-#' kilograms \item general_health. student perception of their health \item
-#' hours_sleep. reported hours of sleep on school nights \item asthma. student
-#' diagnosed as having asthma \item depressed. student reported feeling
-#' depressed for 2 weeks in a row, or more, during the past 12 months \item
-#' helmet. how often student wore a helmet while bicycling during the past 12
-#' months \item seat_belt. how often student wore a seatbelt in motor vehicle
-#' driven by someone else \item sunscreen. how often student reported wearing
-#' sunscreen on sunny days \item describe_weight. student perception of their
-#' weight relative to what they believe it should be \item eat_fruit. how often
-#' student ate fruit over the previous 7 days \item eat_salad. how often student
-#' ate salad over the previous 7 days \item drink_soda. how often student
-#' consumed soda over the previous 7 days \item drink_milk. how often student
-#' drank milk over the previous 7 days \item days_exercise_20. how often student
-#' was active for at least 20 mins over the previous 7 days. \item
-#' days_exercise_60. how often student was active for at least 60 mins over the
-#' previous 7 days. \item number_teams. number of sports teams played on during
-#' previous 12 months \item hours_tv. average number of hours spent watching tv
-#' on a school day \item hours_videogame. average number of hours spent playing
-#' videogames on a school day \item days_smoking. number of days student
-#' reported smoking cigarettes during past 30 days \item fights. number of
-#' fights student has been during the past 12 months }
+#' \itemize{
+#' \item age. age in years
+#' \item gender. sex assigned at birth
+#' \item grade. grade in school
+#' \item hisp_latino. whether or not student identifies as Hispanic or Latino
+#' \item race. race the student identifies with
+#' \item height. height of student in meters
+#' \item weight. weight of student in kilograms
+#' \item helmet. how often student wore a helmet while bicycling during the past 12 months
+#' \item seat_belt. how often student wore a seatbelt in motor vehicle driven by someone else
+#' \item drive_text. how often the student reported texting while driving in the past 30 days.
+#' \item fights. number of fights student has been during the past 12 months
+#' \item bully_school. did the student report being bullied while at school.
+#' \item bully_electronic. did the student report being bullied online.
+#' \item depressed. student reported feeling depressed for 2 weeks in a row, or more, during the past 12 months
+#' \item days_smoking. number of days student reported smoking cigarettes during past 30 days
+#' \item days_vaping. number of days student reported vaping, smoking electronic cigarettes, during past 30 days
+#' \item sexuality. how the student describes their sexual orientation.
+#' \item describe_weight. student perception of their weight relative to what they believe it should be
+#' \item drink_juice. how often student consumed fruit juice over the previous 7 days
+#' \item eat_fruit. how often student ate fruit over the previous 7 days
+#' \item eat_salad. how often student ate salad over the previous 7 days
+#' \item drink_soda. how often student consumed soda over the previous 7 days
+#' \item drink_milk. how often student drank milk over the previous 7 days
+#' \item eat_breakfast. how often the student reported eating breakfast over the past 7 days
+#' \item days_exercise_60. how often student was active for at least 60 mins over the previous 7 days.
+#' \item hours_tv. average number of hours spent watching tv on a school day
+#' \item hours_videogame. average number of hours spent playing videogames on a school day
+#' \item number_teams. number of sports teams played on during previous 12 months
+#' \item asthma. student diagnosed as having asthma
+#' \item hours_sleep. reported hours of sleep on school nights
+#' \item drink_juice. how often student consumed sports drinks over the past 7 days
+#' \item drink_water. how often student consumed water over the past 7 days
+#' \item sunburns. how often student reported being sunburned in the past 12 months}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name cdc
 #' @usage data(cdc)
-#' @format A data frame with 14,041 observations of 26 variables
+#' @format A data frame with 15,624 observations of 33 variables
 #' @source \url{http://www.cdc.gov/HealthyYouth/yrbs/index.htm}
 NULL
 
@@ -267,27 +273,33 @@ NULL
 
 #' Movie Data Set
 #'
-#' Movie
+#' A collection of movies from 1916 to 2016.
 #'
-#' \itemize{ \item title. The title of the film. \item year. The year the film
-#' was released. \item rotten_id. The unique identifer for the film on Rotten
-#' Tomatos. \item mpaa_rating. The rating of the film as given by the MPAA.
-#' \item runtime. The length of the film, in minutes. \item release_theater. The
-#' release date of the film in theaters. \item release_dvd. The release date of
-#' the film onto DVD. \item critics_rating. The average critics rating on a
-#' scale of 1-100. \item critics_score. The label of the critics rating. \item
-#' audience_rating. The average audience rating on a scale of 1-100. \item
-#' audience_score. The label of the audience score. \item reviews_num. The total
-#' number of reviews for the film. \item studio. The studio involved in
-#' releasing the film. \item domest_gross. The domestic gross ticket revenues of
-#' the film in dollars. }
+#' \itemize{
+#' \item title. The title of the film.
+#' \item year. The year the film was released.
+#' \item runtime. The length of the film, in minutes.
+#' \item mpaa_rating. The rating of the film as given by the MPAA.
+#' \item color. Is the film in color or black and white.
+#' \item director. Who directed the film
+#' \item aspect_ratio. the ratio of width and height of the film
+#' \item language. The language of the dialog in the film.
+#' \item country. The country the film was produced in.
+#' \item n_poster_faces. The number of faces shown in the movie posters used for advertisment.
+#' \item n_critics. The number of critics who rated the film.
+#' \item n_audeience. The number of regular audience members who rated the film.
+#' \item imdb_score. The rating of the film on IMDB.
+#' \item imdb_id. The unique id of the film on imdb.com.
+#' \item budget. The budget needed to create the film.
+#' \item gross. The amount of money raised by the film.
+#'  }
 #'
 #' @docType data
 #' @keywords dataset
 #' @name movie
 #' @usage data(movie)
-#' @format A data frame with 489 observations of 14 variables
-#' @source \url{http://www.rottentomatoes.com}
+#' @format A data frame with 5,043 observations of 16 variables
+#' @source \url{http://www.imdb.com}
 NULL
 
 
@@ -342,4 +354,58 @@ NULL
 #' @seealso \link{titanic}
 #' @format A data frame with 308 observations of 7 variables
 #' @source \link{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
+NULL
+
+#' Cereal data
+#'
+#' A dataset about the nutritional value of different breakfast cereals. Models built using this data can be checked by using the cereal_test data.
+#'
+#' \itemize{
+#' \item cereal. The name of the cereal.
+#' \item mfr. The manufacturer of the cereal.
+#' \item calories. The number of calories contained in a single serving.
+#' \item protein. The amount of protein contained in a single serving.
+#' \item fat. The amount of fat contained in a single serving.
+#' \item sodium. The amount of sodium contained in a single serving.
+#' \item fibre. The amount of fibre contained in a single serving.
+#' \item carbo. The amount of carbohydrates contained in a single serving.
+#' \item sugars. The amount of sugar contained in a single serving.
+#' \item shelf. The number of shelfs above the floor the cereal should be displayed on.
+#' \item potassium. The number of  contained in a single serving.
+#' \item vitamins. The type of vitamins included in the cereal.
+#' }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name cereal
+#' @usage data(cereal)
+#' @seealso \link{cereal_test}
+#' @format A data frame with 40 observations of 12 variables
+NULL
+
+#' Cereal test data
+#'
+#' A dataset about the nutritional value of different breakfast cereals used to test models created with the cereal data.
+#'
+#' \itemize{
+#' \item cereal. The name of the cereal.
+#' \item mfr. The manufacturer of the cereal.
+#' \item calories. The number of calories contained in a single serving.
+#' \item protein. The amount of protein contained in a single serving.
+#' \item fat. The amount of fat contained in a single serving.
+#' \item sodium. The amount of sodium contained in a single serving.
+#' \item fibre. The amount of fibre contained in a single serving.
+#' \item carbo. The amount of carbohydrates contained in a single serving.
+#' \item sugars. The amount of sugar contained in a single serving.
+#' \item shelf. The number of shelfs above the floor the cereal should be displayed on.
+#' \item potassium. The number of  contained in a single serving.
+#' \item vitamins. The type of vitamins included in the cereal.
+#' }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name cereal_test
+#' @usage data(cereal_test)
+#' @seealso \link{cereal}
+#' @format A data frame with 20 observations of 12 variables
 NULL
