@@ -6,6 +6,7 @@
 #' \dontrun{
 #' food <- read.csv("Food_Habits_Data.csv")
 #' }
+#' @export
 
 # Because of changes in RStudio that occurred between LAUSD adopting
 # IDS and other districts, we create two functions read.csv() and
@@ -36,6 +37,9 @@ read.csv <- function(file, ...) {
   # Return the data
   return(df)
 }
+
+#' @rdname read.csv
+#' @export
 
 read_csv <- function(file, ...) {
 

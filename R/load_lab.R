@@ -89,13 +89,15 @@ load_labs <- function(lab) {
 .lab_selector <- function (lab, lab_titles) {
 
   # Since LAUSD will be using the 'legacy' labs for an undiclosed length
-  # of time, we'll obtain the labs from a different branch on github.
+  # of time, we'll obtain Lab 1C from a different branch on github.
+
+  # Create a list of URLs to choose from, 1 for each lab.
+  lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
+                     .format_lab_title(lab_titles), '.html')
+
+  # Here is where we change which version of lab 1C is used for LAUSD
   if (rstudioapi::getVersion() == "0.99.902") {
-    lab_urls <- paste0("https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/", .format_lab_title(lab_titles), ".html")
-  } else {
-    # Create a list of URLs to choose from, 1 for each lab.
-    lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
-                       .format_lab_title(lab_titles), '.html')
+    lab_urls[3] <- "https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/unit_1/lab1c/lab1c.html"
   }
 
   if (is.null(lab)) {
