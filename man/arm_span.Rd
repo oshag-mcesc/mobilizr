@@ -19,4 +19,3 @@ span, in inches. \item height. The self-reported height of the student, in
 inches. }
 }
 \keyword{dataset}
-

@@ -34,4 +34,3 @@ add_line(intercept = -180, slope = 165)
 \seealso{
 \code{\link{add_curve}}
 }
-

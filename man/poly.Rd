@@ -20,4 +20,3 @@ Compute Polynomial fits of variables for use in linear models.
 # Use a quadratic polynomial to predict weight based on height.
 lm(weight ~ poly(height, 2), data = cdc)
 }
-

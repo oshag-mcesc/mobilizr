@@ -26,4 +26,3 @@ survived. the survival status of the passenger }
 \link{titanic}
 }
 \keyword{dataset}
-

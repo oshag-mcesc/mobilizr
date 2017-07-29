@@ -23,4 +23,3 @@ wt_lbs. The player's weight in pounds. \item age. The age of the player in
 National Soccer Team or the NFL.}
 }
 \keyword{dataset}
-

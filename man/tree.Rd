@@ -36,4 +36,3 @@ treeplot(m2)
 \seealso{
 \link{\code{rpart::rpart}}
 }
-

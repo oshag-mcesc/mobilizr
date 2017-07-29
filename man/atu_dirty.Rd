@@ -30,4 +30,3 @@ V7. the number of minutes the respondent spent socializing }
 \link{atu_clean}
 }
 \keyword{dataset}
-

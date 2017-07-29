@@ -34,4 +34,3 @@ add_curve(m_curve)
 \seealso{
 \code{\link{add_line}}, \code{\link{lm}}, \code{\link{poly}}
 }
-

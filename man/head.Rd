@@ -19,4 +19,3 @@ head(x, ..., data = NULL, groups = NULL, na.rm = getOption("na.rm",
 head(~hp, data = mtcars)
 tail(~hp, data = mtcars)
 }
-

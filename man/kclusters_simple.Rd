@@ -31,4 +31,3 @@ xyplot(wt_lbs ~ ht_inches, data = futbol, groups = league)
 \seealso{
 \link{\code{stats::kmeans}}
 }
-

@@ -29,4 +29,3 @@ releasing the film. \item domest_gross. The domestic gross ticket revenues of
 the film in dollars. }
 }
 \keyword{dataset}
-

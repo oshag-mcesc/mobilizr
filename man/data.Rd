@@ -19,4 +19,3 @@ an RStudio window to view.
 \examples{
 data(cdc)
 }
-

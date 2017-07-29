@@ -24,10 +24,10 @@ Create a histogram of single variables.
 
 For additional options for creating histogram, look at the help file found in the \code{lattice} package or run \code{help(histogram, package="lattice")} in the console.
 }
+
 \examples{
 data(cdc)
 histogram(~height, data = cdc)
 histogram(~height, data = cdc, fit = "normal")
 histogram(~height | gender, data = cdc)
 }
-

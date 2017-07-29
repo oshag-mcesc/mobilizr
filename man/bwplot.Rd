@@ -25,4 +25,3 @@ bwplot(~height | gender, data = cdc)
 bwplot(gender ~ height, data = cdc)
 bwplot(height ~ gender, data = cdc)
 }
-

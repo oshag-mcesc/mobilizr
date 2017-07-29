@@ -20,10 +20,10 @@ Create a scatter plot.
 
 For additional options for creating bargraphs, look at the help file found in the \code{lattice} package or run \code{help(xyplot, package="lattice")} in the console.
 }
+
 \examples{
 data(cdc)
 xyplot(weight~height, data = cdc)
 xyplot(weight ~ height | gender, data = cdc)
 xyplot(weight ~ height, data = cdc, groups = gender)
 }
-

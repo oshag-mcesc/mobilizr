@@ -16,4 +16,3 @@ the timer.
 stopwatch()
 }
 }
-

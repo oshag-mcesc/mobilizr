@@ -41,4 +41,3 @@ attr(flips, "sequence")
 flips_output <- attr(flips, "sequence")
 bargraph(~flips_output)
 }
-

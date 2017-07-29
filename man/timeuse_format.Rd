@@ -33,10 +33,10 @@ collection period for each user.
   2. and average them over the total number of days they participated in the
   campaign.}
 }
+
 \examples{
 \dontrun{
 timeuse_raw <- read.csv("My class time use data.csv")
 timeuse <- timeuse_format(timeuse_raw)
 }
 }
-

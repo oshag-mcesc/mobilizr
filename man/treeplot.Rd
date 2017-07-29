@@ -22,4 +22,3 @@ treeplot(m)
 \seealso{
 \link{\code{rpart.plot}}
 }
-
