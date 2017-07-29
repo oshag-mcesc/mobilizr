@@ -4,28 +4,34 @@
 \name{movie}
 \alias{movie}
 \title{Movie Data Set}
-\format{A data frame with 489 observations of 14 variables}
+\format{A data frame with 5,043 observations of 16 variables}
 \source{
-\url{http://www.rottentomatoes.com}
+\url{http://www.imdb.com}
 }
 \usage{
 data(movie)
 }
 \description{
-Movie
+A collection of movies from 1916 to 2016.
 }
 \details{
-\itemize{ \item title. The title of the film. \item year. The year the film
-was released. \item rotten_id. The unique identifer for the film on Rotten
-Tomatos. \item mpaa_rating. The rating of the film as given by the MPAA.
-\item runtime. The length of the film, in minutes. \item release_theater. The
-release date of the film in theaters. \item release_dvd. The release date of
-the film onto DVD. \item critics_rating. The average critics rating on a
-scale of 1-100. \item critics_score. The label of the critics rating. \item
-audience_rating. The average audience rating on a scale of 1-100. \item
-audience_score. The label of the audience score. \item reviews_num. The total
-number of reviews for the film. \item studio. The studio involved in
-releasing the film. \item domest_gross. The domestic gross ticket revenues of
-the film in dollars. }
+\itemize{
+\item title. The title of the film.
+\item year. The year the film was released.
+\item runtime. The length of the film, in minutes.
+\item mpaa_rating. The rating of the film as given by the MPAA.
+\item color. Is the film in color or black and white.
+\item director. Who directed the film
+\item aspect_ratio. the ratio of width and height of the film
+\item language. The language of the dialog in the film.
+\item country. The country the film was produced in.
+\item n_poster_faces. The number of faces shown in the movie posters used for advertisment.
+\item n_critics. The number of critics who rated the film.
+\item n_audeience. The number of regular audience members who rated the film.
+\item imdb_score. The rating of the film on IMDB.
+\item imdb_id. The unique id of the film on imdb.com.
+\item budget. The budget needed to create the film.
+\item gross. The amount of money raised by the film.
+ }
 }
 \keyword{dataset}
