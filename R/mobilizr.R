@@ -253,21 +253,21 @@ NULL
 
 #' Futbol Data Set
 #'
-#' Player data for National Football League players from 2014 or from members of
-#' the U.S. Men's National Soccer Team from 2014.
+#' Player data for National Football League 1st string quarterbacks from 2017 or from members of
+#' the U.S. Men's National Soccer Team from 2017 Gold Cup roster.
 #'
 #' \itemize{ \item team. The home city for each player's team. \item player. The
 #' name of the player. \item ht_inches. The player's height in inches. \item
 #' wt_lbs. The player's weight in pounds. \item age. The age of the player in
-#' 2014. \item league. Indicates whether the player plays for the U.S. Mens
+#' 2017. \item league. Indicates whether the player plays for the U.S. Mens
 #' National Soccer Team or the NFL.}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name futbol
 #' @usage data(futbol)
-#' @format A data frame with 45 observations of 6 variables
-#' @source USMNT data from: \url{http://www.ussoccer.com/mens-national-team/latest-roster} NFL data from: \url{http://www.besttickets.com/blog/wp-content/uploads/2014/09/2014-NFL-Census-Shared.xls}
+#' @format A data frame with 55 observations of 6 variables
+#' @source USMNT data from: \url{http://www.ussoccer.com/mens-national-team/latest-roster} NFL data from: \url{http://www.profootballlogic.com/players/?position=all}
 NULL
 
 
