@@ -53,7 +53,7 @@ load_lab <- function(lab) {
   # and displays it in the Viewer pane.
 
   # Get HTML
-  con <- curl(url, "r")
+  con <- curl::curl(url, "r")
   page <- paste(readLines(con), collapse = '\n')
   close(con)
 
@@ -62,7 +62,7 @@ load_lab <- function(lab) {
   writeLines(page, tf)
 
   # Display HTML file in the viewer pane.
-  viewer(tf)
+  rstudioapi::viewer(tf)
 }
 
 #' @rdname load_lab
@@ -91,14 +91,24 @@ load_labs <- function(lab) {
   # Since LAUSD will be using the 'legacy' labs for an undiclosed length
   # of time, we'll obtain Lab 1C from a different branch on github.
 
-  # Create a list of URLs to choose from, 1 for each lab.
-  lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
-                     .format_lab_title(lab_titles), '.html')
-
-  # Here is where we change which version of lab 1C is used for LAUSD
-  if (rstudioapi::getVersion() == "0.99.902") {
-    lab_urls[3] <- "https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/unit_1/lab1c/lab1c.html"
+  # If the version of RStudio is higher than what LAUSD uses, pull labs
+  # from the updated branch.
+  # If the version of RStudio is the same as what LAUSD uses, pull labs
+  # fromt the LAUSD branch
+  if (compareVersion(as.character(rstudioapi::getVersion()), "0.99.902") > 0) {
+    lab_urls <- paste0("https://raw.githubusercontent.com/mobilizingcs/ids_labs/updated-labs/", .format_lab_title(lab_titles),".html")
+  } else {
+    lab_urls <- paste0("https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/", .format_lab_title(lab_titles),".html")
   }
+
+  # # Create a list of URLs to choose from, 1 for each lab.
+  # lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
+  #                    .format_lab_title(lab_titles), '.html')
+  #
+  # # Here is where we change which version of lab 1C is used for LAUSD
+  # if (rstudioapi::getVersion() == "0.99.902") {
+  #   lab_urls <- "https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/unit_1/lab1c/lab1c.html"
+  # }
 
   if (is.null(lab)) {
     # If user doesn't specify a lab to open in load_lab(), prompt them.
