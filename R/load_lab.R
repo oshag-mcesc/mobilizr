@@ -85,12 +85,19 @@ load_labs <- function(lab) {
   return(lab_location)
 }
 
+# Helper function that displays the actual menu to choose labs from.
 .lab_selector <- function (lab, lab_titles) {
-  # Helper function that displays the actual menu to choose labs from.
 
-  # Create a list of URLs to choose from, 1 for each lab.
-  lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
-                     .format_lab_title(lab_titles), '.html')
+  # Since LAUSD will be using the 'legacy' labs for an undiclosed length
+  # of time, we'll obtain the labs from a different branch on github.
+  if (rstudioapi::getVersion() == "0.99.902") {
+    lab_urls <- paste0("https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/", .format_lab_title(lab_titles), ".html")
+  } else {
+    # Create a list of URLs to choose from, 1 for each lab.
+    lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
+                       .format_lab_title(lab_titles), '.html')
+  }
+
   if (is.null(lab)) {
     # If user doesn't specify a lab to open in load_lab(), prompt them.
     selection <- menu(lab_titles, title = "Enter the number next to the lab you would like to load:")
