@@ -11,7 +11,7 @@ test_that("Preloaded data loads", {
   expect_equal(dim(dwp_student), c(1193, 19))
   expect_equal(dim(dwp_teacher), c(512, 19))
   expect_equal(dim(futbol), c(55, 6))
-  expect_equal(dim(movie), c(5043, 16))
+  expect_equal(dim(movie), c(4935, 19))
   expect_equal(dim(slasher), c(485, 2))
   expect_equal(dim(titanic), c(1000, 7))
   expect_equal(dim(titanic_test), c(308, 7))

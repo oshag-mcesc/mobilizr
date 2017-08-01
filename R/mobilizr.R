@@ -280,18 +280,21 @@ NULL
 #' \item year. The year the film was released.
 #' \item runtime. The length of the film, in minutes.
 #' \item mpaa_rating. The rating of the film as given by the MPAA.
+#' \item studio. The studio who produced the film.
 #' \item color. Is the film in color or black and white.
 #' \item director. Who directed the film
-#' \item aspect_ratio. the ratio of width and height of the film
 #' \item language. The language of the dialog in the film.
 #' \item country. The country the film was produced in.
+#' \item aspect_ratio. the ratio of width and height of the film
 #' \item n_poster_faces. The number of faces shown in the movie posters used for advertisment.
 #' \item n_critics. The number of critics who rated the film.
-#' \item n_audeience. The number of regular audience members who rated the film.
-#' \item imdb_score. The rating of the film on IMDB.
-#' \item imdb_id. The unique id of the film on imdb.com.
+#' \item n_audience. The number of regular audience members who rated the film.
+#' \item reviews_num. The combined number of reviewers
+#' \item audience_rating. The average rating a film received from audience members reported by IMDB.
+#' \item critics_rating. The average rating a film received from critics reported by Rotten Tomatoes.
 #' \item budget. The budget needed to create the film.
 #' \item gross. The amount of money raised by the film.
+#' \item imdb_id. The unique id of the film on imdb.com.
 #'  }
 #'
 #' @docType data
@@ -299,7 +302,7 @@ NULL
 #' @name movie
 #' @usage data(movie)
 #' @format A data frame with 5,043 observations of 16 variables
-#' @source \url{http://www.imdb.com}
+#' @source \url{http://www.imdb.com}, \url{http://www.omdbapi.com}, \url{http://www.rottentomatoes.com}
 NULL
 
 
