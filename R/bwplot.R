@@ -18,6 +18,7 @@
 #'
 #' @importFrom lattice bwplot
 #' @importFrom lattice panel.bwplot
+#' @export
 
 bwplot <- function(x, data, ...) {
   # Change the midpoint symbol from a dot to a line

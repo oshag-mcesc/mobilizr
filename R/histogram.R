@@ -16,6 +16,7 @@
 #' histogram(~height | gender, data = cdc)
 #'
 #' @importFrom lattice histogram
+#' @export
 
 histogram <- function(x, data, type = 'count', fit, ...) {
   # Change default y-axis to "count"
