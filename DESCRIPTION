@@ -23,6 +23,7 @@ Imports:
     curl,
     grid,
     stats,
+    utils,
     rstudioapi,
     lattice,
     latticeExtra,
