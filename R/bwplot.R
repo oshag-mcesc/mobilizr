@@ -16,13 +16,11 @@
 #' bwplot(gender ~ height, data = cdc)
 #' bwplot(height ~ gender, data = cdc)
 #'
-#' @importFrom lattice bwplot
-#' @importFrom lattice panel.bwplot
 #' @export
 
 bwplot <- function(x, data, ...) {
   # Change the midpoint symbol from a dot to a line
-  bwplot(x = x, data = data, ..., panel = function(x, ...) {
-    panel.bwplot(x, pch = "|", ...)
+  lattice::bwplot(x = x, data = data, ..., panel = function(x, ...) {
+    lattice::panel.bwplot(x, pch = "|", ...)
   })
 }

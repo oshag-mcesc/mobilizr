@@ -5,7 +5,7 @@ Description: This package is intended to simplify the code writing process for
     Introduction to Data Science, a Mobilize grant high school course. This is
     accomplished by creating wrappers and helper functions so students can work
     with a single, concise syntax in the RStudio server GUI.
-Version: 0.3.2
+Version: 0.3.4
 Date: 2017-08-02
 Authors@R: as.person(c(
     "James Molyneux <jmolyneux@ucla.edu> [aut, cre]",
@@ -16,10 +16,7 @@ Authors@R: as.person(c(
 Encoding: UTF-8
 Depends:
     R (>= 3.0.2),
-    utils,
-    stats,
     dplyr,
-    lattice,
     mosaic (== 0.14.4),
     readr
 Imports:
