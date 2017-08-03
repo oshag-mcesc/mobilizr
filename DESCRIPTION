@@ -16,16 +16,16 @@ Authors@R: as.person(c(
 Encoding: UTF-8
 Depends:
     R (>= 3.0.2),
+    utils,
+    stats,
     dplyr,
+    lattice,
     mosaic (== 0.14.4),
     readr
 Imports:
     curl,
     grid,
-    stats,
-    utils,
     rstudioapi,
-    lattice,
     latticeExtra,
     log4r,
     RColorBrewer,
