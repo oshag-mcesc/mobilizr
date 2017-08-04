@@ -308,7 +308,7 @@ NULL
 
 #' Survival status of actors and actresses in "Slasher" films
 #'
-#' A dataset containing survival statuses of actors and actresses in 50 randomly sampled "Slasher" films.
+#' A dataset containing survival statuses of actors and actresses in 50 randomly sampled "Slasher" films from 1960 to 2009.
 #'
 #' \itemize{ \item gender. the gender of actor/actress \item survival. the survival status of the actor/actress }
 #'
