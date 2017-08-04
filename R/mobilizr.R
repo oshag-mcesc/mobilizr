@@ -328,14 +328,14 @@ NULL
 #' gender. gender of passenger \item fare. amount paid for ticket to sail on the
 #' Titanic \item class. the class hospitality/room aboard the Titanic \item
 #' embarked. location passenger first stepped on board the Titanic \item
-#' survived. the survival status of the passenger }
+#' survived. the survival status of the passenger \item titled. Does the person have a title other than Mr., Mrs., Miss., etc. in their name or not}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name titanic
 #' @usage data(titanic)
 #' @seealso \link{titanic_test}
-#' @format A data frame with 1,000 observations of 7 variables
+#' @format A data frame with 1,000 observations of 8 variables
 #' @source \url{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
 NULL
 
@@ -348,14 +348,14 @@ NULL
 #' gender. gender of passenger \item fare. amount paid for ticket to sail on the
 #' Titanic \item class. the class hospitality/room aboard the Titanic \item
 #' embarked. location passenger first stepped on board the Titanic \item
-#' survived. the survival status of the passenger }
+#' survived. the survival status of the passenger \item titled. Does the person have a title other than Mr., Mrs., Miss., etc. in their name or not}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name titanic_test
 #' @usage data(titanic_test)
 #' @seealso \link{titanic}
-#' @format A data frame with 308 observations of 7 variables
+#' @format A data frame with 308 observations of 8 variables
 #' @source \link{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
 NULL
 
