@@ -30,7 +30,6 @@
 #' flips_output <- attr(flips, "sequence")
 #' bargraph(~flips_output)
 #'
-#' @importFrom mosaic rflip
 #' @export
 
 rflip <- function(n = 1, prob = 0.5, quiet = FALSE, verbose = !quiet) {
@@ -41,6 +40,6 @@ rflip <- function(n = 1, prob = 0.5, quiet = FALSE, verbose = !quiet) {
   } else {
 
     # Flip the coins
-    rflip(n = n , prob = prob, quiet = quiet, verbose = verbose)
+    mosaic::rflip(n = n , prob = prob, quiet = quiet, verbose = verbose)
   }
 }
