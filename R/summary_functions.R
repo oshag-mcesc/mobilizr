@@ -20,7 +20,7 @@
 
 iqr <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::iqr(x = x, ..., na.rm = TRUE)
   return(output)
@@ -30,7 +30,7 @@ iqr <- function(x, ...) {
 #' @export
 IQR <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::iqr(x = x, ..., na.rm = TRUE)
   return(output)
@@ -49,7 +49,7 @@ SAD.formula <- aggregatingFunction1(SAD.simple)
 #' @export
 SAD <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- SAD.formula(x = x, ..., na.rm = TRUE)
   return(output)
@@ -73,7 +73,7 @@ MAD <- function(x, ..., na.rm = TRUE) {
 max <- function(x, ...) {
   if (is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values"))
+      warning(paste("The data contains missing values"), call. = FALSE)
     }
     output <- mosaic::max(x = x, ..., na.rm = TRUE)
   } else {
@@ -86,7 +86,7 @@ max <- function(x, ...) {
 #' @export
 mean <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::mean(x = x, na.rm = TRUE, ...)
   return(output)
@@ -96,7 +96,7 @@ mean <- function(x, ...) {
 #' @export
 median <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::median(x = x, ..., na.rm = TRUE)
   return(output)
@@ -107,7 +107,7 @@ median <- function(x, ...) {
 min <- function(x, ...) {
   if (is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values"))
+      warning(paste("The data contains missing values"), call. = FALSE)
     }
     output <- mosaic::min(x = x, ..., na.rm = TRUE)
   } else {
@@ -120,7 +120,7 @@ min <- function(x, ...) {
 #' @export
 prod <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::prod(x = x, ..., na.rm = TRUE)
   return(output)
@@ -132,7 +132,7 @@ quantile.formula <- aggregatingFunction1(stats::quantile)
 #' @export
 quantile <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- quantile.formula(x = x, ..., na.rm = TRUE)
   return(output)
@@ -142,7 +142,7 @@ quantile <- function(x, ...) {
 #' @export
 range <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::range(x = x, ..., na.rm = TRUE)
   return(output)
@@ -153,7 +153,7 @@ range <- function(x, ...) {
 sd <- function(x, ...) {
   if (is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values."))
+      warning(paste("The data contains missing values."), call. = FALSE)
     }
     output <- mosaic::sd(x = x, ..., na.rm = TRUE)
   } else {
@@ -166,7 +166,7 @@ sd <- function(x, ...) {
 #' @export
 sum <- function(x, ...) {
   if (any(is.na(mosaic::sum(x = x, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::sum(x = x, ..., na.rm = TRUE)
   return(output)
@@ -176,10 +176,40 @@ sum <- function(x, ...) {
 #' @export
 var <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::sd(x = x, ..., na.rm = TRUE)^2
   return(output)
+}
+
+#' @rdname iqr
+#' @export
+cor <- function(x, y = NULL, ..., data = NULL) {
+  if (lazyeval::is_formula(x)) {
+    if (lazyeval::is_formula(y)) {
+      x <- lazyeval::f_eval(x, data)
+      y <- lazyeval::f_eval(y, data)
+    }
+    else {
+      formula <- mosaic_formula_q(x, max.slots = 3)
+      x <- lazyeval::f_eval_rhs(formula, data)
+      y <- lazyeval::f_eval_lhs(formula, data)
+    }
+    if (any(is.na(x) | any(is.na(y)))) {
+      warning("The variables selected feature NA values which have been removed.", call. = FALSE)
+      not_na <- complete.cases(cbind(x, y))
+      x <- x[not_na]
+      y <- y[not_na]
+    }
+    stats::cor(x, y, ...)
+  }
+  if (any(is.na(x) | any(is.na(y)))) {
+    warning("The variables selected feature NA values which have been removed.", call. = FALSE)
+    not_na <- complete.cases(cbind(x, y))
+    x <- x[not_na]
+    y <- y[not_na]
+  }
+  stats::cor(x, y, ...)
 }
 
 ## This is deprecated after mosaic updates -------------------------
