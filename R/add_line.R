@@ -44,7 +44,7 @@ add_line <- function(intercept, slope, vline = NULL, hline = NULL, units = "nati
   if (missing(intercept) | missing(slope)) {
     # If the user specifies a vline or hline, do the following:
     if (!is.null(vline) | !is.null(hline)) {
-      ladd(panel.abline(v = vline, h = hline, col = "red"),
+      ladd(panel.abline(v = vline, h = hline, col = "red", lwd = 2),
            data = list(vline = vline, hline = hline))
     } else {
       # Focus on the plot inorder to prompt the user for coordinates
