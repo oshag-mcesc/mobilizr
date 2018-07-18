@@ -11,6 +11,9 @@
 #' @examples
 #' m <- tree(survived ~ age + gender + class, data = titanic)
 #' treeplot(m)
+#'
+#' @importFrom rpart.plot prp
+#' @export
 
 treeplot <- function(model, ...) {
 
@@ -33,9 +36,8 @@ treeplot <- function(model, ...) {
   }
 }
 
-
+# A helper function to determine whether the model has too many branches to plot.
 .tree_splits <- function(x) {
-  # A helper function to determine whether the model has too many branches to plot.
   cp_table <- x["cptable"]
   cp_df <- as.data.frame(cp_table)
   splits <- cp_df$cptable.nsplit

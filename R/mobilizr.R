@@ -29,7 +29,7 @@ NULL
 NULL
 
 
-#' American Time Use Survey Sample - Clean
+#' American Time Use Survey Data Sample - Clean
 #'
 #' A dataset containing a subset of variables from the American Time Use Survey.
 #' This dataset is a cleaned version of \code{atu_dirty}.
@@ -47,11 +47,11 @@ NULL
 #' @name atu_clean
 #' @usage data(atu_clean)
 #' @seealso \link{atu_dirty}
-#' @format A data frame with 12,443 observations of 8 variables
+#' @format A data frame with 10,493 observations of 8 variables
 #' @source \url{http://www.bls.gov/tus/}
 NULL
 
-#' American Time Use Survey Sample - Dirty
+#' American Time Use Survey Data Sample - Dirty
 #'
 #' A dataset containing a subset of variables from the American Time Use Survey.
 #' This dataset is "dirty", meaning it has elements which require formatting
@@ -71,11 +71,11 @@ NULL
 #' @name atu_dirty
 #' @usage data(atu_dirty)
 #' @seealso \link{atu_clean}
-#' @format A data frame with 12,443 observations of 8 variables
+#' @format A data frame with 10,493 observations of 8 variables
 #' @source \url{http://www.bls.gov/tus/}
 NULL
 
-#' American Time Use Survey
+#' American Time Use Survey Data
 #'
 #' A dataset containing responses from the American Time Use Survey. Each
 #' participant is asked to document the amount of time spent participating in
@@ -123,54 +123,60 @@ NULL
 #' @keywords dataset
 #' @name atus
 #' @usage data(atus)
-#' @format A data frame with 12,443 observations of 43 variables
+#' @format A data frame with 10,493 observations of 43 variables
 #' @source \url{http://www.bls.gov/tus/}
 NULL
 
 
-#' CDC Youth Risk Behaviour survey
+#' CDC Youth Risk Behaviour Survey Data
 #'
 #' A dataset containing responses from the CDC Youth Risk Behavior Survey.
 #'
-#' \itemize{ \item age. age in years \item grade. grade in school \item gender.
-#' sex assigned at birth \item hisp_latino. whether or not student identifies as
-#' Hispanic or Latino \item race. race the student identifies with (A: American
-#' Indian or Alaska Native, B: Asian, C: Black or African American, D: Native
-#' Hawaiian or Other Pacific Islander, E: White, F: Hispanic or Latino, G:
-#' Multiple - Hispanic or Latino, H: Multiple - Non-Hispanic/Latino) \item
-#' height. height of student in meters \item weight. weight of student in
-#' kilograms \item general_health. student perception of their health \item
-#' hours_sleep. reported hours of sleep on school nights \item asthma. student
-#' diagnosed as having asthma \item depressed. student reported feeling
-#' depressed for 2 weeks in a row, or more, during the past 12 months \item
-#' helmet. how often student wore a helmet while bicycling during the past 12
-#' months \item seat_belt. how often student wore a seatbelt in motor vehicle
-#' driven by someone else \item sunscreen. how often student reported wearing
-#' sunscreen on sunny days \item describe_weight. student perception of their
-#' weight relative to what they believe it should be \item eat_fruit. how often
-#' student ate fruit over the previous 7 days \item eat_salad. how often student
-#' ate salad over the previous 7 days \item drink_soda. how often student
-#' consumed soda over the previous 7 days \item drink_milk. how often student
-#' drank milk over the previous 7 days \item days_exercise_20. how often student
-#' was active for at least 20 mins over the previous 7 days. \item
-#' days_exercise_60. how often student was active for at least 60 mins over the
-#' previous 7 days. \item number_teams. number of sports teams played on during
-#' previous 12 months \item hours_tv. average number of hours spent watching tv
-#' on a school day \item hours_videogame. average number of hours spent playing
-#' videogames on a school day \item days_smoking. number of days student
-#' reported smoking cigarettes during past 30 days \item fights. number of
-#' fights student has been during the past 12 months }
+#' \itemize{
+#' \item age. age in years
+#' \item gender. sex assigned at birth
+#' \item grade. grade in school
+#' \item hisp_latino. whether or not student identifies as Hispanic or Latino
+#' \item race. race the student identifies with
+#' \item height. height of student in meters
+#' \item weight. weight of student in kilograms
+#' \item helmet. how often student wore a helmet while bicycling during the past 12 months
+#' \item seat_belt. how often student wore a seatbelt in motor vehicle driven by someone else
+#' \item drive_text. how often the student reported texting while driving in the past 30 days.
+#' \item fights. number of fights student has been during the past 12 months
+#' \item bully_school. did the student report being bullied while at school.
+#' \item bully_electronic. did the student report being bullied online.
+#' \item depressed. student reported feeling depressed for 2 weeks in a row, or more, during the past 12 months
+#' \item days_smoking. number of days student reported smoking cigarettes during past 30 days
+#' \item days_vaping. number of days student reported vaping, smoking electronic cigarettes, during past 30 days
+#' \item sexuality. how the student describes their sexual orientation.
+#' \item describe_weight. student perception of their weight relative to what they believe it should be
+#' \item drink_juice. how often student consumed fruit juice over the previous 7 days
+#' \item eat_fruit. how often student ate fruit over the previous 7 days
+#' \item eat_salad. how often student ate salad over the previous 7 days
+#' \item drink_soda. how often student consumed soda over the previous 7 days
+#' \item drink_milk. how often student drank milk over the previous 7 days
+#' \item eat_breakfast. how often the student reported eating breakfast over the past 7 days
+#' \item days_exercise_60. how often student was active for at least 60 mins over the previous 7 days.
+#' \item hours_tv. average number of hours spent watching tv on a school day
+#' \item hours_videogame. average number of hours spent playing videogames on a school day
+#' \item number_teams. number of sports teams played on during previous 12 months
+#' \item asthma. student diagnosed as having asthma
+#' \item hours_sleep. reported hours of sleep on school nights
+#' \item drink_juice. how often student consumed sports drinks over the past 7 days
+#' \item drink_water. how often student consumed water over the past 7 days
+#' \item sunburns. how often student reported being sunburned in the past 12 months}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name cdc
 #' @usage data(cdc)
-#' @format A data frame with 14,041 observations of 26 variables
+#' @format A data frame with 15,624 observations of 33 variables
 #' @source \url{http://www.cdc.gov/HealthyYouth/yrbs/index.htm}
 NULL
 
 
-#' LA Department of Water and Power (2010)
+#' LA Department of Water and Power (2010) Data
 #'
 #' Water usage from the Los Angeles Department of Water and Power, by census
 #' block, for the year 2010. Some blocks are dropped due to identifiability
@@ -195,7 +201,7 @@ NULL
 NULL
 
 
-#' LA Department of Water and Power (2010) - Student
+#' LA Department of Water and Power (2010) Data - Student
 #'
 #' Water usage from the Los Angeles Department of Water and Power, by census
 #' block, for the year 2010. Some blocks are dropped due to identifiability
@@ -220,7 +226,7 @@ NULL
 NULL
 
 
-#' LA Department of Water and Power (2010) - Teacher
+#' LA Department of Water and Power (2010) Data - Teacher
 #'
 #' Water usage from the Los Angeles Department of Water and Power, by census
 #' block, for the year 2010. Some blocks are dropped due to identifiability
@@ -247,53 +253,62 @@ NULL
 
 #' Futbol Data Set
 #'
-#' Player data for National Football League players from 2014 or from members of
-#' the U.S. Men's National Soccer Team from 2014.
+#' Player data for National Football League 1st string quarterbacks from 2017 or from members of
+#' the U.S. Men's National Soccer Team from 2017 Gold Cup roster.
 #'
 #' \itemize{ \item team. The home city for each player's team. \item player. The
 #' name of the player. \item ht_inches. The player's height in inches. \item
 #' wt_lbs. The player's weight in pounds. \item age. The age of the player in
-#' 2014. \item league. Indicates whether the player plays for the U.S. Mens
+#' 2017. \item league. Indicates whether the player plays for the U.S. Mens
 #' National Soccer Team or the NFL.}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name futbol
 #' @usage data(futbol)
-#' @format A data frame with 45 observations of 6 variables
-#' @source USMNT data from: \url{http://www.ussoccer.com/mens-national-team/latest-roster} NFL data from: \url{http://www.besttickets.com/blog/wp-content/uploads/2014/09/2014-NFL-Census-Shared.xls}
+#' @format A data frame with 55 observations of 6 variables
+#' @source USMNT data from: \url{http://www.ussoccer.com/mens-national-team/latest-roster} NFL data from: \url{http://www.profootballlogic.com/players/?position=all}
 NULL
 
 
 #' Movie Data Set
 #'
-#' Movie
+#' A collection of movies from 1916 to 2016.
 #'
-#' \itemize{ \item title. The title of the film. \item year. The year the film
-#' was released. \item rotten_id. The unique identifer for the film on Rotten
-#' Tomatos. \item mpaa_rating. The rating of the film as given by the MPAA.
-#' \item runtime. The length of the film, in minutes. \item release_theater. The
-#' release date of the film in theaters. \item release_dvd. The release date of
-#' the film onto DVD. \item critics_rating. The average critics rating on a
-#' scale of 1-100. \item critics_score. The label of the critics rating. \item
-#' audience_rating. The average audience rating on a scale of 1-100. \item
-#' audience_score. The label of the audience score. \item reviews_num. The total
-#' number of reviews for the film. \item studio. The studio involved in
-#' releasing the film. \item domest_gross. The domestic gross ticket revenues of
-#' the film in dollars. }
+#' \itemize{
+#' \item title. The title of the film.
+#' \item year. The year the film was released.
+#' \item runtime. The length of the film, in minutes.
+#' \item mpaa_rating. The rating of the film as given by the MPAA.
+#' \item studio. The studio who produced the film.
+#' \item color. Is the film in color or black and white.
+#' \item director. Who directed the film
+#' \item language. The language of the dialog in the film.
+#' \item country. The country the film was produced in.
+#' \item aspect_ratio. the ratio of width and height of the film
+#' \item n_poster_faces. The number of faces shown in the movie posters used for advertisment.
+#' \item n_critics. The number of critics who rated the film.
+#' \item n_audience. The number of regular audience members who rated the film.
+#' \item reviews_num. The combined number of reviewers
+#' \item audience_rating. The average rating a film received from audience members reported by IMDB.
+#' \item critics_rating. The average rating a film received from critics reported by Rotten Tomatoes.
+#' \item budget. The budget needed to create the film.
+#' \item gross. The amount of money raised by the film.
+#' \item imdb_id. The unique id of the film on imdb.com.
+#'  }
 #'
 #' @docType data
 #' @keywords dataset
 #' @name movie
 #' @usage data(movie)
-#' @format A data frame with 489 observations of 14 variables
-#' @source \url{http://www.rottentomatoes.com}
+#' @format A data frame with 5,043 observations of 16 variables
+#' @source \url{http://www.imdb.com}, \url{http://www.omdbapi.com}, \url{http://www.rottentomatoes.com}
 NULL
 
 
 #' Survival status of actors and actresses in "Slasher" films
 #'
-#' A dataset containing survival statuses of actors and actresses in 50 randomly sampled "Slasher" films.
+#' A dataset containing survival statuses of actors and actresses in 50 randomly sampled "Slasher" films from 1960 to 2009.
 #'
 #' \itemize{ \item gender. the gender of actor/actress \item survival. the survival status of the actor/actress }
 #'
@@ -304,7 +319,7 @@ NULL
 #' @format A data frame with 485 observations of 2 variables
 NULL
 
-#' Titanic passenger data
+#' Titanic Passenger Data
 #'
 #' A dataset Containing Information on 1,000 Randomly Sampled Passengers of the
 #' Titanic.
@@ -313,14 +328,14 @@ NULL
 #' gender. gender of passenger \item fare. amount paid for ticket to sail on the
 #' Titanic \item class. the class hospitality/room aboard the Titanic \item
 #' embarked. location passenger first stepped on board the Titanic \item
-#' survived. the survival status of the passenger }
+#' survived. the survival status of the passenger \item titled. Does the person have a title other than Mr., Mrs., Miss., etc. in their name or not}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name titanic
 #' @usage data(titanic)
 #' @seealso \link{titanic_test}
-#' @format A data frame with 1,000 observations of 7 variables
+#' @format A data frame with 1,000 observations of 8 variables
 #' @source \url{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
 NULL
 
@@ -333,14 +348,14 @@ NULL
 #' gender. gender of passenger \item fare. amount paid for ticket to sail on the
 #' Titanic \item class. the class hospitality/room aboard the Titanic \item
 #' embarked. location passenger first stepped on board the Titanic \item
-#' survived. the survival status of the passenger }
+#' survived. the survival status of the passenger \item titled. Does the person have a title other than Mr., Mrs., Miss., etc. in their name or not}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name titanic_test
 #' @usage data(titanic_test)
 #' @seealso \link{titanic}
-#' @format A data frame with 308 observations of 7 variables
+#' @format A data frame with 308 observations of 8 variables
 #' @source \link{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
 NULL
 

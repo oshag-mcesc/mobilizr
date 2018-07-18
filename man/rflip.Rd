@@ -40,4 +40,8 @@ attr(flips, "sequence")
 # Create a bargraph of the output
 flips_output <- attr(flips, "sequence")
 bargraph(~flips_output)
+<<<<<<< HEAD
+=======
+
+>>>>>>> beta
 }

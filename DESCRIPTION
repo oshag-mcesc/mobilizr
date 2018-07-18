@@ -5,8 +5,8 @@ Description: This package is intended to simplify the code writing process for
     Introduction to Data Science, a Mobilize grant high school course. This is
     accomplished by creating wrappers and helper functions so students can work
     with a single, concise syntax in the RStudio server GUI.
-Version: 0.2.22
-Date: 2015-04-13
+Version: 0.3.11
+Date: 2017-08-03
 Authors@R: as.person(c(
     "James Molyneux <jmolyneux@ucla.edu> [aut, cre]",
     "Amelia McNamara <amelia.mcnamara@stat.ucla.edu> [aut]",
@@ -16,26 +16,27 @@ Authors@R: as.person(c(
 Encoding: UTF-8
 Depends:
     R (>= 3.0.2),
-    grid,
+    utils,
     stats,
-    MASS,
-    mosaic,
-    plyr,
     dplyr,
-    ggplot2,
-    XML,
     leaflet,
-    RColorBrewer,
-    network,
-    stringr,
-    rpart,
-    rpart.plot
+    mosaic (== 0.14.4),
+    readr (== 1.1.1),
+    XML
 Imports:
     curl,
+    grid,
     rstudioapi,
-    log4r
-Suggests:
-    testthat
+    latticeExtra,
+    log4r,
+    RColorBrewer,
+    stringr,
+    plyr,
+    rpart,
+    rpart.plot,
+    roxygen2,
+    testthat,
+    visualTest
 License: GPL (>= 2)
 LazyData: TRUE
 URL: http://www.mobilizingcs.org

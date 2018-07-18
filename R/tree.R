@@ -14,7 +14,6 @@
 #'   categorized into a node before the algorithm decides to split the node into
 #'   a pair of branches.
 #'
-#' @seealso \link{\code{rpart::rpart}}
 #'
 #' @examples
 #' m1 <- tree(survived ~ age + embarked + class, data = titanic)
@@ -23,7 +22,10 @@
 #' # For a more complex model
 #' m2 <- tree(survived ~ age + embarked + class, data = titanic, cp = 0.001, minsplit = 5)
 #' treeplot(m2)
+#'
+#' @importFrom rpart rpart
+#' @export
 
 tree <- function(x, data, cp = 0.01, minsplit = 20, ...) {
-  rpart::rpart(formula = x, data = data, cp = cp, minsplit = minsplit, ...)
+  rpart(formula = x, data = data, cp = cp, minsplit = minsplit, ...)
 }

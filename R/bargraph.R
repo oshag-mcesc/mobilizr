@@ -21,6 +21,8 @@
 #' bargraph(~depressed, data = cdc)
 #' bargraph(~depressed, data = cdc, groups = gender)
 #' bargraph(~depressed | grade, data = cdc, groups = gender)
+#'
+#' @export
 
 bargraph <- function(x, data, horizontal = FALSE, type = "frequency", ...) {
 

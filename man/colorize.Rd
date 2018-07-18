@@ -24,4 +24,8 @@ separate categorical variable. Designed to be used within the \code{dplyr}
 mt_colors <- mutate(mtcars, colors = colorize(cyl))
 head(mt_colors$colors)
 xyplot(hp ~ disp, data = mt_colors, groups = colors)
+<<<<<<< HEAD
+=======
+
+>>>>>>> beta
 }

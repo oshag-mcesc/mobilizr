@@ -13,25 +13,30 @@
 #' MAD(~height | gender, data = cdc)
 #' quantile(~height, data = cdc)
 #' quantile(~height, data = cdc, probs = 0.6)
+#'
+#' @import mosaic
+#' @importFrom plyr is.formula
+#' @export
 
 iqr <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::iqr(x = x, ..., na.rm = TRUE)
   return(output)
 }
 
 #' @rdname iqr
+#' @export
 IQR <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::iqr(x = x, ..., na.rm = TRUE)
   return(output)
 }
 
-SAD.simple <- function (x, ...) {
+SAD.simple <- function(x, ...) {
   mean.x <- mosaic::mean(x, ...)
   abs.deviation <- base::abs(x - mean.x)
   sad <- mosaic::sum(abs.deviation, ...)
@@ -41,15 +46,17 @@ SAD.simple <- function (x, ...) {
 SAD.formula <- aggregatingFunction1(SAD.simple)
 
 #' @rdname iqr
+#' @export
 SAD <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- SAD.formula(x = x, ..., na.rm = TRUE)
   return(output)
 }
 
 #' @rdname iqr
+#' @export
 MAD <- function(x, ..., na.rm = TRUE) {
   tal <- tally(x, format = "count", margin = TRUE, useNA = "no", ...)
   if (is.na(ncol(tal))) {
@@ -62,10 +69,11 @@ MAD <- function(x, ..., na.rm = TRUE) {
 }
 
 #' @rdname iqr
+#' @export
 max <- function(x, ...) {
-  if(plyr::is.formula(x)) {
+  if (is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values"))
+      warning(paste("The data contains missing values"), call. = FALSE)
     }
     output <- mosaic::max(x = x, ..., na.rm = TRUE)
   } else {
@@ -75,28 +83,31 @@ max <- function(x, ...) {
 }
 
 #' @rdname iqr
+#' @export
 mean <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::mean(x = x, na.rm = TRUE, ...)
   return(output)
 }
 
 #' @rdname iqr
+#' @export
 median <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::median(x = x, ..., na.rm = TRUE)
   return(output)
 }
 
 #' @rdname iqr
+#' @export
 min <- function(x, ...) {
-  if(plyr::is.formula(x)) {
+  if (is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values"))
+      warning(paste("The data contains missing values"), call. = FALSE)
     }
     output <- mosaic::min(x = x, ..., na.rm = TRUE)
   } else {
@@ -106,9 +117,10 @@ min <- function(x, ...) {
 }
 
 #' @rdname iqr
+#' @export
 prod <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::prod(x = x, ..., na.rm = TRUE)
   return(output)
@@ -117,64 +129,104 @@ prod <- function(x, ...) {
 quantile.formula <- aggregatingFunction1(stats::quantile)
 
 #' @rdname iqr
+#' @export
 quantile <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- quantile.formula(x = x, ..., na.rm = TRUE)
   return(output)
 }
 
 #' @rdname iqr
+#' @export
 range <- function(x, ...) {
   if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::range(x = x, ..., na.rm = TRUE)
   return(output)
 }
 
 #' @rdname iqr
+#' @export
 sd <- function(x, ...) {
-  if(plyr::is.formula(x)) {
+  if (is.formula(x)) {
     if (any(is.na(mosaic::mean(x = x, na.rm = FALSE, ...)))) {
-      warning(paste("The data contains missing values."))
+      warning(paste("The data contains missing values."), call. = FALSE)
     }
     output <- mosaic::sd(x = x, ..., na.rm = TRUE)
   } else {
-    output <- stats::sd(x, ...)
+    output <- stats::sd(x, na.rm = TRUE, ...)
   }
   return(output)
 }
 
 #' @rdname iqr
+#' @export
 sum <- function(x, ...) {
   if (any(is.na(mosaic::sum(x = x, ...)))) {
-    warning(paste("The data contains missing values"))
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
   output <- mosaic::sum(x = x, ..., na.rm = TRUE)
   return(output)
 }
 
 #' @rdname iqr
+#' @export
 var <- function(x, ...) {
-  if (any(is.na(mosaic::var(x = x, ...)))) {
-    warning(paste("The data contains missing values"))
+  if (any(is.na(mosaic::mean(x = x, ...)))) {
+    warning(paste("The data contains missing values"), call. = FALSE)
   }
-  output <- mosaic::var(x = x, ..., na.rm = TRUE)
+  output <- mosaic::sd(x = x, ..., na.rm = TRUE)^2
   return(output)
 }
 
-fav_stats <- function (x, ..., na.rm = TRUE) {
-  if (!is.null(dim(x)) && min(dim(x)) != 1)
-    warning("Not respecting matrix dimensions.  Hope that's OK.")
-  x <- as.vector(x)
-  qq <- stats::quantile(x, na.rm = na.rm)
-  val <- data.frame(qq[1], qq[2], qq[3], qq[4], qq[5], base::mean(x,
-                                                                  na.rm = na.rm), stats::sd(x, na.rm = na.rm), base::sum(!is.na(x)),
-                    base::sum(is.na(x)))
-  rownames(val) <- ""
-  names(val) <- c("min", "Q1", "median", "Q3", "max", "mean",
-                  "sd", "n", "missing")
-  return(val)
+#' @rdname iqr
+#' @export
+cor <- function(x, y = NULL, ..., data = NULL) {
+  if (lazyeval::is_formula(x)) {
+    if (lazyeval::is_formula(y)) {
+      x <- lazyeval::f_eval(x, data)
+      y <- lazyeval::f_eval(y, data)
+    }
+    else {
+      formula <- mosaic_formula_q(x, max.slots = 3)
+      x <- lazyeval::f_eval_rhs(formula, data)
+      y <- lazyeval::f_eval_lhs(formula, data)
+    }
+    if (any(is.na(x) | any(is.na(y)))) {
+      warning("The variables selected feature NA values which have been removed.", call. = FALSE)
+      not_na <- complete.cases(cbind(x, y))
+      x <- x[not_na]
+      y <- y[not_na]
+    }
+    stats::cor(x, y, ...)
+  }
+  if (any(is.na(x) | any(is.na(y)))) {
+    warning("The variables selected feature NA values which have been removed.", call. = FALSE)
+    not_na <- complete.cases(cbind(x, y))
+    x <- x[not_na]
+    y <- y[not_na]
+  }
+  stats::cor(x, y, ...)
 }
+
+## This is deprecated after mosaic updates -------------------------
+#' #' @rdname favstats
+#' #' @export
+#' fav_stats <- function(x, ..., na.rm = TRUE) {
+#'   if (!is.null(dim(x)) && min(dim(x)) != 1)
+#'     warning("Not respecting matrix dimensions.  Hope that's OK.")
+#'   x <- as.vector(x)
+#'   qq <- mosaic::quantile(x, na.rm = na.rm)
+#'   val <- data.frame(qq[1], qq[2], qq[3], qq[4], qq[5],
+#'                     base::mean(x,na.rm = na.rm),
+#'                     stats::sd(x, na.rm = na.rm),
+#'                     base::sum(!is.na(x)),
+#'                     base::sum(is.na(x)))
+#'   rownames(val) <- ""
+#'   names(val) <- c("min", "Q1", "median", "Q3", "max", "mean",
+#'                   "sd", "n", "missing")
+#'   return(val)
+#' }

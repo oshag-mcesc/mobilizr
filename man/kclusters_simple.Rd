@@ -27,7 +27,8 @@ xyplot(wt_lbs ~ ht_inches, data = futbol, groups = cluster)
 
 # We can compare the clustering to the actual
 xyplot(wt_lbs ~ ht_inches, data = futbol, groups = league)
+
 }
 \seealso{
-\link{\code{stats::kmeans}}
+\code{\link{stats::kmeans}}
 }

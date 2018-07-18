@@ -14,6 +14,8 @@
 #' histogram(~height, data = cdc)
 #' histogram(~height, data = cdc, fit = "normal")
 #' histogram(~height | gender, data = cdc)
+#'
+#' @export
 
 histogram <- function(x, data, type = 'count', fit, ...) {
   # Change default y-axis to "count"

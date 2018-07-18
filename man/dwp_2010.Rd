@@ -3,7 +3,7 @@
 \docType{data}
 \name{dwp_2010}
 \alias{dwp_2010}
-\title{LA Department of Water and Power (2010)}
+\title{LA Department of Water and Power (2010) Data}
 \format{A data frame with 1,705 observations of 19 variables}
 \source{
 \url{https://www.ladwp.com}

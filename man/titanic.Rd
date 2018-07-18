@@ -3,8 +3,8 @@
 \docType{data}
 \name{titanic}
 \alias{titanic}
-\title{Titanic passenger data}
-\format{A data frame with 1,000 observations of 7 variables}
+\title{Titanic Passenger Data}
+\format{A data frame with 1,000 observations of 8 variables}
 \source{
 \url{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
 }
@@ -20,7 +20,7 @@ Titanic.
 gender. gender of passenger \item fare. amount paid for ticket to sail on the
 Titanic \item class. the class hospitality/room aboard the Titanic \item
 embarked. location passenger first stepped on board the Titanic \item
-survived. the survival status of the passenger }
+survived. the survival status of the passenger \item titled. Does the person have a title other than Mr., Mrs., Miss., etc. in their name or not}
 }
 \seealso{
 \link{titanic_test}

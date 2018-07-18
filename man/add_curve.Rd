@@ -4,7 +4,7 @@
 \alias{add_curve}
 \title{Add a fitted linear model to a plot}
 \usage{
-add_curve(mod, col = "black")
+add_curve(mod, col = "black", plot_base = trellis.last.object())
 }
 \arguments{
 \item{mod}{Model. A linear model with a single response and a single explanatory
@@ -30,6 +30,7 @@ add_curve(m_line)
 m_curve <- lm(weight ~ poly(height, 2), data = cdc)
 xyplot(weight ~ height, data = cdc)
 add_curve(m_curve)
+
 }
 \seealso{
 \code{\link{add_line}}, \code{\link{lm}}, \code{\link{poly}}

@@ -1,11 +1,11 @@
-summarise <- function(...) {
+xsummarise <- function(...) {
   dplyr::summarise(...)
 }
 
-summarize <- function(...) {
+xsummarize <- function(...) {
   dplyr::summarise(...)
 }
 
-rename <- function(...) {
+xrename <- function(...) {
   dplyr::rename(...)
 }

@@ -7,7 +7,7 @@
 #'   \code{y} are the variables to use for clustering.
 #' @param k Integer. The number of clusters to group the data into.
 #'
-#' @seealso \link{\code{stats::kmeans}}
+#' @seealso \code{\link{stats::kmeans}}
 #'
 #' @examples
 #' # Use k-means to cluster football/soccer players by height and weight.
@@ -20,11 +20,16 @@
 #'
 #' # We can compare the clustering to the actual
 #' xyplot(wt_lbs ~ ht_inches, data = futbol, groups = league)
+#'
+#' @importFrom mosaic aggregatingFunction2
+
 
 # A simple kmeans function to use
 kclusters_simple <- function(x, k, ...) {
-  kmeans(x = x, centers = k, ...)$cluster
+  # Suppress warnings for this implementation
+  suppressWarnings(kmeans(x = x, centers = k, ...)$cluster)
 }
 
-
+#' @export
 kclusters <- mosaic::aggregatingFunction2(kclusters_simple)
+

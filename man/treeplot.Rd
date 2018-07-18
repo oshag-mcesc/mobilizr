@@ -18,6 +18,7 @@ Creates a visualization of the tree created when using a tree-based model.
 \examples{
 m <- tree(survived ~ age + gender + class, data = titanic)
 treeplot(m)
+
 }
 \seealso{
 \link{\code{rpart.plot}}

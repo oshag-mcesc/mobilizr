@@ -4,12 +4,16 @@
 \alias{add_line}
 \title{Add a line to an \code{xyplot}}
 \usage{
-add_line(intercept, slope, units = "native")
+add_line(intercept, slope, vline = NULL, hline = NULL, units = "native")
 }
 \arguments{
 \item{intercept}{Numerical (optional). The intercept term for a line to plot.}
 
 \item{slope}{Numerical (optional). The slope term for a line to plot.}
+
+\item{slope}{vline (optional). Draws a vertical line at the desired x coordinate}
+
+\item{slope}{hline (optional). Draws a horizontal line at the desired y coordinate}
 }
 \description{
 Include a line to an \code{xyplot} by either including a slope and intercept
@@ -30,6 +34,11 @@ add_line() # Click the Plots pane twice inorder to proceed.
 # Specify a line using the slope and intercept arguments
 xyplot(weight ~ height, data = cdc)
 add_line(intercept = -180, slope = 165)
+
+# Include a horizontal and/or vertical line
+xyplot(weight ~ height, data = cdc)
+add_line(vline = 1.6, hline = 100)
+
 }
 \seealso{
 \code{\link{add_curve}}

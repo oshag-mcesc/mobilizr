@@ -24,6 +24,11 @@
 #' timeuse_raw <- read.csv("My class time use data.csv")
 #' timeuse <- timeuse_format(timeuse_raw)
 #' }
+#'
+#' @importFrom dplyr group_by
+#' @importFrom dplyr summarise
+#' @importFrom magrittr %>%
+#' @export
 
 timeuse_format <- function(data) {
   # Pre-format the data before cleaning
@@ -45,8 +50,8 @@ timeuse_format <- function(data) {
 
   # Sum the amount of time spent doing activities for each user for each day.
   sum_timeuse <- clean_data %>%
-    dplyr::group_by(user.id, day) %>%
-    dplyr::summarise(
+    group_by(user.id, day) %>%
+    summarise(
       submissions = n(),
       chores = sum(chores),
       friends = sum(friends),
@@ -66,8 +71,8 @@ timeuse_format <- function(data) {
   # For each user, take the daily sums of time spent participating in various
   # activities and compute the mean time for each activity.
   mean_timeuse <- sum_timeuse %>%
-    dplyr::group_by(user.id) %>%
-    dplyr::summarise(
+    group_by(user.id) %>%
+    summarise(
       submissions = sum(submissions),
       chores = mean(chores),
       friends = mean(friends),

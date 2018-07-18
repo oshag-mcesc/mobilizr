@@ -1,5 +1,7 @@
-# A set of logging functions that Steve made. These aren't used by the user
-# and so no documentation will be made for them.
+#' A set of logging functions that Steve made.
+#' These aren't used by the user.
+#' @import log4r
+
 
 log_config <- log4r::create.logger()
 

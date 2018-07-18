@@ -9,6 +9,8 @@
 #' @examples
 #' # Use a quadratic polynomial to predict weight based on height.
 #' lm(weight ~ poly(height, 2), data = cdc)
+#'
+#' @export
 
 poly <- function(x, ..., degree = 1, raw = TRUE) {
   stats::poly(x = x, ..., degree = degree, raw = raw)

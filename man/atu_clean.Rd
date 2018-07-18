@@ -3,8 +3,8 @@
 \docType{data}
 \name{atu_clean}
 \alias{atu_clean}
-\title{American Time Use Survey Sample - Clean}
-\format{A data frame with 12,443 observations of 8 variables}
+\title{American Time Use Survey Data Sample - Clean}
+\format{A data frame with 10,493 observations of 8 variables}
 \source{
 \url{http://www.bls.gov/tus/}
 }

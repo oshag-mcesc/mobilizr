@@ -3,8 +3,8 @@
 \docType{data}
 \name{atus}
 \alias{atus}
-\title{American Time Use Survey}
-\format{A data frame with 12,443 observations of 43 variables}
+\title{American Time Use Survey Data}
+\format{A data frame with 10,493 observations of 43 variables}
 \source{
 \url{http://www.bls.gov/tus/}
 }

@@ -12,6 +12,8 @@
 #' # Roll a die many times then create a histogram.
 #' rolls <- roll_die("A", times = 100)
 #' histogram(rolls, nint = 6)
+#'
+#' @export
 
 roll_die <- function(die, times = 1) {
 

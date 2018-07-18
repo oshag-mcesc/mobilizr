@@ -15,6 +15,7 @@
 \alias{sd}
 \alias{sum}
 \alias{var}
+\alias{cor}
 \title{Numerical Summary Functions}
 \usage{
 iqr(x, ...)
@@ -44,6 +45,8 @@ sd(x, ...)
 sum(x, ...)
 
 var(x, ...)
+
+cor(x, y = NULL, ..., data = NULL)
 }
 \arguments{
 \item{x}{A vector of values or a formula. Formulas should be of the form \code{~ x | z} where \code{x} is a numeric variable and \code{z} is a categorical variable. If a formula is supplied, the \code{data} argument must also be supplied.}
@@ -63,4 +66,8 @@ MAD(~height, data = cdc)
 MAD(~height | gender, data = cdc)
 quantile(~height, data = cdc)
 quantile(~height, data = cdc, probs = 0.6)
+<<<<<<< HEAD
+=======
+
+>>>>>>> beta
 }
