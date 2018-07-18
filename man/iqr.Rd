@@ -66,8 +66,5 @@ MAD(~height, data = cdc)
 MAD(~height | gender, data = cdc)
 quantile(~height, data = cdc)
 quantile(~height, data = cdc, probs = 0.6)
-<<<<<<< HEAD
-=======
 
->>>>>>> beta
 }

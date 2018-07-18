@@ -18,8 +18,5 @@ head(x, ..., data = NULL, groups = NULL, na.rm = getOption("na.rm",
 \examples{
 head(~hp, data = mtcars)
 tail(~hp, data = mtcars)
-<<<<<<< HEAD
-=======
 
->>>>>>> beta
 }

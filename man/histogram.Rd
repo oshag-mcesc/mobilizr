@@ -30,8 +30,5 @@ data(cdc)
 histogram(~height, data = cdc)
 histogram(~height, data = cdc, fit = "normal")
 histogram(~height | gender, data = cdc)
-<<<<<<< HEAD
-=======
 
->>>>>>> beta
 }

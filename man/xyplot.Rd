@@ -26,8 +26,5 @@ data(cdc)
 xyplot(weight~height, data = cdc)
 xyplot(weight ~ height | gender, data = cdc)
 xyplot(weight ~ height, data = cdc, groups = gender)
-<<<<<<< HEAD
-=======
 
->>>>>>> beta
 }

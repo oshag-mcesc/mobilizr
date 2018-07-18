@@ -412,3 +412,20 @@ NULL
 #' @seealso \link{cereal}
 #' @format A data frame with 20 observations of 12 variables
 NULL
+
+#' Lung capacity data
+#'
+#' A dataset containing a subset of variables from the American Time Use Survey.
+#' This dataset is "dirty", meaning it has elements which require formatting
+#' before use.
+#'
+#' \itemize{ \item age. Age in years
+#' \item lung_cap. Maximum forced expiratory volume in one second \item height. Height in inchces \item gender. "Female" or "Male" \item smoker. Describes whether a person is a smoker ("Yes") or not ("No")}
+#'
+#' @docType data
+#' @keywords dataset
+#' @name fev
+#' @usage data(fev)
+#' @format A data frame with 654 observations of 4 variables
+#' @source \url{http://ww2.amstat.org/publications/jse/v13n2/datasets.kahn.html}
+NULL
