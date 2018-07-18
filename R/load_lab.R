@@ -86,34 +86,26 @@ load_labs <- function(lab) {
 }
 
 # Helper function that displays the actual menu to choose labs from.
-.lab_selector <- function (lab, lab_titles) {
-<<<<<<< HEAD
+.lab_selector <- function(lab, lab_titles) {
 
-  # Since LAUSD will be using the 'legacy' labs for an undiclosed length
-  # of time, we'll obtain Lab 1C from a different branch on github.
+  # Since LAUSD and CSVD might not update as often as the IDS server,
+  # we can keep separate branches of the labs so we can pull the labs
+  # based on their versions of Rstudio
 
-  # Create a list of URLs to choose from, 1 for each lab.
-  lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
-                     .format_lab_title(lab_titles), '.html')
-
-  # Here is where we change which version of lab 1C is used for LAUSD
   if (rstudioapi::getVersion() == "0.99.902") {
-    lab_urls[3] <- "https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/unit_1/lab1c/lab1c.html"
-=======
-
-  # Since LAUSD will be using the 'legacy' labs for an undiclosed length
-  # of time, we'll obtain Lab 1C from a different branch on github.
-
-  # If the version of RStudio is higher than what LAUSD uses, pull labs
-  # from the updated branch.
-  # If the version of RStudio is the same as what LAUSD uses, pull labs
-  # fromt the LAUSD branch
-  if (compareVersion(as.character(rstudioapi::getVersion()), "0.99.902") > 0) {
-    lab_urls <- paste0("https://raw.githubusercontent.com/mobilizingcs/ids_labs/updated-labs/", .format_lab_title(lab_titles),".html")
+    # LAUSD: Pull labs from their branch
+    # NOTE: Make sure to update the Rstudio version on the line above
+    lab_urls <- paste0("https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/",
+                       .format_lab_title(lab_titles), '.html')
+  } else if (rstudioapi::getVersion() == "0.99.902") {
+    # CVSD: Pull labs from their branch
+    # NOTE: Make sure to update the Rstudio version on the line above
+    lab_urls <- paste0("https://raw.githubusercontent.com/mobilizingcs/ids_labs/cvsd-labs/",
+                       .format_lab_title(lab_titles), '.html')
   } else {
+    # IDS Server: Pull labs from the master branch
     lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
                        .format_lab_title(lab_titles), '.html')
->>>>>>> beta
   }
 
   if (is.null(lab)) {
@@ -124,7 +116,7 @@ load_labs <- function(lab) {
   }
 
   if (!is.null(lab)) {
-    if(!is.numeric(lab) | length(lab) != 1) {
+    if (!is.numeric(lab) | length(lab) != 1) {
       # If user puts something that's not a number associated with a lab,
       # give the user an error message.
       stop("Input should be either left blank or a single integer.")
@@ -135,7 +127,7 @@ load_labs <- function(lab) {
   return(url)
 }
 
-.log_loaded_lab <- function (lab) {
+.log_loaded_lab <- function(lab) {
   # logs the load_lab command correctly regardless of how the user selected a lab
   log_info(paste('load_lab(',lab,')', sep = ""))
 }
