@@ -53,7 +53,7 @@ load_lab <- function(lab) {
   # and displays it in the Viewer pane.
 
   # Get HTML
-  con <- curl::curl(url, "r")
+  con <- curl(url, "r")
   page <- paste(readLines(con), collapse = '\n')
   close(con)
 
@@ -62,7 +62,7 @@ load_lab <- function(lab) {
   writeLines(page, tf)
 
   # Display HTML file in the viewer pane.
-  rstudioapi::viewer(tf)
+  viewer(tf)
 }
 
 #' @rdname load_lab
@@ -87,6 +87,19 @@ load_labs <- function(lab) {
 
 # Helper function that displays the actual menu to choose labs from.
 .lab_selector <- function (lab, lab_titles) {
+<<<<<<< HEAD
+
+  # Since LAUSD will be using the 'legacy' labs for an undiclosed length
+  # of time, we'll obtain Lab 1C from a different branch on github.
+
+  # Create a list of URLs to choose from, 1 for each lab.
+  lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
+                     .format_lab_title(lab_titles), '.html')
+
+  # Here is where we change which version of lab 1C is used for LAUSD
+  if (rstudioapi::getVersion() == "0.99.902") {
+    lab_urls[3] <- "https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/unit_1/lab1c/lab1c.html"
+=======
 
   # Since LAUSD will be using the 'legacy' labs for an undiclosed length
   # of time, we'll obtain Lab 1C from a different branch on github.
@@ -100,6 +113,7 @@ load_labs <- function(lab) {
   } else {
     lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
                        .format_lab_title(lab_titles), '.html')
+>>>>>>> beta
   }
 
   if (is.null(lab)) {

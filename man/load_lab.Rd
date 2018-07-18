@@ -25,5 +25,8 @@ load_lab() # Loads a menu to choose from
 load_lab(1) # Automatically loads the 1st lab from the menu.
 load_labs() # Similar to load_lab()
 load_labs(1) # Similar to load_lab(1)
+<<<<<<< HEAD
+=======
 
+>>>>>>> beta
 }

@@ -39,5 +39,8 @@ collection period for each user.
 timeuse_raw <- read.csv("My class time use data.csv")
 timeuse <- timeuse_format(timeuse_raw)
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> beta
 }
