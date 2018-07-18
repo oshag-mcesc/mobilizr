@@ -95,16 +95,16 @@ load_labs <- function(lab) {
   if (rstudioapi::getVersion() == "0.99.902") {
     # LAUSD: Pull labs from their branch
     # NOTE: Make sure to update the Rstudio version on the line above
-    lab_urls <- paste0("https://raw.githubusercontent.com/mobilizingcs/ids_labs/lausd-labs/",
+    lab_urls <- paste0("https://raw.githubusercontent.com/IDSUCLA/ids_labs/lausd-labs/",
                        .format_lab_title(lab_titles), '.html')
   } else if (rstudioapi::getVersion() == "0.99.902") {
     # CVSD: Pull labs from their branch
     # NOTE: Make sure to update the Rstudio version on the line above
-    lab_urls <- paste0("https://raw.githubusercontent.com/mobilizingcs/ids_labs/cvsd-labs/",
+    lab_urls <- paste0("https://raw.githubusercontent.com/IDSUCLA/ids_labs/cvsd-labs/",
                        .format_lab_title(lab_titles), '.html')
   } else {
     # IDS Server: Pull labs from the master branch
-    lab_urls <- paste0('http://gh.mobilizingcs.org/ids_labs/',
+    lab_urls <- paste0('http://gh.IDSUCLA.org/ids_labs/',
                        .format_lab_title(lab_titles), '.html')
   }
 
