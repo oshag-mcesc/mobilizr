@@ -17,4 +17,5 @@ test_that("Preloaded data loads", {
   expect_equal(dim(titanic_test), c(308, 8))
   expect_equal(dim(cereal), c(40, 12))
   expect_equal(dim(cereal_test), c(20, 12))
+  expect_equal(dim(nutrition), c(1241, 12))
 })
