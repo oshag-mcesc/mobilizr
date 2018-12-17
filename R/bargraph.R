@@ -24,13 +24,21 @@
 #'
 #' @export
 
-bargraph <- function(x, data, horizontal = FALSE, type = "frequency", ...) {
+bargraph <- function (x, data, horizontal = FALSE, type = "frequency", col = NULL, ...) {
+# Set the default plot setting
+par_setting <- simpleTheme()
 
-  # Rotate the axis lables so they remain easy to read when there's many labels
-  # Include a legend by default when groups argument is use
-  if (!horizontal) {
-    mosaic::bargraph(x = x, data = data, scales = list(x = list(rot = 30)), auto.key = TRUE, type = type, ...)
-  } else {
-    mosaic::bargraph(x = x, data = data, horizontal = horizontal, auto.key = TRUE, type = type, ...)
-  }
+# If user supplies a vector of colors, add these to the plot settings
+if(!is.null(col)) {
+par_setting <- simpleTheme(col = col)
+}
+
+# Include the plot settings in the sub-function calls.
+if (!horizontal) {
+mosaic::bargraph(x = x, data = data, scales = list(x = list(rot = 30)),
+auto.key = TRUE, type = type, par.settings = par_setting, ...)
+} else {
+mosaic::bargraph(x = x, data = data, horizontal = horizontal,
+auto.key = TRUE, type = type, par.settings = par_setting,...)
+}
 }
