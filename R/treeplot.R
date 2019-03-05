@@ -32,7 +32,7 @@ treeplot <- function(model, ...) {
   } else {
 
     # For classification trees, use the following plotting parameters.
-    rpart.plot::prp(x=model, type=3, extra=3, under=TRUE, clip.right.labs=FALSE,varlen=0, faclen=0, ...)
+    rpart.plot::prp(x=model, type=3, extra=3, under=TRUE, clip.right.labs=FALSE,varlen=0, faclen=0, roundint = FALSE, ...)
   }
 }
 
