@@ -4,9 +4,8 @@
 #'
 #' @param model The tree-based model to plot.
 #' @param ... Additional plotting parameters that can be passed. See help
-#'   documentation for \link{\code{rpart.plot}} for additional information
+#'   documentation for rpart.plot for additional information
 #'
-#' @seealso \link{\code{rpart.plot}}
 #'
 #' @examples
 #' m <- tree(survived ~ age + gender + class, data = titanic)
