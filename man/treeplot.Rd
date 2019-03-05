@@ -10,7 +10,7 @@ treeplot(model, ...)
 \item{model}{The tree-based model to plot.}
 
 \item{...}{Additional plotting parameters that can be passed. See help
-documentation for \link{\code{rpart.plot}} for additional information}
+documentation for rpart.plot for additional information}
 }
 \description{
 Creates a visualization of the tree created when using a tree-based model.
@@ -19,7 +19,4 @@ Creates a visualization of the tree created when using a tree-based model.
 m <- tree(survived ~ age + gender + class, data = titanic)
 treeplot(m)
 
-}
-\seealso{
-\link{\code{rpart.plot}}
 }
