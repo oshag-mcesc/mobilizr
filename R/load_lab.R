@@ -131,3 +131,96 @@ load_labs <- function(lab) {
   # logs the load_lab command correctly regardless of how the user selected a lab
   log_info(paste('load_lab(',lab,')', sep = ""))
 }
+
+
+#' Load new lab slides into RStudio's Viewer Pane
+#'
+#' Load new lab slides into RStudio's Viewer Pane. The function can either be called
+#' without an argument \code{load_new_lab()}, in which case a menu will appear in
+#' the console for the user to make their selection, or with a number indicating
+#' the desired lab as an argument.
+#'
+#' @param lab Integer (optional). Including an integer will load the desired lab
+#'   automatically. Leaving the argument blank will load a menu for users to
+#'   make a selection from.
+#' @examples
+#' load_new_lab() # Loads a menu to choose from
+#' load_new_lab(1) # Automatically loads the 1st lab from the menu.
+#' load_new_labs() # Similar to load_new_lab()
+#' load_new_labs(1) # Similar to load_new_lab(1)
+#'
+#' @importFrom curl curl
+#' @importFrom rstudioapi viewer
+#' @importFrom stringr str_extract
+#' @export
+
+load_new_lab <- function(lab) {
+  # Create the names of the labs for the menu
+  unit_1_titles <- c("Lab 1A", "Lab 1B", "Lab 1C", "Lab 1D", "Lab 1E", "Lab 1F",
+                     "Lab 1G", "Lab 1H")
+  unit_2_titles <- c("Lab 2A", "Lab 2B", "Lab 2C", "Lab 2D", "Lab 2E", "Lab 2F",
+                     "Lab 2G", "Lab 2H", "Lab 2I")
+  unit_3_titles <- c("Lab 3A", "Lab 3B", "Lab 3C", "Lab 3D", "Lab 3E", "Lab 3F")
+  unit_4_titles <- c("Lab 4A", "Lab 4B", "Lab 4C", "Lab 4D", "Lab 4E", "Lab 4F",
+                     "Lab 4G", "Lab 4H")
+  
+  # These were added because the labs used during Summer PDs used different
+  # campaigns than the actual labs. At some point it'd be nice to remove
+  # these labs.
+  pd_lab_titles <- c("PD Lab 1D",
+                     "PD Lab 1E")
+  
+  # Put lab titles together.
+  lab_titles <- c(unit_1_titles, unit_2_titles, unit_3_titles, unit_4_titles,
+                  pd_lab_titles)
+  
+  # If the user specifies a lab file in load_new_lab(), grab the lab URL.
+  if (!missing(lab)) {
+    url <- .new_lab_selector(lab=lab, lab_titles = lab_titles)
+  }
+  
+  # Otherwise, open a menu for the user to select from and grab the lab URL.
+  if (missing(lab)) {
+    url <- .new_lab_selector(lab=NULL, lab_titles = lab_titles)
+  }
+  
+  # Using the URL for the chosen lab, the following reads in the lab's HTML
+  # and displays it in the Viewer pane.
+  
+  # Get HTML
+  con <- curl(url, "r")
+  page <- paste(readLines(con), collapse = '\n')
+  close(con)
+  
+  # Create a temp HTML file
+  tf <- tempfile(fileext = ".html")
+  writeLines(page, tf)
+  
+  # Display HTML file in the viewer pane.
+  viewer(tf)
+}
+
+# Helper function that displays the actual menu to choose labs from.
+.new_lab_selector <- function(lab, lab_titles) {
+  
+  lab_urls <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+                     .format_lab_title(lab_titles), 'Rev.html')
+  
+  if (is.null(lab)) {
+    # If user doesn't specify a lab to open in load_lab(), prompt them.
+    selection <- menu(lab_titles, title = "Enter the number next to the lab you would like to load:")
+    .log_loaded_lab(selection)
+    url <- lab_urls[selection]
+  }
+  
+  if (!is.null(lab)) {
+    if (!is.numeric(lab) | length(lab) != 1) {
+      # If user puts something that's not a number associated with a lab,
+      # give the user an error message.
+      stop("Input should be either left blank or a single integer.")
+    }
+    .log_loaded_lab(lab)
+    url <- lab_urls[lab]
+  }
+  return(url)
+}
