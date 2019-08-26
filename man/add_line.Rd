@@ -4,7 +4,8 @@
 \alias{add_line}
 \title{Add a line to an \code{xyplot}}
 \usage{
-add_line(intercept, slope, vline = NULL, hline = NULL, units = "native")
+add_line(intercept, slope, vline = NULL, hline = NULL,
+  units = "native")
 }
 \arguments{
 \item{intercept}{Numerical (optional). The intercept term for a line to plot.}

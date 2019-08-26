@@ -163,56 +163,64 @@ load_new_lab <- function(lab) {
   unit_3_titles <- c("Lab 3A", "Lab 3B", "Lab 3C", "Lab 3D", "Lab 3E", "Lab 3F")
   unit_4_titles <- c("Lab 4A", "Lab 4B", "Lab 4C", "Lab 4D", "Lab 4E", "Lab 4F",
                      "Lab 4G", "Lab 4H")
-  
+
   # These were added because the labs used during Summer PDs used different
   # campaigns than the actual labs. At some point it'd be nice to remove
   # these labs.
   pd_lab_titles <- c("PD Lab 1D",
                      "PD Lab 1E")
-  
+
   # Put lab titles together.
   lab_titles <- c(unit_1_titles, unit_2_titles, unit_3_titles, unit_4_titles,
                   pd_lab_titles)
-  
+
   # If the user specifies a lab file in load_new_lab(), grab the lab URL.
   if (!missing(lab)) {
     url <- .new_lab_selector(lab=lab, lab_titles = lab_titles)
   }
-  
+
   # Otherwise, open a menu for the user to select from and grab the lab URL.
   if (missing(lab)) {
     url <- .new_lab_selector(lab=NULL, lab_titles = lab_titles)
   }
-  
+
   # Using the URL for the chosen lab, the following reads in the lab's HTML
   # and displays it in the Viewer pane.
-  
+
   # Get HTML
   con <- curl(url, "r")
   page <- paste(readLines(con), collapse = '\n')
   close(con)
-  
+
   # Create a temp HTML file
   tf <- tempfile(fileext = ".html")
   writeLines(page, tf)
-  
+
   # Display HTML file in the viewer pane.
   viewer(tf)
 }
 
+#' @rdname load_new_lab
+#' @export
+load_new_labs <- function(lab) {
+  # Alias to avoid problems with load_new_lab vs. load_new_labs in the written
+  # curriculum
+  load_new_lab(lab)
+}
+
 # Helper function that displays the actual menu to choose labs from.
 .new_lab_selector <- function(lab, lab_titles) {
-  
+
   lab_urls <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
                      .format_lab_title(lab_titles), 'Rev.html')
-  
+
   if (is.null(lab)) {
     # If user doesn't specify a lab to open in load_lab(), prompt them.
     selection <- menu(lab_titles, title = "Enter the number next to the lab you would like to load:")
     .log_loaded_lab(selection)
     url <- lab_urls[selection]
   }
-  
+
   if (!is.null(lab)) {
     if (!is.numeric(lab) | length(lab) != 1) {
       # If user puts something that's not a number associated with a lab,

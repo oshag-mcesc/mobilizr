@@ -8,8 +8,6 @@
 \alias{Do}
 \alias{print.repeater}
 \alias{*,repeater,ANY-method}
-\alias{do}
-\alias{do}
 \title{Do Things Repeatedly}
 \usage{
 do(N)

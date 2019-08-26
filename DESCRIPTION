@@ -40,4 +40,4 @@ Imports:
 License: GPL (>= 2)
 LazyData: TRUE
 URL: http://www.mobilizingcs.org
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1

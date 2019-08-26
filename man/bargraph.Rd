@@ -4,7 +4,8 @@
 \alias{bargraph}
 \title{Bargraph Plots}
 \usage{
-bargraph(x, data, horizontal = FALSE, type = "frequency", ...)
+bargraph(x, data, horizontal = FALSE, type = "frequency", col = NULL,
+  ...)
 }
 \arguments{
 \item{x}{Formula. An expression of the form \code{~ x | z} where
