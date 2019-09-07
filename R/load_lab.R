@@ -167,8 +167,10 @@ load_new_lab <- function(lab) {
   # These were added because the labs used during Summer PDs used different
   # campaigns than the actual labs. At some point it'd be nice to remove
   # these labs.
-  pd_lab_titles <- c("PD Lab 1D",
-                     "PD Lab 1E")
+  #pd_lab_titles <- c("PD Lab 1D",
+  #                   "PD Lab 1E")
+
+  pd_lab_titles <- c()
 
   # Put lab titles together.
   lab_titles <- c(unit_1_titles, unit_2_titles, unit_3_titles, unit_4_titles,
@@ -231,4 +233,72 @@ load_new_labs <- function(lab) {
     url <- lab_urls[lab]
   }
   return(url)
+}
+
+
+#' @rdname load_pd
+#' @export
+load_pds <- function(lab) {
+  load_pd(lab)
+}
+
+#' Load new pd lab slides into RStudio's Viewer Pane
+#'
+#' Load new pd lab slides into RStudio's Viewer Pane. The function can either be called
+#' without an argument \code{load_pd()}, in which case a menu will appear in
+#' the console for the user to make their selection, or with a number indicating
+#' the desired lab as an argument.
+#'
+#' @param lab Integer (optional). Including an integer will load the desired pd lab
+#'   automatically. Leaving the argument blank will load a menu for users to
+#'   make a selection from.
+#' @examples
+#' load_pd() # Loads a menu to choose from
+#' load_pd(1) # Automatically loads the 1st lab from the menu.
+#' load_pds() # Similar to load_pd()
+#' load_pds(1) # Similar to load_pd(1)
+#'
+#' @importFrom curl curl
+#' @importFrom rstudioapi viewer
+#' @importFrom stringr str_extract
+#' @export
+
+load_pd <- function(lab) {
+
+  lab_titles_A <- c("PD lab 1d", "PD lab 1e")
+  lab_urls_A <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+                       "/unit_1/", gsub(x = tolower(lab_titles_A), pattern = ' ', replacement = ""), "/" , gsub(x = tolower(lab_titles_A), pattern = ' ', replacement = ""), 'Rev.html')
+
+  lab_titles_B <- c("Advanced PD 1a", "Advanced PD 1b", "Advanced PD 2a", "Advanced PD 2b")
+  lab_titles_BB <- c("AdvPD1a", "AdvPD1b", "AdvPD2a", "AdvPD2b")
+  lab_urls_B <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+                     "/AdvPD/", lab_titles_BB, "/lab" , lab_titles_BB, 'Rev.html')
+
+  lab_titles <- c(lab_titles_A, lab_titles_B)
+  lab_urls <- c(lab_urls_A, lab_urls_B)
+
+  lab_titles <- c(lab_titles_A, lab_titles_B)
+
+  if (missing(lab)) {
+    lab <- menu(lab_titles, title = "Enter the number next to the lab you would like to load:")
+  }
+
+  .log_loaded_pd(lab)
+  url <- lab_urls[lab]
+
+  con <- curl(url, "r")
+  page <- paste(readLines(con), collapse = '\n')
+  close(con)
+
+  tf <- tempfile(fileext = ".html")
+  writeLines(page, tf)
+
+  viewer(tf)
+
+
+}
+
+.log_loaded_pd <- function(lab) {
+  # logs the load_lab command correctly regardless of how the user selected a lab
+  log_info(paste('load_pd(',lab,')', sep = ""))
 }
