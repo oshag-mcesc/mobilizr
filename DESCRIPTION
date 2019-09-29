@@ -20,8 +20,8 @@ Depends:
     stats,
     dplyr,
     leaflet,
-    mosaic (== 0.14.4),
-    readr (== 1.1.1),
+    mosaic,
+    readr,
     XML
 Imports:
     curl,
@@ -39,5 +39,5 @@ Imports:
     visualTest
 License: GPL (>= 2)
 LazyData: TRUE
-URL: http://www.mobilizingcs.org
+URL: https://www.mobilizingcs.org
 RoxygenNote: 6.1.1
