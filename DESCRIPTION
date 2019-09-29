@@ -41,4 +41,5 @@ Suggests:
 License: GPL (>= 2)
 LazyData: TRUE
 URL: https://www.mobilizingcs.org
+Maintainer: IDSUCLA <admin@idsucla.org>
 RoxygenNote: 6.1.1
