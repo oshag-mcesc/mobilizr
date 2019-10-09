@@ -284,7 +284,10 @@ load_pd <- function(lab) {
   }
 
   .log_loaded_pd(lab)
-  if (lab>6) {
+  if (assertthat::is.string(lab)) {
+	url <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+                     "/AdvPD/" , toString(lab), '.html')
+  }else if (lab>6) {
 	url <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
                      "/AdvPD/labAdvPD" , toString(lab), 'Rev.html')
   }else{
