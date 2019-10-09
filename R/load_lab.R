@@ -286,7 +286,7 @@ load_pd <- function(lab) {
   .log_loaded_pd(lab)
   if (lab>6) {
 	url <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
-                     "/labAdvPD" , toString(lab), 'Rev.html')
+                     "/AdvPD/labAdvPD" , toString(lab), 'Rev.html')
   }else{
 	url <- lab_urls[lab]
   }
