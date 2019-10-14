@@ -92,21 +92,24 @@ load_labs <- function(lab) {
   # we can keep separate branches of the labs so we can pull the labs
   # based on their versions of Rstudio
 
-  if (rstudioapi::getVersion() == "0.99.902") {
-    # LAUSD: Pull labs from their branch
-    # NOTE: Make sure to update the Rstudio version on the line above
-    lab_urls <- paste0("https://raw.githubusercontent.com/IDSUCLA/ids_labs/lausd-labs/",
-                       .format_lab_title(lab_titles), '.html')
-  } else if (rstudioapi::getVersion() == "0.99.902") {
-    # CVSD: Pull labs from their branch
-    # NOTE: Make sure to update the Rstudio version on the line above
-    lab_urls <- paste0("https://raw.githubusercontent.com/IDSUCLA/ids_labs/cvsd-labs/",
-                       .format_lab_title(lab_titles), '.html')
-  } else {
-    # IDS Server: Pull labs from the master branch
-    lab_urls <- paste0('http://gh.IDSUCLA.org/ids_labs/',
-                       .format_lab_title(lab_titles), '.html')
-  }
+  # if (rstudioapi::getVersion() == "0.99.902") {
+  #   # LAUSD: Pull labs from their branch
+  #   # NOTE: Make sure to update the Rstudio version on the line above
+  #   lab_urls <- paste0("https://raw.githubusercontent.com/IDSUCLA/ids_labs/lausd-labs/",
+  #                      .format_lab_title(lab_titles), '.html')
+  # } else if (rstudioapi::getVersion() == "0.99.902") {
+  #   # CVSD: Pull labs from their branch
+  #   # NOTE: Make sure to update the Rstudio version on the line above
+  #   lab_urls <- paste0("https://raw.githubusercontent.com/IDSUCLA/ids_labs/cvsd-labs/",
+  #                      .format_lab_title(lab_titles), '.html')
+  # } else {
+  #   # IDS Server: Pull labs from the master branch
+  #   lab_urls <- paste0('http://gh.IDSUCLA.org/ids_labs/',
+  #                      .format_lab_title(lab_titles), '.html')
+  # }
+  
+  lab_urls <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+                     .format_lab_title(lab_titles), '.html')
 
   if (is.null(lab)) {
     # If user doesn't specify a lab to open in load_lab(), prompt them.
