@@ -108,7 +108,7 @@ load_labs <- function(lab) {
   #                      .format_lab_title(lab_titles), '.html')
   # }
   
-  lab_urls <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+  lab_urls <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/master/',
                      .format_lab_title(lab_titles), '.html')
 
   if (is.null(lab)) {
@@ -216,7 +216,7 @@ load_new_labs <- function(lab) {
 # Helper function that displays the actual menu to choose labs from.
 .new_lab_selector <- function(lab, lab_titles) {
 
-  lab_urls <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+  lab_urls <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/master/',
                      .format_lab_title(lab_titles), 'Rev.html')
 
   if (is.null(lab)) {
@@ -269,12 +269,12 @@ load_pds <- function(lab) {
 load_pd <- function(lab) {
 
   lab_titles_A <- c("PD lab 1d", "PD lab 1e")
-  lab_urls_A <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+  lab_urls_A <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/master/',
                        "/unit_1/", gsub(x = tolower(lab_titles_A), pattern = ' ', replacement = ""), "/" , gsub(x = tolower(lab_titles_A), pattern = ' ', replacement = ""), 'Rev.html')
 
   lab_titles_B <- c("Advanced PD 1a", "Advanced PD 1b", "Advanced PD 2a", "Advanced PD 2b")
   lab_titles_BB <- c("AdvPD1a", "AdvPD1b", "AdvPD2a", "AdvPD2b")
-  lab_urls_B <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+  lab_urls_B <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/master/',
                      "/AdvPD/", lab_titles_BB, "/lab" , lab_titles_BB, 'Rev.html')
 
   lab_titles <- c(lab_titles_A, lab_titles_B)
@@ -288,10 +288,10 @@ load_pd <- function(lab) {
 
   .log_loaded_pd(lab)
   if (assertthat::is.string(lab)) {
-	url <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+	url <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/master/',
                      "/AdvPD/" , toString(lab), '.html')
   }else if (lab>6) {
-	url <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/modern-labs/',
+	url <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/master/',
                      "/AdvPD/labAdvPD" , toString(lab), 'Rev.html')
   }else{
 	url <- lab_urls[lab]
