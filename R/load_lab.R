@@ -119,12 +119,19 @@ load_labs <- function(lab) {
   }
 
   if (!is.null(lab)) {
-	if(is.character(lab) && isTRUE(nchar("2D") == 2) ){
+	if(is.character(lab) && isTRUE(nchar(lab) == 2) ){
 		LAB <- paste0("Lab ", toupper(lab))
 		if (isTRUE(match(LAB,lab_titles) > 0)){
 			lab <- match(LAB,lab_titles)
 		}else{
 			stop("Input should be either left blank or a single integer..")
+		}
+	}else if(is.character(lab) && isTRUE(nchar(lab) > 2) ){
+		LAB <- paste0(toupper(lab))
+		if (isTRUE(match(LAB,toupper(lab_titles)) > 0)){
+			lab <- match(LAB,toupper(lab_titles))
+		}else{
+			stop("Input should be either left blank or a single integer...")
 		}
 	}else if (!is.numeric(lab) | length(lab) != 1) {
       # If user puts something that's not a number associated with a lab,
@@ -234,12 +241,19 @@ load_new_labs <- function(lab) {
   }
 
   if (!is.null(lab)) {
-	if(is.character(lab) && isTRUE(nchar("2D") == 2) ){
+	if(is.character(lab) && isTRUE(nchar(lab) == 2) ){
 		LAB <- paste0("Lab ", toupper(lab))
 		if (isTRUE(match(LAB,lab_titles) > 0)){
 			lab <- match(LAB,lab_titles)
 		}else{
 			stop("Input should be either left blank or a single integer..")
+		}
+	}else if(is.character(lab) && isTRUE(nchar(lab) > 2) ){
+		LAB <- paste0(toupper(lab))
+		if (isTRUE(match(LAB,toupper(lab_titles)) > 0)){
+			lab <- match(LAB,toupper(lab_titles))
+		}else{
+			stop("Input should be either left blank or a single integer...")
 		}
 	}else if (!is.numeric(lab) | length(lab) != 1) {
       # If user puts something that's not a number associated with a lab,

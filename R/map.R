@@ -29,6 +29,30 @@
 #' map(lat~lon, data=geodata, scaleby = scale, col = type)
 
 map <- function(x, data=parent.frame(), e, scaleby, size = 1, col='blue', zoom=10, color, ...){
+
+
+  try({
+    condition <- lattice::latticeParseFormula(x, data = data)$condition
+    total_levels <- 1
+    if (length(condition) > 0 ){
+      for (cc in 1: length(condition)){
+        total_levels <- total_levels * length(attributes(condition[cc][[1]])$levels)
+      }
+    }
+    if (isTRUE( total_levels > 180 )){
+      message("This command is too complex, Total Levels: ", total_levels)
+      if (length(condition) > 0 ){
+        for (cc in 1: length(condition)){
+          message( toString(names(condition[cc])), " has level: ", length(attributes(condition[cc][[1]])$levels) )
+        }
+      }
+      message("Please revise this command and try again. ")
+      return (NULL)
+    }
+    # print(total_levels)
+  }, silent = TRUE)
+
+  
   latitude <- data[, deparse(lhs(x))]
   longitude <- data[, deparse(rhs(x))]
   projected <- data.frame(longitude, latitude)
