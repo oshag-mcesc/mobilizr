@@ -22,7 +22,9 @@ Depends:
     leaflet,
     mosaic,
     readr,
-    XML
+    XML,
+	rvest,
+	xml2
 Imports:
     curl,
     grid,
