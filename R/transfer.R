@@ -68,12 +68,18 @@ transfer_download <- function(url = NULL, passcode = NULL, destfile = NULL){
     destfile <- base_name
   }
   tryCatch({
-    download.file(extended_url, destfile = destfile)
+    download.file(extended_url, destfile = destfile, method = 'curl')
     message(paste0("File downloaded to: \'", normalizePath(destfile), "\'"))
     return (normalizePath(destfile))
   }, error=function(err) {
-    message(err)
-    return (NULL)
+    tryCatch({
+      download.file(extended_url, destfile = destfile)
+      message(paste0("File downloaded to: \'", normalizePath(destfile), "\'"))
+      return (normalizePath(destfile))
+    }, error=function(err1) {
+      message(err1)
+      return (NULL)
+    })
   })
 }
 
