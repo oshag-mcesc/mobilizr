@@ -137,6 +137,8 @@ quick_import <- function(server = NULL, username = NULL, token = NULL, campaign 
 
 
   write.csv(MyData, file = csv_path, row.names=FALSE)
+  
+  MyData <- read_csv(csv_path)
 
   message(paste("File Saved:", csv_path))
 
