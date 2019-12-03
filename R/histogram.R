@@ -18,8 +18,46 @@
 #'
 #' @export
 
-histogram <- function (x, data, type = "count", nint = 8, fit, breaks, ...) {
 
+
+histogram <- function(x, data, type = 'count', fit, ...) {
+
+
+  try({
+    condition <- lattice::latticeParseFormula(x, data = data)$condition
+    total_levels <- 1
+    if (length(condition) > 0 ){
+      for (cc in 1: length(condition)){
+        total_levels <- total_levels * length(attributes(condition[cc][[1]])$levels)
+      }
+    }
+    if (isTRUE( total_levels > 180 )){
+      message("This command is too complex, Total Levels: ", total_levels)
+      if (length(condition) > 0 ){
+        for (cc in 1: length(condition)){
+          message( toString(names(condition[cc])), " has level: ", length(attributes(condition[cc][[1]])$levels) )
+        }
+      }
+      message("Please revise this command and try again. ")
+      return (NULL)
+    }
+    # print(total_levels)
+  }, silent = TRUE)
+
+  
+  # Change default y-axis to "count"
+
+  # If including a fitted density curve, change y-axis back to "density"
+  if(!missing(fit)) {
+    lattice::histogram(x = x, data = data, type = 'density', fit = fit, ...)
+  } else {
+    lattice::histogram(x = x, data = data, type = type, ...)
+  }
+}
+
+#' @export
+
+histogram1 <- function (x, data, type = "count", nint = 8, fit, breaks, ...) {
 
   try({
     condition <- lattice::latticeParseFormula(x, data = data)$condition
@@ -68,38 +106,3 @@ histogram <- function (x, data, type = "count", nint = 8, fit, breaks, ...) {
 
 
 #' @export
-
-histogram0 <- function(x, data, type = 'count', fit, ...) {
-
-
-  try({
-    condition <- lattice::latticeParseFormula(x, data = data)$condition
-    total_levels <- 1
-    if (length(condition) > 0 ){
-      for (cc in 1: length(condition)){
-        total_levels <- total_levels * length(attributes(condition[cc][[1]])$levels)
-      }
-    }
-    if (isTRUE( total_levels > 180 )){
-      message("This command is too complex, Total Levels: ", total_levels)
-      if (length(condition) > 0 ){
-        for (cc in 1: length(condition)){
-          message( toString(names(condition[cc])), " has level: ", length(attributes(condition[cc][[1]])$levels) )
-        }
-      }
-      message("Please revise this command and try again. ")
-      return (NULL)
-    }
-    # print(total_levels)
-  }, silent = TRUE)
-
-  
-  # Change default y-axis to "count"
-
-  # If including a fitted density curve, change y-axis back to "density"
-  if(!missing(fit)) {
-    lattice::histogram(x = x, data = data, type = 'density', fit = fit, ...)
-  } else {
-    lattice::histogram(x = x, data = data, type = type, ...)
-  }
-}

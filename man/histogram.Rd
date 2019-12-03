@@ -4,7 +4,7 @@
 \alias{histogram}
 \title{Histogram Plots}
 \usage{
-histogram(x, data, type = "count", nint = 8, fit, breaks, ...)
+histogram(x, data, type = "count", fit, ...)
 }
 \arguments{
 \item{x}{\code{formula}. An expression of the form \code{~ x | z} where \code{x} is the variable we want to make histograms for and \code{z} is a second, optional, variable we would like to use for faceting.}
@@ -13,9 +13,9 @@ histogram(x, data, type = "count", nint = 8, fit, breaks, ...)
 
 \item{type}{character. A character string that describes what units the user would like on the y-axis. Options include \code{"count"} for frequencies, \code{"percent"} for percentages and \code{"density"} which can be used when adding fitted lines.}
 
-\item{nint}{number. The number of bins to use in the histogram}
-
 \item{fit}{character. A character string that describes a probablility density curve to overlay on the histogram of the data. Distributions that can be used are \code{"normal"}, \code{"beta"}, \code{"cauchy"}, \code{"chisq"} (similarly \code{"chi-squared"}), \code{"exponential"}, \code{"gamma"}, \code{"geometric"}, \code{"lognormal"}, \code{"poisson"}, \code{"t"} and \code{"weibull"}}
+
+\item{nint}{number. The number of bins to use in the histogram}
 
 \item{breaks}{Usually a numeric vector of length (number of bins + 1) defining the breakpoints of the bins. Note that when breakpoints are not equally spaced, the only value of type that makes sense is density.}
 }
