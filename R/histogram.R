@@ -106,3 +106,58 @@ histogram1 <- function (x, data, type = "count", nint = 8, fit, breaks, ...) {
 
 
 #' @export
+histogram19 <- function (x, data = NULL, type = "count", nint = 8, fit, breaks, ...) {
+
+  try({
+    condition <- lattice::latticeParseFormula(x, data = data)$condition
+    total_levels <- 1
+    if (length(condition) > 0 ){
+      for (cc in 1: length(condition)){
+        total_levels <- total_levels * length(attributes(condition[cc][[1]])$levels)
+      }
+    }
+    if (isTRUE( total_levels > 180 )){
+      message("This command is too complex, Total Levels: ", total_levels)
+      if (length(condition) > 0 ){
+        for (cc in 1: length(condition)){
+          message( toString(names(condition[cc])), " has level: ", length(attributes(condition[cc][[1]])$levels) )
+        }
+      }
+      message("Please revise this command and try again. ")
+      return (NULL)
+    }
+    # print(total_levels)
+  }, silent = TRUE)
+
+  dots_args <- eval(substitute(alist(...)))
+  
+  if (is.numeric(x) & !missing(fit)) {
+    return(lattice::histogram(x = ~x, data = NULL, type = "density", nint = nint, fit = fit, breaks = breaks, ...))
+  }
+  
+  if (is.numeric(x)) {
+    return(lattice::histogram(x = ~x, data = NULL, type = type, nint = nint, breaks = breaks, ...))
+  }
+  
+  if (!is.null(dots_args$subset)) {
+    data <- subset(data, eval(dots_args$subset))
+  }
+  
+    
+  form <- latticeParseFormula(model = x, data = data)
+  
+  
+  if (missing(breaks) & !is.null(form$condition)) {
+    breaks <- seq(min(form$right), max(form$right), length.out = nint + 1)
+  } 
+  
+  if (!missing(fit)) {
+    lattice::histogram(x = x, data = data, type = "density", nint = nint,
+                       fit = fit, breaks = breaks, ...)
+  }
+  else {
+    lattice::histogram(x = x, data = data, nint = nint, type = type, 
+                       breaks = breaks, ...)
+  }
+}
+
