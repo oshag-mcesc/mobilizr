@@ -57,7 +57,7 @@ histogram <- function(x, data, type = 'count', fit, ...) {
 
 #' @export
 
-histogram1 <- function (x, data, type = "count", nint = 8, fit, breaks, ...) {
+old_histogram <- function (x, data, type = "count", nint = 8, fit, breaks, ...) {
 
   try({
     condition <- lattice::latticeParseFormula(x, data = data)$condition
@@ -106,7 +106,7 @@ histogram1 <- function (x, data, type = "count", nint = 8, fit, breaks, ...) {
 
 
 #' @export
-histogram19 <- function (x, data = NULL, type = "count", nint = 8, fit, breaks, ...) {
+old_histogram19 <- function (x, data = NULL, type = "count", nint = 8, fit, breaks, ...) {
 
   try({
     condition <- lattice::latticeParseFormula(x, data = data)$condition
