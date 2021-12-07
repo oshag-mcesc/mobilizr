@@ -19,7 +19,7 @@
 #' @export
 
 readHTMLTable <- function(url, which, ...) {
-  the_html <- xml2::read_html(url)
+  the_html <- read_html(httr::GET(url, config = httr::config(ssl_verifypeer = FALSE)))
   
   if (!missing(which)) {
     table <- rvest::html_table(the_html, ...)[[which]]
