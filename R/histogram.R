@@ -22,7 +22,6 @@
 
 histogram <- function(x, data, type = 'count', fit, ...) {
 
-
   try({
     condition <- lattice::latticeParseFormula(x, data = data)$condition
     total_levels <- 1
@@ -44,15 +43,18 @@ histogram <- function(x, data, type = 'count', fit, ...) {
     # print(total_levels)
   }, silent = TRUE)
 
-  
-  # Change default y-axis to "count"
 
+  # Change default y-axis to "count"
   # If including a fitted density curve, change y-axis back to "density"
   if(!missing(fit)) {
-    lattice::histogram(x = x, data = data, type = 'density', fit = fit, ...)
+    suppressWarnings(expr =
+    lattice::histogram(x = x, data = data, type = 'density', fit = fit, ...))
   } else {
-    lattice::histogram(x = x, data = data, type = type, ...)
+    suppressWarnings(expr =
+    lattice::histogram(x = x, data = data, type = type, ...))
   }
+
+
 }
 
 #' @export
@@ -80,26 +82,26 @@ old_histogram <- function (x, data, type = "count", nint = 8, fit, breaks, ...) 
     # print(total_levels)
   }, silent = TRUE)
 
-  
+
   # Check for subsetting, if so, subset data manually otherwise use function defaults
   dots_args <- eval(substitute(alist(...)))
   if (!is.null(dots_args$subset)) {
     data <- subset(data, eval(dots_args$subset))
   }
-  
-  # Parse formula to check for conditioning/faceting  
+
+  # Parse formula to check for conditioning/faceting
   form <- latticeParseFormula(model = x, data = data)
   if (missing(breaks) & !is.null(form$condition)) {
     breaks <- seq(min(form$right), max(form$right), length.out = nint + 1)
-  } 
-  
+  }
+
   # Run the rest of the function as before.
   if (!missing(fit)) {
     lattice::histogram(x = x, data = data, type = "density", nint = nint,
                        fit = fit, breaks = breaks, ...)
   }
   else {
-    lattice::histogram(x = x, data = data, nint = nint, type = type, 
+    lattice::histogram(x = x, data = data, nint = nint, type = type,
                        breaks = breaks, ...)
   }
 }
@@ -130,33 +132,33 @@ old_histogram19 <- function (x, data = NULL, type = "count", nint = 8, fit, brea
   }, silent = TRUE)
 
   dots_args <- eval(substitute(alist(...)))
-  
+
   if (is.numeric(x) & !missing(fit)) {
     return(lattice::histogram(x = ~x, data = NULL, type = "density", nint = nint, fit = fit, breaks = breaks, ...))
   }
-  
+
   if (is.numeric(x)) {
     return(lattice::histogram(x = ~x, data = NULL, type = type, nint = nint, breaks = breaks, ...))
   }
-  
+
   if (!is.null(dots_args$subset)) {
     data <- subset(data, eval(dots_args$subset))
   }
-  
-    
+
+
   form <- latticeParseFormula(model = x, data = data)
-  
-  
+
+
   if (missing(breaks) & !is.null(form$condition)) {
     breaks <- seq(min(form$right), max(form$right), length.out = nint + 1)
-  } 
-  
+  }
+
   if (!missing(fit)) {
     lattice::histogram(x = x, data = data, type = "density", nint = nint,
                        fit = fit, breaks = breaks, ...)
   }
   else {
-    lattice::histogram(x = x, data = data, nint = nint, type = type, 
+    lattice::histogram(x = x, data = data, nint = nint, type = type,
                        breaks = breaks, ...)
   }
 }
