@@ -43,6 +43,11 @@ histogram <- function(x, data, type = 'count', fit, ...) {
     # print(total_levels)
   }, silent = TRUE)
 
+  # Filter out observations with NAs in its dependent variable
+  if(!missing(data)){
+    containing_na<- all.vars(x)[1]
+    data<- data %>% filter(is.na(!!rlang::sym(containing_na)) == F)
+  }
 
   # Change default y-axis to "count"
   # If including a fitted density curve, change y-axis back to "density"
@@ -53,6 +58,7 @@ histogram <- function(x, data, type = 'count', fit, ...) {
     suppressWarnings(expr =
     lattice::histogram(x = x, data = data, type = type, ...))
   }
+
 
 
 }
