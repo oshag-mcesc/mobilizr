@@ -191,7 +191,7 @@ cor <- function(x, y = NULL, ..., data = NULL) {
       y <- lazyeval::f_eval(y, data)
     }
     else {
-      formula <- mosaic_formula_q(x, max.slots = 3)
+      formula <- mosaicCore::mosaic_formula_q(x, max.slots = 3)
       x <- lazyeval::f_eval_rhs(formula, data)
       y <- lazyeval::f_eval_lhs(formula, data)
     }
