@@ -16,3 +16,4 @@ vignettes/*.pdf
 data/add_curve_plot.png
 data/add_line_plot.png
 tests/testthat/Rplots.pdf
+issues/
