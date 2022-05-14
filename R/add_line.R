@@ -55,6 +55,7 @@ add_line <- function(intercept, slope, vline = NULL, hline = NULL, units = "nati
       ind2_raw <- grid.locator(unit = "native")
       ind1 <- as.numeric(ind1_raw)
       ind2 <- as.numeric(ind2_raw)
+      cat("indi1 is:", ind1, "indi2 is", ind2)
 
       # Create a slope and intercept term based on the coordinates.
       m1 <- (ind2[2] - ind1[2])/(ind2[1] - ind1[1])
