@@ -18,7 +18,7 @@
 #'
 #' @export
 
-bwplot <- function(x, data, ...) {
+bwplot <- function(x, data, color = "blue", ...) {
 
 
   try({
@@ -42,9 +42,14 @@ bwplot <- function(x, data, ...) {
     # print(total_levels)
   }, silent = TRUE)
 
-  
+
   # Change the midpoint symbol from a dot to a line
-  lattice::bwplot(x = x, data = data, ..., panel = function(x, ...) {
+  lattice::bwplot(x = x, data = data, col = color, ...,
+                  par.settings = list(box.rectangle = list(col = color),
+                                      box.dot = list(col = color),
+                                      box.umbrella = list(col = color),
+                                      plot.symbol = list(col = color)),
+                  panel = function(x, ...) {
     lattice::panel.bwplot(x, pch = "|", ...)
   })
 }
