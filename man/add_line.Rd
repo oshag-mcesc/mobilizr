@@ -4,17 +4,19 @@
 \alias{add_line}
 \title{Add a line to an \code{xyplot}}
 \usage{
-add_line(intercept, slope, vline = NULL, hline = NULL,
-  units = "native")
+add_line(
+  intercept,
+  slope,
+  vline = NULL,
+  hline = NULL,
+  units = "native",
+  color = "red"
+)
 }
 \arguments{
 \item{intercept}{Numerical (optional). The intercept term for a line to plot.}
 
-\item{slope}{Numerical (optional). The slope term for a line to plot.}
-
-\item{slope}{vline (optional). Draws a vertical line at the desired x coordinate}
-
-\item{slope}{hline (optional). Draws a horizontal line at the desired y coordinate}
+\item{slope}{color (optional). Sets color of the line to be drawn}
 }
 \description{
 Include a line to an \code{xyplot} by either including a slope and intercept

@@ -102,12 +102,12 @@ NULL
 #' volunteering, in minutes \item religion. time spend participating in
 #' religious activities, in minutes \item sports. time spent playing sports, in
 #' minutes \item social. time spent socializing, in minutes \item food. time
-#' spent eating or preparing food, in minutes \item gov_civic. time spent
-#' participating in civic engagement activities, in minutes \item household.
+#' spent eating or preparing food, in minutes \item social_civic. time spent
+#' in organizational, civic, and religious activities, in minutes \item household.
 #' time spent performing household duties, in minutes \item pro_services. time
-#' spent engaged in professional services, in minutes \item purchasing. time
+#' spent purchasing professsional services, in minutes \item purchasing. time
 #' spent shopping, in minutes \item education. time spent in educational
-#' activities, in minutes \item work. time spent in work related activites, in
+#' activities, in minutes \item work. time spent in work related activities, in
 #' minutes \item care_nonhousehold. time spent engaged in non-household related
 #' duties, in minutes \item care_household. time spend providing care within
 #' respondent's household, in minutes \item household_chores. time spent
@@ -123,7 +123,7 @@ NULL
 #' @keywords dataset
 #' @name atus
 #' @usage data(atus)
-#' @format A data frame with 10,493 observations of 43 variables
+#' @format A data frame with 8,782 observations of 43 variables
 #' @source \url{http://www.bls.gov/tus/}
 NULL
 
@@ -140,10 +140,8 @@ NULL
 #' \item race. race the student identifies with
 #' \item height. height of student in meters
 #' \item weight. weight of student in kilograms
-#' \item helmet. how often student wore a helmet while bicycling during the past 12 months
 #' \item seat_belt. how often student wore a seatbelt in motor vehicle driven by someone else
 #' \item drive_text. how often the student reported texting while driving in the past 30 days.
-#' \item fights. number of fights student has been during the past 12 months
 #' \item bully_school. did the student report being bullied while at school.
 #' \item bully_electronic. did the student report being bullied online.
 #' \item depressed. student reported feeling depressed for 2 weeks in a row, or more, during the past 12 months
@@ -163,15 +161,14 @@ NULL
 #' \item number_teams. number of sports teams played on during previous 12 months
 #' \item asthma. student diagnosed as having asthma
 #' \item hours_sleep. reported hours of sleep on school nights
-#' \item drink_juice. how often student consumed sports drinks over the past 7 days
-#' \item drink_water. how often student consumed water over the past 7 days
-#' \item sunburns. how often student reported being sunburned in the past 12 months}
+#' \item drink_sportdrink. how often student consumed sports drinks over the past 7 days
+#' \item drink_water. how often student consumed water over the past 7 days}
 #'
 #' @docType data
 #' @keywords dataset
 #' @name cdc
 #' @usage data(cdc)
-#' @format A data frame with 15,624 observations of 33 variables
+#' @format A data frame with 13,677 observations of 30 variables
 #' @source \url{http://www.cdc.gov/HealthyYouth/yrbs/index.htm}
 NULL
 
