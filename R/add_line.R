@@ -39,14 +39,14 @@
 
 
 add_line <- function(intercept, slope, vline = NULL, hline = NULL, units = "native", color = "red") {
-  color <<- color
+
   # If a slope and/or intercept are missing, prompt the user to click twice on
   # the plot pane.
   if (missing(intercept) | missing(slope)) {
     # If the user specifies a vline or hline, do the following:
     if (!is.null(vline) | !is.null(hline)) {
       ladd(panel.abline(v = vline, h = hline, col = color, lwd = 2),
-           data = list(vline = vline, hline = hline))
+           data = list(vline = vline, hline = hline, color = color))
     } else {
       # Focus on the plot inorder to prompt the user for coordinates
       trellis.focus("panel", 1, 1)
@@ -68,11 +68,11 @@ add_line <- function(intercept, slope, vline = NULL, hline = NULL, units = "nati
 
       # Included the line in the plot
       trellis.unfocus()
-      ladd(panel.abline(a=b1, b=m1, col = color), data = list(b1 = b1, m1 = m1))
+      ladd(panel.abline(a=b1, b=m1, col = color), data = list(b1 = b1, m1 = m1, color = color))
     }
   } else {
     # If both a slope AND intercept are provided, draw the requested line.
     ladd(panel.abline(a=intercept, b=slope, col = color),
-         data = list(intercept = intercept, slope = slope))
+         data = list(intercept = intercept, slope = slope, color = color))
   }
 }
