@@ -14,7 +14,7 @@ A data frame with 8,782 observations of 43 variables
 data(atus)
 }
 \description{
-A dataset containing responses from the American Time Use Survey. Each
+A dataset containing responses from the 2020 American Time Use Survey. Each
 participant is asked to document the amount of time spent participating in
 various activities for a single 24 hour period. Variables provided are a
 subset of the entire survey.

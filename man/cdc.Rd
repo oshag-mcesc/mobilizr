@@ -14,7 +14,7 @@ A data frame with 13,677 observations of 30 variables
 data(cdc)
 }
 \description{
-A dataset containing responses from the CDC Youth Risk Behavior Survey.
+A dataset containing responses from the 2019 CDC Youth Risk Behavior Survey.
 }
 \details{
 \itemize{

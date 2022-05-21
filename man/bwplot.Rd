@@ -4,7 +4,7 @@
 \alias{bwplot}
 \title{Box and Whisker Plot}
 \usage{
-bwplot(x, data, ...)
+bwplot(x, data, color = "blue", ...)
 }
 \arguments{
 \item{x}{Formula. An expression of the form \code{~ x | z} where \code{x} is
