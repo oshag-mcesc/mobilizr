@@ -426,3 +426,29 @@ NULL
 #' @format A data frame with 654 observations of 4 variables
 #' @source \url{http://ww2.amstat.org/publications/jse/v13n2/datasets.kahn.html}
 NULL
+
+#' March 2020 Flight Data
+#'
+#' This dataset contains the number of flights and the number of passengers at
+#' each of the top 10 busiest airports in the U.S. in March 2020.
+#'
+#' \itemize{
+#' \item date.
+#' \item departures. Number of departure flights.
+#' \item arrivals. Number of arrival flights.
+#' \item total_operations. Number of departure and arrival flights.
+#' \item departure_seats. Number of available seats on departure flights.
+#' \item arrival seats. Number of available seats on arrival flights
+#' \item average_departure_seats. Average number of seats on a departure flight.
+#' \item average_arrival_seats. Average number of seats on a arrival flight.
+#' \item airport. IATA Airport Code
+#' \item day. Day of the week, starting with Sunday.
+#' \item week. Week of the Month}
+#'
+#' @docType data
+#' @keywords dataset
+#' @name flights
+#' @usage data(flights)
+#' @format A data frame with 310 observations of 11 variables
+#' @source \url{https://aspm.faa.gov}
+NULL
