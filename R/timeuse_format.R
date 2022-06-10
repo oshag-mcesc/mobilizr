@@ -30,65 +30,35 @@
 #' @importFrom magrittr %>%
 #' @export
 
-timeuse_format <- function(data) {
-  # Pre-format the data before cleaning
-  names(data) <- gsub(names(data), pattern = ":", replacement = ".")
-
-  # Record the variables that should be included
-  time_use_vars <- c("chores", "day","friends", "grooming",
-                     "homework", "meals", "online", "read",
-                     "school", "sleep", "sports", "television",
-                     "travel", "videogames", "work")
-
-  # Change "NOT_DISPLAYED" to 0. Note: This is appropriate because the
-  # "NOT_DISPLAYED" will appear only for activities in which students
-  # have spent 0 minutes participating in.
-  clean_data <- sapply(data, function(x) gsub(x, pattern = "NOT_DISPLAYED",
-                                              replacement = 0))
-  clean_data <- as.data.frame(clean_data, stringsAsFactors = FALSE)
-  clean_data[time_use_vars] <- sapply(clean_data[time_use_vars], as.numeric)
-
-  # Sum the amount of time spent doing activities for each user for each day.
-  sum_timeuse <- clean_data %>%
-    group_by(user.id, day) %>%
-    summarise(
-      submissions = n(),
-      chores = sum(chores),
-      friends = sum(friends),
-      grooming = sum(grooming),
-      homework = sum(homework),
-      meals = sum(meals),
-      online = sum(online),
-      read = sum(read),
-      school = sum(school),
-      sleep = sum(sleep),
-      sports = sum(sports),
-      television = sum(television),
-      travel = sum(travel),
-      videogames = sum(videogames),
-      work = sum(work))
-
-  # For each user, take the daily sums of time spent participating in various
-  # activities and compute the mean time for each activity.
-  mean_timeuse <- sum_timeuse %>%
-    group_by(user.id) %>%
-    summarise(
-      submissions = sum(submissions),
-      chores = mean(chores),
-      friends = mean(friends),
-      grooming = mean(grooming),
-      homework = mean(homework),
-      meals = mean(meals),
-      online = mean(online),
-      read = mean(read),
-      school = mean(school),
-      sleep = mean(sleep),
-      sports = mean(sports),
-      television = mean(television),
-      travel = mean(travel),
-      videogames = mean(videogames),
-      work = mean(work))
-
-  # Return the mean times for each user.
-  return(mean_timeuse)
-}
+timeuse_format <-
+  function (data)
+  {
+    names(data) <- gsub(names(data), pattern = ":", replacement = ".")
+    time_use_vars <- c("chores", "communicate", "day", "extra", "grooming",
+                       "homework", "meals", "purchases", "read", "school", "sleep",
+                       "social_media","socialize", "spiritual", "sports", "television",
+                       "travel", "videogames", "work")
+    clean_data <- sapply(data, function(x) gsub(x, pattern = "NOT_DISPLAYED",
+                                                replacement = 0))
+    clean_data <- as.data.frame(clean_data, stringsAsFactors = FALSE)
+    clean_data[time_use_vars] <- sapply(clean_data[time_use_vars],
+                                        as.numeric)
+    sum_timeuse <- clean_data %>% group_by(user.id, day) %>%
+      summarise(submissions = n(), chores = sum(chores),
+                communicate = sum(communicate), extra = sum(extra),
+                grooming = sum(grooming), homework = sum(homework),
+                meals = sum(meals), purchases = sum(purchases), read = sum(read),
+                school = sum(school), sleep = sum(sleep), social_media = sum(social_media),
+                socialize = sum(socialize), spiritual = sum(spiritual), sports = sum(sports),
+                television = sum(television), travel = sum(travel),
+                videogames = sum(videogames), work = sum(work))
+    mean_timeuse <- sum_timeuse %>% group_by(user.id) %>% summarise(submissions = sum(submissions), chores = sum(chores),
+                                                                    communicate = sum(communicate), extra = sum(extra),
+                                                                    grooming = sum(grooming), homework = sum(homework),
+                                                                    meals = sum(meals), purchases = sum(purchases), read = sum(read),
+                                                                    school = sum(school), sleep = sum(sleep), social_media = sum(social_media),
+                                                                    socialize = sum(socialize), spiritual = sum(spiritual), sports = sum(sports),
+                                                                    television = sum(television), travel = sum(travel),
+                                                                    videogames = sum(videogames), work = sum(work))
+    return(mean_timeuse)
+  }
