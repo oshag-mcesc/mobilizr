@@ -5,7 +5,9 @@
 \alias{log_config}
 \title{A set of logging functions that Steve made.
 These aren't used by the user.}
-\format{An object of class \code{logger} of length 3.}
+\format{
+An object of class \code{logger} of length 3.
+}
 \usage{
 log_config
 }

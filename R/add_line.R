@@ -11,6 +11,7 @@
 #' @param slope Numerical (optional). The slope term for a line to plot.
 #' @param slope vline (optional). Draws a vertical line at the desired x coordinate
 #' @param slope hline (optional). Draws a horizontal line at the desired y coordinate
+#' @param slope color (optional). Sets color of the line to be drawn
 #'
 #' @seealso \code{\link{add_curve}}
 #'
@@ -37,15 +38,15 @@
 #' @export
 
 
-add_line <- function(intercept, slope, vline = NULL, hline = NULL, units = "native") {
+add_line <- function(intercept, slope, vline = NULL, hline = NULL, units = "native", color = "red") {
 
   # If a slope and/or intercept are missing, prompt the user to click twice on
   # the plot pane.
   if (missing(intercept) | missing(slope)) {
     # If the user specifies a vline or hline, do the following:
     if (!is.null(vline) | !is.null(hline)) {
-      ladd(panel.abline(v = vline, h = hline, col = "red", lwd = 2),
-           data = list(vline = vline, hline = hline))
+      ladd(panel.abline(v = vline, h = hline, col = color, lwd = 2),
+           data = list(vline = vline, hline = hline, color = color))
     } else {
       # Focus on the plot inorder to prompt the user for coordinates
       trellis.focus("panel", 1, 1)
@@ -54,6 +55,7 @@ add_line <- function(intercept, slope, vline = NULL, hline = NULL, units = "nati
       ind2_raw <- grid.locator(unit = "native")
       ind1 <- as.numeric(ind1_raw)
       ind2 <- as.numeric(ind2_raw)
+      cat("indi1 is:", ind1, "indi2 is", ind2)
 
       # Create a slope and intercept term based on the coordinates.
       m1 <- (ind2[2] - ind1[2])/(ind2[1] - ind1[1])
@@ -66,12 +68,11 @@ add_line <- function(intercept, slope, vline = NULL, hline = NULL, units = "nati
 
       # Included the line in the plot
       trellis.unfocus()
-      ladd(panel.abline(a=b1, b=m1), data = list(b1 = b1, m1 = m1))
+      ladd(panel.abline(a=b1, b=m1, col = color), data = list(b1 = b1, m1 = m1, color = color))
     }
   } else {
-
     # If both a slope AND intercept are provided, draw the requested line.
-    ladd(panel.abline(a=intercept, b=slope, col = "red"),
-         data = list(intercept = intercept, slope = slope))
+    ladd(panel.abline(a=intercept, b=slope, col = color),
+         data = list(intercept = intercept, slope = slope, color = color))
   }
 }

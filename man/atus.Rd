@@ -4,7 +4,9 @@
 \name{atus}
 \alias{atus}
 \title{American Time Use Survey Data}
-\format{A data frame with 10,493 observations of 43 variables}
+\format{
+A data frame with 8,782 observations of 43 variables
+}
 \source{
 \url{http://www.bls.gov/tus/}
 }
@@ -12,7 +14,7 @@
 data(atus)
 }
 \description{
-A dataset containing responses from the American Time Use Survey. Each
+A dataset containing responses from the 2020 American Time Use Survey. Each
 participant is asked to document the amount of time spent participating in
 various activities for a single 24 hour period. Variables provided are a
 subset of the entire survey.
@@ -38,12 +40,12 @@ phone. time spent talking on a phone, in minutes \item volunteer. time spent
 volunteering, in minutes \item religion. time spend participating in
 religious activities, in minutes \item sports. time spent playing sports, in
 minutes \item social. time spent socializing, in minutes \item food. time
-spent eating or preparing food, in minutes \item gov_civic. time spent
-participating in civic engagement activities, in minutes \item household.
+spent eating or preparing food, in minutes \item social_civic. time spent
+in organizational, civic, and religious activities, in minutes \item household.
 time spent performing household duties, in minutes \item pro_services. time
-spent engaged in professional services, in minutes \item purchasing. time
+spent purchasing professsional services, in minutes \item purchasing. time
 spent shopping, in minutes \item education. time spent in educational
-activities, in minutes \item work. time spent in work related activites, in
+activities, in minutes \item work. time spent in work related activities, in
 minutes \item care_nonhousehold. time spent engaged in non-household related
 duties, in minutes \item care_household. time spend providing care within
 respondent's household, in minutes \item household_chores. time spent

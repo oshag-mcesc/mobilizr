@@ -12,7 +12,7 @@ The package builds on many of the features that were included in the [MobilizeSi
 To install the development version of `mobilizr` from github, be sure to have the `devtools` package installed and then run:
 
 ```{r}
-devtools::install_github("mobilizingcs/mobilizr")
+devtools::install_github("caoalbert/mobilizr")
 ```
 
 The functions included in the package are intended to work within the [RStudio server GUI](http://www.rstudio.com)

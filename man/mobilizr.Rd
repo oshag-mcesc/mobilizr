@@ -3,7 +3,6 @@
 \docType{package}
 \name{mobilizr}
 \alias{mobilizr}
-\alias{mobilizr-package}
 \title{mobilizr: Functions for the Mobilize Intro to Data Science course.}
 \description{
 mobilizr provides wrappers and other functions to help students focus on the

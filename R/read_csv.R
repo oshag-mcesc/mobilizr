@@ -25,7 +25,7 @@ read.csv <- function(file, ...) {
   # 1) Remove the ".key" variables
   if (all(ps_names %in% names(df))) {
     if(length(grep(".key", names(df))) > 0) {
-      df <- df %>% select(-ends_with(".key"))
+      df <- df %>% dplyr::select(-ends_with(".key"))
     }
     # 2) Remove the ".label", "context." and "location." characters from the
     # Variable names
@@ -54,7 +54,7 @@ read_csv <- function(file, ...) {
   # 1) Remove the ".key" variables
   if (all(ps_names %in% names(df))) {
     if(length(grep(".key", names(df))) > 0) {
-      df <- select(df, -ends_with(".key"))
+      df <- dplyr::select(df, -ends_with(".key"))
     }
   # 2) Remove the ".label", "context." and "location." characters from the
   # Variable names

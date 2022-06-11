@@ -4,7 +4,9 @@
 \name{cdc}
 \alias{cdc}
 \title{CDC Youth Risk Behaviour Survey Data}
-\format{A data frame with 15,624 observations of 33 variables}
+\format{
+A data frame with 13,677 observations of 30 variables
+}
 \source{
 \url{http://www.cdc.gov/HealthyYouth/yrbs/index.htm}
 }
@@ -12,7 +14,7 @@
 data(cdc)
 }
 \description{
-A dataset containing responses from the CDC Youth Risk Behavior Survey.
+A dataset containing responses from the 2019 CDC Youth Risk Behavior Survey.
 }
 \details{
 \itemize{
@@ -23,10 +25,8 @@ A dataset containing responses from the CDC Youth Risk Behavior Survey.
 \item race. race the student identifies with
 \item height. height of student in meters
 \item weight. weight of student in kilograms
-\item helmet. how often student wore a helmet while bicycling during the past 12 months
 \item seat_belt. how often student wore a seatbelt in motor vehicle driven by someone else
 \item drive_text. how often the student reported texting while driving in the past 30 days.
-\item fights. number of fights student has been during the past 12 months
 \item bully_school. did the student report being bullied while at school.
 \item bully_electronic. did the student report being bullied online.
 \item depressed. student reported feeling depressed for 2 weeks in a row, or more, during the past 12 months
@@ -46,8 +46,7 @@ A dataset containing responses from the CDC Youth Risk Behavior Survey.
 \item number_teams. number of sports teams played on during previous 12 months
 \item asthma. student diagnosed as having asthma
 \item hours_sleep. reported hours of sleep on school nights
-\item drink_juice. how often student consumed sports drinks over the past 7 days
-\item drink_water. how often student consumed water over the past 7 days
-\item sunburns. how often student reported being sunburned in the past 12 months}
+\item drink_sportdrink. how often student consumed sports drinks over the past 7 days
+\item drink_water. how often student consumed water over the past 7 days}
 }
 \keyword{dataset}
