@@ -52,13 +52,13 @@ timeuse_format <-
                 socialize = sum(socialize), spiritual = sum(spiritual), sports = sum(sports),
                 television = sum(television), travel = sum(travel),
                 videogames = sum(videogames), work = sum(work))
-    mean_timeuse <- sum_timeuse %>% group_by(user.id) %>% summarise(submissions = sum(submissions), chores = sum(chores),
-                                                                    communicate = sum(communicate), extra = sum(extra),
-                                                                    grooming = sum(grooming), homework = sum(homework),
-                                                                    meals = sum(meals), purchases = sum(purchases), read = sum(read),
-                                                                    school = sum(school), sleep = sum(sleep), social_media = sum(social_media),
-                                                                    socialize = sum(socialize), spiritual = sum(spiritual), sports = sum(sports),
-                                                                    television = sum(television), travel = sum(travel),
-                                                                    videogames = sum(videogames), work = sum(work))
+    mean_timeuse <- sum_timeuse %>% group_by(user.id) %>% summarise(submissions = sum(submissions), chores = mean(chores),
+                                                                    communicate = mean(communicate), extra = mean(extra),
+                                                                    grooming = mean(grooming), homework = mean(homework),
+                                                                    meals = mean(meals), purchases = mean(purchases), read = mean(read),
+                                                                    school = mean(school), sleep = mean(sleep), social_media = mean(social_media),
+                                                                    socialize = mean(socialize), spiritual = mean(spiritual), sports = mean(sports),
+                                                                    television = mean(television), travel = mean(travel),
+                                                                    videogames = mean(videogames), work = mean(work))
     return(mean_timeuse)
   }
