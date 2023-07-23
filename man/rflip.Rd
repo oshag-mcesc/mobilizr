@@ -2,9 +2,12 @@
 % Please edit documentation in R/rflip.R
 \name{rflip}
 \alias{rflip}
+\alias{print.cointoss}
 \title{Coin flip.}
 \usage{
 rflip(n = 1, prob = 0.5, quiet = FALSE, verbose = !quiet)
+
+\method{print}{cointoss}(x, ...)
 }
 \arguments{
 \item{n}{Integer. The number of times to flip the coin.}
@@ -18,6 +21,10 @@ Default value is 0.5.}
 \item{verbose}{Logical. The opposite of quiet from above. Should a message be
 printed? Default value is \code{TRUE}. Note, either quiet or verbose can be
 specified, but not both.}
+
+\item{x}{an object}
+
+\item{\dots}{additional arguments}
 }
 \description{
 Flip a coin 2000 times or fewer.
