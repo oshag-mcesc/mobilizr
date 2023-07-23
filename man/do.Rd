@@ -69,7 +69,7 @@ A data frame of the values for the repeated function.
 \code{do()} provides a natural syntax for repetition tuned to assist
 with replication and resampling methods.
 
-Number of iterations is capped at 500 to prevent individual users from
+Number of iterations is capped at 2000 to prevent individual users from
 hogging server computation time. Additional details about the \code{do}
 function can be found in the \code{\link[mosaic]{do}} package documentation
 

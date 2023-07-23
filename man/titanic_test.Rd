@@ -8,7 +8,7 @@
 A data frame with 308 observations of 8 variables
 }
 \source{
-\link{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
+\link{https://hbiostat.org/data/repo/titanic.html}
 }
 \usage{
 data(titanic_test)
@@ -19,7 +19,7 @@ not included in the \code{titanic} data set.
 }
 \details{
 \itemize{ \item name. name of passenger \item age. age of passenger \item
-gender. gender of passenger \item fare. amount paid for ticket to sail on the
+gender. gender of passenger \item fare. amount paid for ticket (in Pounds) to sail on the
 Titanic \item class. the class hospitality/room aboard the Titanic \item
 embarked. location passenger first stepped on board the Titanic \item
 survived. the survival status of the passenger \item titled. Does the person have a title other than Mr., Mrs., Miss., etc. in their name or not}

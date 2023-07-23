@@ -23,3 +23,24 @@ data <- function(...) {
   }
   utils::data(...)
 }
+
+#' Load external datasets.
+#'
+#' Load external data sets. After loading the data, the data frame will popup in
+#' an RStudio window to view. For more detail, check curriculum.idsucla.org/data
+#'
+#' @param data The name of the dataset to load.
+#'
+#' @return Loads the dataset and opens it up to view.
+#'
+#' @examples
+#' extra_data('cdc')
+#' @export
+
+extra_data <- function(data) {
+  var_name=load(url(paste("http://curriculum.idsucla.org/data/",data,".rda",sep="")), envir = .GlobalEnv)
+  # if (exists(var_name, envir = .GlobalEnv)) {
+  #   View(get(var_name, envir = .GlobalEnv))
+  # }
+}
+

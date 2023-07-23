@@ -4,7 +4,7 @@
 \alias{kclusters_simple}
 \title{Simple k-Means for 2 variable clustering}
 \usage{
-kclusters_simple(x, k, ...)
+kclusters_simple(x, y, k, ...)
 }
 \arguments{
 \item{x}{Formula. An expression of the form \code{y ~ x} where \code{x} and

@@ -3,7 +3,7 @@
 \docType{data}
 \name{dwp_2010}
 \alias{dwp_2010}
-\title{LA Department of Water and Power (2010) Data}
+\title{LA Department of Water and Power (2010-2011) Data}
 \format{
 A data frame with 1,705 observations of 19 variables
 }
@@ -15,7 +15,7 @@ data(dwp_2010)
 }
 \description{
 Water usage from the Los Angeles Department of Water and Power, by census
-block, for the year 2010. Some blocks are dropped due to identifiability
+block, for July 2010 through June 2011. Some blocks are dropped due to identifiability
 concerns.
 }
 \details{
@@ -24,7 +24,7 @@ type of customers using water. \item longitude. The longitudinal centroid of
 the census block. \item latitude. The latitudinal centroid of the census
 block. \item census_pop. The number of people residing within the census
 block. \item total. The total amount of water used in the year in hundreds of
-cubic feet for each census block. \item july - june. The amount of water used
+cubic feet for each census block. \item july 2010 - june 2011. The amount of water used
 per month in hundreds of cubic feet for each census block. \item count. The
 number of users measured per census block by sector type.}
 }

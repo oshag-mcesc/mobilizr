@@ -1,6 +1,6 @@
 #' Coin flip.
 #'
-#' Flip a coin 500 times or fewer.
+#' Flip a coin 2000 times or fewer.
 #'
 #' @param n Integer. The number of times to flip the coin.
 #' @param prob Number between 0 and 1. The probability of getting a "head".
@@ -34,9 +34,9 @@
 
 rflip <- function(n = 1, prob = 0.5, quiet = FALSE, verbose = !quiet) {
 
-  # Prevent students from flipping more than 500 coins to avoid them hogging computational resources
-  if (n > 500) {
-    stop("Number of flips should be less than or equal to 500")
+  # Prevent students from flipping more than 2000 coins to avoid them hogging computational resources
+  if (n > 2000) {
+    stop("Number of flips should be less than or equal to 2000")
   } else {
 
     # Flip the coins

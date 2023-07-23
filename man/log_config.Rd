@@ -4,7 +4,7 @@
 \name{log_config}
 \alias{log_config}
 \title{A set of logging functions that Steve made.
-These aren't used by the user.}
+These are and aren't used by the user.}
 \format{
 An object of class \code{logger} of length 3.
 }
@@ -13,6 +13,6 @@ log_config
 }
 \description{
 A set of logging functions that Steve made.
-These aren't used by the user.
+These are and aren't used by the user.
 }
 \keyword{datasets}

@@ -20,7 +20,7 @@ printed? Default value is \code{TRUE}. Note, either quiet or verbose can be
 specified, but not both.}
 }
 \description{
-Flip a coin 500 times or fewer.
+Flip a coin 2000 times or fewer.
 }
 \examples{
 # Basic usage. Note the printed output.

@@ -173,10 +173,10 @@ NULL
 NULL
 
 
-#' LA Department of Water and Power (2010) Data
+#' LA Department of Water and Power (2010-2011) Data
 #'
 #' Water usage from the Los Angeles Department of Water and Power, by census
-#' block, for the year 2010. Some blocks are dropped due to identifiability
+#' block, for July 2010 through June 2011. Some blocks are dropped due to identifiability
 #' concerns.
 #'
 #' \itemize{ \item census. The census block. \item sector_type. Indicates the
@@ -184,7 +184,7 @@ NULL
 #' the census block. \item latitude. The latitudinal centroid of the census
 #' block. \item census_pop. The number of people residing within the census
 #' block. \item total. The total amount of water used in the year in hundreds of
-#' cubic feet for each census block. \item july - june. The amount of water used
+#' cubic feet for each census block. \item july 2010 - june 2011. The amount of water used
 #' per month in hundreds of cubic feet for each census block. \item count. The
 #' number of users measured per census block by sector type.}
 #'
@@ -198,10 +198,10 @@ NULL
 NULL
 
 
-#' LA Department of Water and Power (2010) Data - Student
+#' LA Department of Water and Power (2010-2011) Data - Student
 #'
 #' Water usage from the Los Angeles Department of Water and Power, by census
-#' block, for the year 2010. Some blocks are dropped due to identifiability
+#' block, for July 2010 through June 2011. Some blocks are dropped due to identifiability
 #' concerns. This data set is used for a student practicum and contains 1,193 randomly selected observations. The remaining 512 observations can be found in the \code{\link{dwp_teacher}} data.
 #'
 #' \itemize{ \item census. The census block. \item sector_type. Indicates the
@@ -209,7 +209,7 @@ NULL
 #' the census block. \item latitude. The latitudinal centroid of the census
 #' block. \item census_pop. The number of people residing within the census
 #' block. \item total. The total amount of water used in the year in hundreds of
-#' cubic feet for each census block. \item july - june. The amount of water used
+#' cubic feet for each census block. \item july 2010 - june 2011. The amount of water used
 #' per month in hundreds of cubic feet for each census block. \item count. The
 #' number of users measured per census block by sector type.}
 #'
@@ -223,10 +223,10 @@ NULL
 NULL
 
 
-#' LA Department of Water and Power (2010) Data - Teacher
+#' LA Department of Water and Power (2010-2011) Data - Teacher
 #'
 #' Water usage from the Los Angeles Department of Water and Power, by census
-#' block, for the year 2010. Some blocks are dropped due to identifiability
+#' block, for July 2010 through June 2011. Some blocks are dropped due to identifiability
 #' concerns. This data set is used for a student practicum and contains 512 observations can be used by teachers to validate the student models.
 #'
 #' \itemize{ \item census. The census block. \item sector_type. Indicates the
@@ -234,7 +234,7 @@ NULL
 #' the census block. \item latitude. The latitudinal centroid of the census
 #' block. \item census_pop. The number of people residing within the census
 #' block. \item total. The total amount of water used in the year in hundreds of
-#' cubic feet for each census block. \item july - june. The amount of water used
+#' cubic feet for each census block. \item july 2010 - june 2011. The amount of water used
 #' per month in hundreds of cubic feet for each census block. \item count. The
 #' number of users measured per census block by sector type.}
 #'
@@ -322,7 +322,7 @@ NULL
 #' Titanic.
 #'
 #' \itemize{ \item name. name of passenger \item age. age of passenger \item
-#' gender. gender of passenger \item fare. amount paid for ticket to sail on the
+#' gender. gender of passenger \item fare. amount paid for ticket (in Pounds) to sail on the
 #' Titanic \item class. the class hospitality/room aboard the Titanic \item
 #' embarked. location passenger first stepped on board the Titanic \item
 #' survived. the survival status of the passenger \item titled. Does the person have a title other than Mr., Mrs., Miss., etc. in their name or not}
@@ -333,7 +333,7 @@ NULL
 #' @usage data(titanic)
 #' @seealso \link{titanic_test}
 #' @format A data frame with 1,000 observations of 8 variables
-#' @source \url{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
+#' @source \url{https://hbiostat.org/data/repo/titanic.html}
 NULL
 
 #' Titanic Passenger Survivial Test Data
@@ -342,7 +342,7 @@ NULL
 #' not included in the \code{titanic} data set.
 #'
 #' \itemize{ \item name. name of passenger \item age. age of passenger \item
-#' gender. gender of passenger \item fare. amount paid for ticket to sail on the
+#' gender. gender of passenger \item fare. amount paid for ticket (in Pounds) to sail on the
 #' Titanic \item class. the class hospitality/room aboard the Titanic \item
 #' embarked. location passenger first stepped on board the Titanic \item
 #' survived. the survival status of the passenger \item titled. Does the person have a title other than Mr., Mrs., Miss., etc. in their name or not}
@@ -353,7 +353,7 @@ NULL
 #' @usage data(titanic_test)
 #' @seealso \link{titanic}
 #' @format A data frame with 308 observations of 8 variables
-#' @source \link{http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html}
+#' @source \link{https://hbiostat.org/data/repo/titanic.html}
 NULL
 
 #' Cereal data
@@ -451,4 +451,80 @@ NULL
 #' @usage data(flights)
 #' @format A data frame with 310 observations of 11 variables
 #' @source \url{https://aspm.faa.gov}
+NULL
+
+#' Pride & Prejudice Word Data
+#'
+#' A dataset containing every word in the Pride and Prejudice book.
+#'
+#' \itemize{ \item word. The words as they appear in the book, in order. }
+#'
+#' @docType data
+#' @keywords dataset
+#' @name pride
+#' @usage data(pride)
+#' @format A data frame with 122204 observations of 1 variable.
+NULL
+
+#' Purchases Data (toy dataset)
+#'
+#' Toy (fictional) dataset related to purchases to assist in demonstrating various methods of merging data frames.
+#'
+#' \itemize{
+#' \item customer_id.
+#' \item number_of_orders. Number of purchases.
+#' \item average_amount_spent. Average amount spent on those purchases.}
+#'
+#' @docType data
+#' @keywords dataset
+#' @name purchases
+#' @usage data(purchases)
+#' @format A data frame with 90 observations of 3 variables
+NULL
+
+#' Sentiments of Words Data
+#'
+#' This dataset contains a list of words and estimated positive/negative sentiment based on how they are most often used in the Microsoft Bing search engine.
+#'
+#' \itemize{
+#' \item word. Each word that has a defined sentiment.
+#' \item sentiment. Either positive or negative, based on the Bing sentiment lexicon.}
+#'
+#' @docType data
+#' @keywords dataset
+#' @name sentiments
+#' @usage data(sentiments)
+#' @format A data frame with 6786 observations of 2 variables
+#' @source \url{https://github.com/EmilHvitfeldt/textdata/blob/HEAD/R/lexicon_bing.R}
+NULL
+
+#' Stop Words Data
+#'
+#' This dataset contains stop words. Stop words are words that are generally filtered out before or after processing of natural language data because they are insignificant (i.e., a, the, etc.).
+#'
+#' \itemize{
+#' \item word.}
+#'
+#' @docType data
+#' @keywords dataset
+#' @name stop_words
+#' @usage data(stop_words)
+#' @format A data frame with 1149 observations of 1 variable
+NULL
+
+#' Surveys Data
+#'
+#' This dataset contains surveys.
+#'
+#' \itemize{
+#' \item customer_id.
+#' \item age.
+#' \item gender.
+#' \item favorite_product.}
+#'
+#' @docType data
+#' @keywords dataset
+#' @name surveys
+#' @usage data(surveys)
+#' @format A data frame with 36 observations of 4 variables
 NULL

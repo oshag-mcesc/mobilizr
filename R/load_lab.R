@@ -63,6 +63,9 @@ load_lab <- function(lab) {
 
   # Display HTML file in the viewer pane.
   viewer(tf)
+
+  # auto update
+  # mobilizr::update_mobilizr();
 }
 
 #' @rdname load_lab
@@ -107,7 +110,7 @@ load_labs <- function(lab) {
   #   lab_urls <- paste0('http://gh.IDSUCLA.org/ids_labs/',
   #                      .format_lab_title(lab_titles), '.html')
   # }
-  
+
   lab_urls <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/master/',
                      .format_lab_title(lab_titles), '.html')
 
@@ -337,7 +340,68 @@ load_pd <- function(lab) {
 
 }
 
+
+#' @rdname extra_lab
+#' @export
+extra_labs <- function(lab) {
+  extra_lab(lab)
+}
+
+#' Load new extra lab slides into RStudio's Viewer Pane
+#'
+#' Load new extra lab slides into RStudio's Viewer Pane. The function can either be called
+#' without an argument \code{extra_lab()}, in which case a menu will appear in
+#' the console for the user to make their selection, or with a number indicating
+#' the desired lab as an argument.
+#'
+#' @param lab Integer/String (optional). Including an integer will load the desired extra lab
+#'   automatically. Leaving the argument blank will load a menu for users to
+#'   make a selection from.
+#' @examples
+#' extra_lab() # Loads a menu to choose from
+#' extra_lab(999) # Automatically loads the 999th lab from the menu.
+#' extra_lab('veryinterestinglab') # Automatically loads the veryinterestinglab from the menu.
+#' extra_labs() # Similar to extra_lab()
+#' extra_labs(999) # Similar to extra_lab(999)
+#' extra_labs('veryinterestinglab') # Similar to extra_lab('veryinterestinglab')
+#'
+#' @importFrom curl curl
+#' @importFrom rstudioapi viewer
+#' @importFrom stringr str_extract
+#' @export
+
+extra_lab <- function(lab) {
+
+  if (missing(lab)) {
+    lab <- menu(1:10, title = "Enter the number next to the lab you would like to load:")
+  }
+
+  .log_loaded_pd(lab)
+
+	url <- paste0('https://raw.githubusercontent.com/mobilizingcs/ids_labs/master/',
+                     "/extra_labs/" , toString(lab), '.html')
+
+  con <- curl(url, "r")
+  page <- paste(readLines(con), collapse = '\n')
+  close(con)
+
+  tf <- tempfile(fileext = ".html")
+  writeLines(page, tf)
+
+  viewer(tf)
+
+
+}
+
 .log_loaded_pd <- function(lab) {
   # logs the load_lab command correctly regardless of how the user selected a lab
   log_info(paste('load_pd(',lab,')', sep = ""))
 }
+
+
+#' Update Mobilizr
+#' @export
+update_mobilizr <- function() {
+
+}
+

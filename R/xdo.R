@@ -15,7 +15,7 @@
 
 do <- function(N) {
   # If number of requested loops exceed 500, break and return a message.
-  if (N > 500) stop("Number of iterations must not exceed 500. Choose a smaller number of iterations and try again.")
+  if (N > 2000) stop("Number of iterations must not exceed 2000. Choose a smaller number of iterations and try again.")
 
   # If number of requested loops is 500 or fewer, perform the loops.
   df <- mosaic::do(N, mode = 'data.frame')

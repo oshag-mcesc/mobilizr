@@ -1,11 +1,13 @@
 #' A set of logging functions that Steve made.
-#' These aren't used by the user.
+#' These are and aren't used by the user.
 #' @import log4r
 
 
 log_config <- log4r::create.logger()
 
 .onLoad <- function(libname, pkgname) {
+  # set default na.action level, that is used by user.
+  options(na.action = "na.exclude")
   log_path <- Sys.getenv('MOBILIZR_LOGFILE', '~/.mobilizr.log')
   logger_set(file.path(log_path), "INFO")
 }
