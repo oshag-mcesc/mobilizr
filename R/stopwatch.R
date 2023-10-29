@@ -9,11 +9,12 @@
 #' stopwatch()
 #' }
 #' @export
-
 stopwatch <- function () {
   tic <- Sys.time()
   cat("The stopwatch has started. \n Press [enter] to stop it.")
   line <- readline()
   toc <- Sys.time() - tic
-  print(toc)
+  #print(toc)
+  elapsed_seconds <- as.numeric(toc, units = "secs")
+  cat("Time difference of ", elapsed_seconds, " secs\n")
 }
