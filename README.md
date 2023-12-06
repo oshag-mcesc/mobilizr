@@ -1,6 +1,6 @@
 # mobilizr
 
-`mobilizr` is a set of functions that are used in the [Mobilize Project's](http://www.mobilizingcs.org) _Intro to Data Science_ (IDS) math curriculum (which can be [found here](https://www.mobilizingcs.org/)). 
+`mobilizr` is a set of functions that are used in the [Mobilize Project's](http://www.mobilizingcs.org) _Intro to Data Science_ (IDS) curriculum (which can be [found here](https://www.mobilizingcs.org/)). 
 
 The package builds on many of the features that were included in the [MobilizeSimple](https://github.com/mobilizingcs/MobilizeSimple) package but with two changes:
 
