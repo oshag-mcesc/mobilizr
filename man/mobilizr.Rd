@@ -2,6 +2,7 @@
 % Please edit documentation in R/mobilizr.R
 \docType{package}
 \name{mobilizr}
+\alias{mobilizr-package}
 \alias{mobilizr}
 \title{mobilizr: Functions for the Mobilize Intro to Data Science course.}
 \description{
@@ -11,4 +12,22 @@ essentials of learning to code and conduct data science.
 \details{
 To learn more about Mobilize and the Introduction to Data Science course see
 \href{http://www.mobilizingcs.org}{the Mobilize homepage}.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://www.mobilizingcs.org}
+}
+
+}
+\author{
+\strong{Maintainer}: James Molyneux \email{jmolyneux@ucla.edu}
+
+Authors:
+\itemize{
+  \item Amelia McNamara \email{amelia.mcnamara@stat.ucla.edu}
+  \item Terri Johnson \email{terri.johnson@stat.ucla.edu}
+  \item Steve Nolen \email{technolengy@gmail.com}
+}
+
 }
