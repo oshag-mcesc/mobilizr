@@ -25,3 +25,4 @@ get_line <- function(p1, p2) {
   m <- (p2[2] - p1[2]) / (p2[1] - p1[1])  # Calculate the slope
   b <- p1[2] - m * p1[1]  # Calculate the intercept
   return(c("intercept" = b, "slope" = m))  # Return the intercept and slope as a named vector
+}
